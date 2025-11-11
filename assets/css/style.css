@@ -1,0 +1,610 @@
+/* STYLE BUTTON */
+.glow-button {
+  position: relative;
+  overflow: hidden;
+  transition: color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.glow-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 10%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.6),
+    transparent
+  );
+  transform: translateX(-100%) skewX(-20deg);
+  transition: left 0.6s ease-out, transform 0.5s ease-out;
+}
+
+.glow-button:hover::before {
+  left: 100%;
+  transform: translateX(100%) skewX(-20deg);
+}
+
+.glow-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px rgba(0, 0, 255, 0.3);
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.8s ease-out;
+}
+
+/* Dropdown animations - PERBAIKAN */
+.nav-item {
+  position: relative;
+  padding: 8px 0;
+}
+
+/* Tambahkan area hover yang lebih besar */
+.nav-item::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  background: transparent;
+  z-index: 999;
+}
+
+.dropdown-menu {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  pointer-events: none;
+  z-index: 1000;
+  top: 100%;
+  margin-top: 8px;
+  /* Hilangkan gap */
+}
+
+.nav-item:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+  transition-delay: 0.1s;
+  /* Delay untuk mencegah flicker */
+}
+
+/* Arrow pointer for dropdown */
+.dropdown-arrow {
+  position: absolute;
+  top: -8px;
+  left: 20px;
+  width: 16px;
+  height: 16px;
+  background: white;
+  transform: rotate(45deg);
+  border-left: 1px solid #f3f4f6;
+  border-top: 1px solid #f3f4f6;
+  z-index: 1001;
+}
+
+/* Hamburger animations */
+.hamburger-line {
+  transition: all 0.3s ease;
+}
+
+#hamburger.active .hamburger-line:nth-child(1) {
+  transform: rotate(45deg) translateY(10px);
+}
+
+#hamburger.active .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+
+#hamburger.active .hamburger-line:nth-child(3) {
+  transform: rotate(-45deg) translateY(-10px);
+}
+
+/* Sticky navbar */
+.main-nav.sticky {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Perbaikan untuk mencegah gap */
+.nav-item .dropdown-trigger {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* CSS Tambahan Khusus untuk Dropdown Bahasa Desktop */
+/* Pastikan style ini dipertahankan karena Anda menggunakan logic JS untuk toggle visibility/opacity */
+.language-dropdown-desktop .dropdown-menu {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  transform: translateY(10px);
+}
+
+.dropdown-arrow-right {
+  position: absolute;
+  top: -10px;
+  right: 15px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid white;
+  filter: drop-shadow(0 -2px 2px rgba(0, 0, 0, 0.1));
+  z-index: 10;
+}
+
+.nav-item:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+body,
+html {
+  overflow-x: hidden; /* Hanya blokir scroll horizontal global */
+  overflow-y: auto; /* Selalu izinkan scroll vertikal */
+  height: 100%;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slideUp {
+  animation: slideUp 1s ease-out;
+}
+
+/* ⚠️ PENTING: Untuk mengatasi bug scroll mobile, 
+   pastikan swiper-wrapper di hero mengizinkan scroll vertikal */
+#heroSwiper .swiper-wrapper {
+  touch-action: pan-y !important;
+}
+
+/* ========================================
+   SECTION 1: HERO SLIDER STYLES (SWIPER)
+   ======================================== */
+
+#heroSwiper {
+  position: relative;
+  overflow: hidden;
+}
+
+#heroSwiper .swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* Navigasi Swiper (Menggantikan Panah Manual) */
+#hero .swiper-button-prev,
+#hero .swiper-button-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3.5rem; /* w-14 */
+  height: 3.5rem; /* h-14 */
+  color: white;
+  background: rgba(37, 99, 235, 0.8); /* bg-blue-600/80 */
+  border-radius: 0.375rem; /* rounded-md */
+  display: none; /* Default hidden */
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 30;
+}
+
+@media (min-width: 768px) {
+  #hero .swiper-button-prev,
+  #hero .swiper-button-next {
+    display: flex; /* Show on desktop */
+    width: 4rem; /* md:w-16 */
+    height: 4rem; /* md:h-16 */
+  }
+}
+
+#hero .swiper-button-prev:hover,
+#hero .swiper-button-next:hover {
+  background: #2563eb; /* hover:bg-blue-600 */
+  transform: translateY(-50%) scale(1.1);
+}
+
+/* ========================================
+   SECTION 2: PPDB SLIDER STYLES (SWIPER)
+   ======================================== */
+.slider-ppdb-wrapper {
+  position: relative;
+  width: 100%;
+  height: 480px;
+  overflow: hidden;
+}
+
+.ppdb-custom-slide {
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  cursor: grab;
+  border-radius: 12px;
+}
+
+.ppdb-custom-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+  user-select: none;
+  pointer-events: none;
+}
+
+.ppdb-custom-slide:hover img {
+  transform: scale(1.05);
+}
+
+/* Gradient dan info */
+.ppdb-custom-slide .gradient {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 0;
+  background: linear-gradient(
+    to top,
+    rgba(37, 99, 235, 0.95),
+    rgba(37, 99, 235, 0.7),
+    transparent
+  );
+  transition: height 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 10;
+  pointer-events: none;
+}
+
+.ppdb-custom-slide:hover .gradient {
+  height: 75%;
+}
+
+.ppdb-custom-slide .info {
+  position: absolute;
+  bottom: -120px;
+  left: 0;
+  right: 0;
+  padding: 1.5rem;
+  transition: bottom 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 20;
+  pointer-events: none;
+}
+
+.ppdb-custom-slide:hover .info {
+  bottom: 0;
+}
+
+/* Mobile Responsive */
+@media (max-width: 1024px) {
+  .slider-ppdb-wrapper {
+    height: 420px;
+  }
+}
+
+@media (max-width: 768px) {
+  .slider-ppdb-wrapper {
+    height: 380px; /* ← INI PENTING! */
+  }
+
+  /* ✅ FIX: Enable pointer events di mobile */
+  .ppdb-custom-slide .info {
+    pointer-events: auto;
+  }
+
+  .ppdb-custom-slide .info button {
+    pointer-events: auto;
+  }
+
+  /* Nonaktifkan hover di mobile */
+  .ppdb-custom-slide:hover .info {
+    bottom: -120px;
+  }
+
+  /* Aktifkan dengan class .active */
+  .ppdb-custom-slide.active .info {
+    bottom: 0;
+  }
+
+  .ppdb-custom-slide.active .gradient {
+    height: 75%;
+  }
+}
+
+@media (max-width: 480px) {
+  .slider-ppdb-wrapper {
+    height: 320px; /* ← INI JUGA PENTING! */
+  }
+}
+
+/* Desktop: PPDB Sisi Kanan FLAT */
+@media (min-width: 769px) {
+  .ppdb-custom-slide {
+    border-radius: 12px 0 0 12px;
+  }
+}
+
+/* infografis */
+.photo-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
+}
+
+.photo-card img {
+  position: relative;
+  overflow: hidden;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #3b82f6 !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: #3b82f6 !important;
+}
+
+/* untuk infografis */
+.infografis-card {
+  background: white;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.infografis-card:hover {
+  box-shadow: 0 20px 25px -5px rgba(59, 130, 246, 0.15),
+    0 10px 10px -5px rgba(59, 130, 246, 0.08);
+}
+
+.infografis-card img {
+  width: 100%;
+  height: 384px;
+  object-fit: cover;
+}
+
+.slash-info {
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%) skewX(-20deg);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  width: 50%;
+  pointer-events: none;
+}
+
+.infografis-card:hover .slash-info {
+  animation: slash-animate 0.7s ease-in-out;
+}
+
+@keyframes slash-animate {
+  0% {
+    transform: translateX(-100%) skewX(-20deg);
+  }
+  100% {
+    transform: translateX(300%) skewX(-20deg);
+  }
+}
+
+.service-card {
+  background: white;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.service-card:hover {
+  box-shadow: 0 20px 25px -5px rgba(59, 130, 246, 0.15),
+    0 10px 10px -5px rgba(59, 130, 246, 0.08);
+  transform: translateY(-8px);
+}
+
+.image-wrapper {
+  position: relative;
+  overflow: hidden;
+  height: 220px;
+}
+
+.service-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.service-card:hover img {
+  transform: scale(1.08);
+}
+
+.slash-overlay {
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%) skewX(-20deg);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  width: 50%;
+  pointer-events: none;
+}
+
+.service-card:hover .slash-overlay {
+  animation: slash-animate 0.7s ease-in-out;
+}
+
+@keyframes slash-animate {
+  0% {
+    transform: translateX(-100%) skewX(-20deg);
+  }
+  100% {
+    transform: translateX(300%) skewX(-20deg);
+  }
+}
+
+.content-area {
+  padding: 1.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.service-btn {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.service-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateX(-100%) skewX(-20deg);
+  transition: transform 0.5s ease;
+}
+
+.service-btn:hover::before {
+  transform: translateX(100%) skewX(-20deg);
+}
+
+.service-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px rgba(59, 130, 246, 0.3);
+}
+
+/* berita */
+
+.swiper-hero {
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.hero-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+  z-index: 10;
+}
+
+.btn-more {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.btn-more::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateX(-100%) skewX(-20deg);
+  transition: transform 0.5s ease;
+}
+
+.btn-more:hover::before {
+  transform: translateX(100%) skewX(-20deg);
+}
+
+.btn-more:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px rgba(0, 0, 255, 0.3);
+}
+
+/* galeri */
+.galeri-swiper {
+  overflow: hidden;
+}
+
+.galeri-slide {
+  transition: all 0.3s ease;
+}
+
+.galeri-slide img {
+  transition: transform 0.4s ease;
+  border-radius: 1rem;
+}
+
+.galeri-slide:hover img {
+  transform: scale(1.05);
+}
+
+.galeri-slide:hover {
+  box-shadow: 0 20px 30px rgba(0, 0, 255, 0.3);
+  transition: 0.6s all;
+}
+
+.link-selengkapnya {
+  position: relative;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.link-selengkapnya::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #2563eb;
+  transition: width 0.3s ease;
+}
+
+.link-selengkapnya:hover::after {
+  width: 100%;
+}
+
+.link-selengkapnya:hover {
+  color: #1d4ed8;
+}
