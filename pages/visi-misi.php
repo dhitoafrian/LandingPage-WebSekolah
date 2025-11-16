@@ -1,6 +1,7 @@
 <?php
 $page_title = 'Visi dan Misi';
 include '../src/includes/header.php';
+include '../pages/banner.php';
 ?>
 
 <section class="py-16 bg-gray-50">

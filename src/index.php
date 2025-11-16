@@ -249,7 +249,7 @@ include 'includes/header.php';
             <div class="flex flex-col items-center text-center">
                 <div class="relative mb-6">
                     <div class="relative group">
-                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop"
+                        <img src="/Template-WebSekolah/assets/images/kepala-sekolah.jpeg"
                             alt="Kepala Sekolah"
                             class="w-40 h-40 rounded-full object-cover border-4 border-blue-600 shadow-xl transition-transform duration-300 group-hover:scale-105">
                         <div class="absolute inset-0 rounded-full overflow-hidden pointer-events-none">
@@ -728,9 +728,9 @@ include 'includes/header.php';
 
                 <!-- Button Berita Lainnya -->
                 <div class="text-center">
-                    <button class="glow-button overflow-hidden bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-semibold">
+                    <a href="/Template-WebSekolah/pages/berita.php" class="glow-button overflow-hidden bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-semibold">
                         <span class="relative z-10">Berita Lainnya</span>
-                    </button>
+                    </a>
                 </div>
             </div>
 

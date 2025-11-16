@@ -7,11 +7,7 @@
             <!-- About Section -->
             <div>
                 <div class="flex items-center gap-3 mb-6">
-                    <img src="https://via.placeholder.com/50x50/2563eb/ffffff?text=Logo" alt="Logo" class="w-12 h-12 rounded-full">
-                    <div>
-                        <div class="text-lg font-bold">SEKOLAH MODERN</div>
-                        <div class="text-xs text-blue-300">Unggul & Berkarakter</div>
-                    </div>
+                    <img src="/Template-WebSekolah/assets/images/logo.png" alt="Logo" class="lg:w-80 w-60 ">
                 </div>
                 <p class="text-gray-300 text-sm leading-relaxed mb-4">
                     Membentuk generasi unggul yang berakhlak mulia dengan pendidikan berkualitas dan fasilitas modern.
