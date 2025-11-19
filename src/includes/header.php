@@ -139,7 +139,7 @@
                                         <div class="text-xs text-gray-500">Info Pendaftaran</div>
                                     </div>
                                 </a>
-                                <a href="/Template-WebSekolah/pages/syarat-pendaftaran.php" class="flex items-center gap-3 px-4 py-3 hover:bg-blue-50 transition-colors group"><i class="fas fa-file-alt w-5 transition-transform group-hover:text-blue-600"></i>
+                                <a href="/Template-WebSekolah/pages/syarat-ketentuan.php" class="flex items-center gap-3 px-4 py-3 hover:bg-blue-50 transition-colors group"><i class="fas fa-file-alt w-5 transition-transform group-hover:text-blue-600"></i>
                                     <div>
                                         <div class="font-medium text-gray-900 group-hover:text-blue-600">Syarat Pendaftaran</div>
                                         <div class="text-xs text-gray-500">Persyaratan</div>
@@ -186,17 +186,11 @@
                                         <div class="text-xs text-gray-500">Agenda Kegiatan</div>
                                     </div>
                                 </a>
-                                <a href="/Template-WebSekolah/pages/prestasi.php" class="flex items-center gap-3 px-4 py-3 hover:bg-blue-50 transition-colors group"><i class="fas fa-trophy w-5 transition-transform group-hover:text-blue-600"></i>
-                                    <div>
-                                        <div class="font-medium text-gray-900 group-hover:text-blue-600">Prestasi</div>
-                                        <div class="text-xs text-gray-500">Prestasi Siswa</div>
-                                    </div>
-                                </a>
                             </div>
                         </div>
                     </li>
 
-                    <li><a href="/Template-WebSekolah/quospages/galeri.php" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Galeri</a></li>
+                    <li><a href="/Template-WebSekolah/pages/galeri.php" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Galeri</a></li>
                     <li><a href="/Template-WebSekolah/pages/kontak.php" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Kontak</a></li>
 
                     <li class="nav-item relative language-dropdown-desktop" id="desktopLangDropdown">
@@ -217,7 +211,7 @@
                         </div>
                     </li>
 
-                    <li class="relative overflow-hidden">
+                    <li>
                         <a href="login.php" class="glow-button block w-full h-full rounded-full bg-blue-600 text-white px-6 py-2.5 hover:bg-blue-700 font-semibold shadow-md will-change-transform">
                             <span class="relative z-10">Masuk</span>
                         </a>
@@ -225,11 +219,11 @@
                 </ul>
 
                 <div class="flex items-center gap-2 lg:hidden">
-                    <li class="relative overflow-hidden">
-                        <a href="login.php" class="glow-button block w-full h-full rounded-full bg-blue-600 text-white px-6 py-2.5 hover:bg-blue-700 font-semibold shadow-md will-change-transform">
+                    <div>
+                        <a href="login.php" class="glow-button overflow-hidden block w-full h-full rounded-full bg-blue-600 text-white px-6 py-2.5 hover:bg-blue-700 font-semibold shadow-md will-change-transform">
                             <span class="relative z-10">Masuk</span>
                         </a>
-                    </li>
+                    </div>
                     <button id="hamburger" class="lg:hidden w-10 h-10 flex flex-col justify-center items-center gap-1.5 rounded-lg hover:bg-gray-100 transition-all">
                         <span class="hamburger-line w-6 h-0.5 bg-gray-700 rounded-full"></span>
                         <span class="hamburger-line w-6 h-0.5 bg-gray-700 rounded-full"></span>
@@ -293,7 +287,7 @@
                     <div class="mobile-dropdown-content max-h-0 overflow-hidden transition-all duration-300">
                         <div class="pl-4 pt-2 space-y-1 border-l-2 border-blue-200 ml-6">
                             <a href="/Template-WebSekolah/pages/info-ppdb.php" class="block px-4 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg">Informasi PPDB</a>
-                            <a href="/Template-WebSekolah/pages/syarat-pendaftaran.php" class="block px-4 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg">Syarat Pendaftaran</a>
+                            <a href="/Template-WebSekolah/pages/syarat-ketentuan.php" class="block px-4 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg">Syarat Pendaftaran</a>
                             <a href="/Template-WebSekolah/pages/alur-pendaftaran.php" class="block px-4 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg">Alur Pendaftaran</a>
                             <a href="/Template-WebSekolah/pages/daftar-online.php" class="block px-4 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg">Daftar Online</a>
                         </div>
@@ -310,7 +304,6 @@
                             <a href="/Template-WebSekolah/pages/berita.php" class="block px-4 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg">Berita</a>
                             <a href="/Template-WebSekolah/pages/pengumuman.php" class="block px-4 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg">Pengumuman</a>
                             <a href="/Template-WebSekolah/pages/agenda.php" class="block px-4 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg">Agenda</a>
-                            <a href="/Template-WebSekolah/pages/prestasi.php" class="block px-4 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg">Prestasi</a>
                         </div>
                     </div>
                 </div>

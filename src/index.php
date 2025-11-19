@@ -4,7 +4,6 @@ include 'includes/header.php';
 ?>
 
 <style>
-    /* video dan agenda */
     .video-thumbnail {
         position: relative;
         cursor: pointer;
@@ -143,6 +142,7 @@ include 'includes/header.php';
     }
 </style>
 
+<!-- ================= START BANNER SWIPER SECTION ================= -->
 <section id="hero" class="relative w-full h-[60vh] md:h-[70vh] lg:h-[80vh] overflow-hidden bg-black">
     <div class="swiper h-full w-full" id="heroSwiper">
         <div class="swiper-wrapper" id="sliderTrack">
@@ -221,18 +221,6 @@ include 'includes/header.php';
         </div>
     </div>
 
-    <!-- <div class="absolute top-0 left-0 z-20 pointer-events-none">
-        <div class="border-t-[12px] border-l-[12px] border-blue-600 w-40 h-40 md:w-60 md:h-60"></div>
-        <div class="absolute top-12 left-0 w-24 h-[12px] bg-blue-500 md:w-32"></div>
-        <div class="absolute top-0 left-12 w-[12px] h-24 bg-blue-500 md:h-32"></div>
-    </div>
-
-    <div class="absolute bottom-0 right-0 z-20 pointer-events-none">
-        <div class="border-b-[12px] border-r-[12px] border-blue-600 w-40 h-40 md:w-60 md:h-60"></div>
-        <div class="absolute bottom-12 right-0 w-24 h-[12px] bg-blue-500 md:w-32"></div>
-        <div class="absolute bottom-0 right-12 w-[12px] h-24 bg-blue-500 md:h-32"></div>
-    </div> -->
-
     <button id="prevBtn" class="swiper-button-prev hidden absolute left-8 top-1/2 -translate-y-1/2 z-30 w-14 h-14 md:w-16 md:h-16 bg-blue-600/80 hover:bg-blue-600 text-white rounded-md md:flex items-center justify-center transition-all duration-300 transform hover:scale-110 shadow-xl disabled:opacity-50">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M15 19l-7-7 7-7" />
     </button>
@@ -241,7 +229,9 @@ include 'includes/header.php';
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7" />
     </button>
 </section>
+<!-- ================= END BANNER SWIPER SECTION ================= -->
 
+<!-- ================= START SAMBUTAN & INFORMASI PPDB ================= -->
 <section class="bg-blue-100 py-5 px-2 lg:p-20">
     <div class="max-w-7xl mx-auto bg-white rounded-2xl p-6 md:p-10 shadow-2xl">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
@@ -271,7 +261,7 @@ include 'includes/header.php';
                     </p>
                 </div>
 
-                <a href="sambutan.php" class="glow-button relative overflow-hidden inline-flex items-center justify-center px-8 py-3 text-base font-semibold text-white bg-blue-600 rounded-full hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-300 shadow-lg">
+                <a href="/Template-WebSekolah/pages/sambutan.php" class="glow-button relative overflow-hidden inline-flex items-center justify-center px-8 py-3 text-base font-semibold text-white bg-blue-600 rounded-full hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-300 shadow-lg">
                     <span class="relative z-10">Baca Sambutan Lengkap</span>
                 </a>
             </div>
@@ -334,7 +324,9 @@ include 'includes/header.php';
         </div>
     </div>
 </section>
+<!-- ================= END SAMBUTAN & INFORMASI PPDB ================= -->
 
+<!-- ================= START SMARTSCHOOL STATISTICS ================= -->
 <section class="py-16 px-4 bg-[url('/Template-WebSekolah/assets/images/desktop.jpg')] bg-cover bg-center">
     <div class="max-w-7xl mx-auto">
         <!-- Section Title -->
@@ -372,8 +364,9 @@ include 'includes/header.php';
         </div>
     </div>
 </section>
+<!-- ================= END SMARTSCHOOL STATISTICS ================= -->
 
-<!-- Infografis Prestasi Section -->
+<!-- ================= START PRESTASI INFOGRAPHIC ================= -->
 <section class="py-16 px-4">
     <div class="max-w-7xl mx-auto">
         <!-- Header Text - Center -->
@@ -451,157 +444,83 @@ include 'includes/header.php';
         </div>
     </div>
 </section>
+<!-- ================= END PRESTASI INFOGRAPHIC ================= -->
 
-<!-- Layanan Khusus Section: Kelas Belajar -->
+<!-- ================= START LAYANAN KHUSUS / KELAS BELAJAR ================= -->
 <section class="py-16 px-4">
     <div class="max-w-7xl mx-auto">
-        <!-- Section Header -->
+
         <div class="mb-10">
             <h2 class="text-blue-600 text-xl md:text-2xl font-bold mb-2">
                 <span class="inline-block">─ ──</span> Layanan Khusus
             </h2>
-            <h3 class="text-2xl md:text-3xl font-bold text-gray-800">KELAS BELAJAR</h3>
+            <h3 class="text-2xl md:text-3xl font-bold text-gray-800">KELAS BELAJAR & ASRAMA</h3>
         </div>
 
-        <!-- Grid Cards -->
-        <!-- Card: Kelas Tahfidz -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
 
-            <div class="service-card mb-6 md:mb-0 md:col-span-1 lg:col-span-1">
+            <div class="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-6 lg:border-r lg:pr-6 border-gray-200 order-2 lg:order-none">
 
-                <div class="image-wrapper">
-                    <img src="https://images.unsplash.com/photo-1580537659466-0a9bfa916a54?w=600&h=400&fit=crop"
-                        alt="Kelas Tahfidz">
-                    <div class="slash-overlay"></div>
+                <div class="service-card card-small mb-6 sm:mb-0 sm:col-span-1">
+                    <div class="image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1580537659466-0a9bfa916a54?w=600&h=400&fit=crop"
+                            alt="Kelas Tahfidz">
+                        <div class="slash-overlay"></div>
+                    </div>
+                    <div class="content-area-small p-4 sm:p-6 flex flex-col flex-grow">
+                        <h4 class="text-xl font-bold text-gray-800 mb-3">Kelas Tahfidz</h4>
+                        <p class="text-gray-600 mb-4 flex-grow leading-relaxed line-clamp-2 text-sm">
+                            Kelas tahfidz merupakan program pendidikan untuk menghafal Al-Qur'an.
+                        </p>
+                        <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full font-semibold inline-block text-center text-sm mt-auto">
+                            <span class="relative z-10">Selengkapnya</span>
+                        </a>
+                    </div>
                 </div>
-                <div class="content-area">
-                    <h4 class="text-xl font-bold text-gray-800 mb-3">Kelas Tahfidz</h4>
-                    <p class="text-gray-600 mb-6 flex-grow leading-relaxed line-clamp-3">
-                        Kelas tahfidz merupakan program pendidikan yang dirancang khusus untuk menghafal Al-Qur'an.
-                    </p>
-                    <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded-full font-semibold inline-block text-center">
-                        <span class="relative z-10">Selengkapnya</span>
-                    </a>
-                </div>
-            </div>
 
-
-            <div class="grid grid-cols-2 md:col-span-1 lg:col-span-2 gap-6">
-
-                <div class="service-card">
+                <div class="service-card card-small sm:col-span-1">
                     <div class="image-wrapper">
                         <img src="https://images.unsplash.com/photo-1561998338-13ad7883b20f?w=600&h=400&fit=crop"
                             alt="Kelas DKV">
                         <div class="slash-overlay"></div>
                     </div>
-                    <div class="content-area">
+                    <div class="content-area-small p-4 sm:p-6 flex flex-col flex-grow">
                         <h4 class="text-xl font-bold text-gray-800 mb-3">Kelas DKV</h4>
-                        <p class="text-gray-600 mb-6 flex-grow leading-relaxed line-clamp-3">
-                            Desain Komunikasi Visual (DKV) adalah disiplin ilmu yang mengajarkan penyampaian pesan secara visual.
+                        <p class="text-gray-600 mb-4 flex-grow leading-relaxed line-clamp-2 text-sm">
+                            Desain Komunikasi Visual (DKV) mengajarkan penyampaian pesan secara visual.
                         </p>
-                        <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded-full font-semibold inline-block text-center">
+                        <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full font-semibold inline-block text-center text-sm mt-auto">
                             <span class="relative z-10">Selengkapnya</span>
                         </a>
                     </div>
                 </div>
-
-                <div class="service-card">
-                    <div class="image-wrapper">
-                        <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=400&fit=crop"
-                            alt="Kelas Komputer">
-                        <div class="slash-overlay"></div>
-                    </div>
-                    <div class="content-area">
-                        <h4 class="text-xl font-bold text-gray-800 mb-3">Kelas Komputer</h4>
-                        <p class="text-gray-600 mb-6 flex-grow leading-relaxed line-clamp-3">
-                            Program kelas komputer yang mengajarkan keterampilan digital dan teknologi informasi.
-                        </p>
-                        <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded-full font-semibold inline-block text-center">
-                            <span class="relative z-10">Selengkapnya</span>
-                        </a>
-                    </div>
-                </div>
-
             </div>
-        </div>
-</section>
 
-<!-- Layanan Khusus Section: Asrama -->
-<section class="py-16 px-4 bg-white">
-    <div class="max-w-7xl mx-auto">
-        <div class="mb-10">
-            <h2 class="text-blue-600 text-xl md:text-2xl font-bold mb-2">
-                <span class="inline-block">─ ──</span> Layanan Khusus
-            </h2>
-            <h3 class="text-2xl md:text-3xl font-bold text-gray-800">ASRAMA</h3>
-        </div>
-
-        <div class="md:grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-
-            <div class="mb-6 md:mb-0 md:col-span-1 lg:col-span-1">
+            <div class="lg:col-span-1 col-span-full order-1 lg:order-none">
                 <div class="service-card">
-                    <div class="image-wrapper">
+                    <div class="image-wrapper h-64">
                         <img src="https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=600&h=400&fit=crop"
                             alt="Asrama Putri">
                         <div class="slash-overlay"></div>
                     </div>
-                    <div class="content-area">
+                    <div class="content-area p-6 flex flex-col flex-grow">
                         <h4 class="text-xl font-bold text-gray-800 mb-3">Asrama Putri</h4>
-                        <p class="text-gray-600 mb-6 flex-grow leading-relaxed">
-                            Asrama putri adalah fasilitas yang dirancang khusus untuk memberikan tempat tinggal yang aman dan nyaman.
+                        <p class="text-gray-600 mb-6 flex-grow leading-relaxed line-clamp-3">
+                            Asrama putri adalah fasilitas yang dirancang khusus untuk memberikan tempat tinggal yang aman dan nyaman bagi siswi.
                         </p>
-                        <a href="#" class="glow-button relative overflow-hidden bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded-full font-semibold inline-block text-center">
+                        <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded-full font-semibold inline-block text-center mt-auto">
                             <span class="relative z-10">Selengkapnya</span>
                         </a>
                     </div>
                 </div>
             </div>
 
-            <div class="grid grid-cols-2 md:col-span-1 lg:col-span-2 gap-6">
-
-                <div class="col-span-1">
-                    <div class="service-card">
-                        <div class="image-wrapper">
-                            <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&h=400&fit=crop"
-                                alt="Asrama Putra">
-                            <div class="slash-overlay"></div>
-                        </div>
-                        <div class="content-area">
-                            <h4 class="text-xl font-bold text-gray-800 mb-3">Asrama Putra</h4>
-                            <p class="text-gray-600 mb-6 flex-grow leading-relaxed line-clamp-3">
-                                Fasilitas asrama putra yang modern dengan berbagai fasilitas pendukung untuk kenyamanan siswa.
-                            </p>
-                            <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded-full font-semibold inline-block text-center">
-                                <span class="relative z-10">Selengkapnya</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-span-1">
-                    <div class="service-card">
-                        <div class="image-wrapper">
-                            <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=600&h=400&fit=crop"
-                                alt="Fasilitas Asrama">
-                            <div class="slash-overlay"></div>
-                        </div>
-                        <div class="content-area">
-                            <h4 class="text-xl font-bold text-gray-800 mb-3">Fasilitas Asrama</h4>
-                            <p class="text-gray-600 mb-6 flex-grow leading-relaxed line-clamp-3">
-                                Berbagai fasilitas lengkap termasuk ruang belajar, perpustakaan mini, dan area olahraga.
-                            </p>
-                            <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded-full font-semibold inline-block text-center ">
-                                <span class="relative z-10">Selengkapnya</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
         </div>
     </div>
 </section>
+<!-- ================= END LAYANAN KHUSUS / KELAS BELAJAR ================= -->
 
+<!-- ================= START BERITA & ARTIKEL ================= -->
 <section class="py-16 px-4">
     <div class="max-w-7xl mx-auto">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -621,11 +540,11 @@ include 'includes/header.php';
                     <div class="swiper-wrapper">
                         <!-- Slide 1 -->
                         <div class="swiper-slide relative h-96">
-                            <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=400&h=300&fit=crop"
-                                alt="Berita 1" class="w-full h-full object-cover">
+                            <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1200&h=600&fit=crop"
+                                alt="Berita 3" class="w-full h-full object-cover">
                             <div class="hero-content">
-                                <h4 class="text-white text-2xl md:text-3xl font-bold mb-2">Bulan Bahasa 2025</h4>
-                                <p class="text-white/80 text-sm">📅 01 November 2025</p>
+                                <h4 class="text-white text-2xl md:text-3xl font-bold mb-2">Upacara Nasional 2025</h4>
+                                <p class="text-white/80 text-sm">📅 1 Oktober 2025</p>
                             </div>
                         </div>
 
@@ -809,15 +728,17 @@ include 'includes/header.php';
         </div>
     </div>
 </section>
+<!-- ================= START BERITA & ARTIKEL ================= -->
 
+<!-- ================= START PRESENSI REALTIME CTA ================= -->
 <section class="py-16 px-4 bg-[url('/Template-WebSekolah/assets/images/desktop.jpg')] bg-cover bg-center">
     <div class="max-w-7xl mx-auto">
         <!-- Section Title -->
-        <h6 class="text-2xl md:text-2xl font-bold text-white text-center mb-12">
+        <h6 class="text-2xl md:text-3xl font-bold text-white text-center mb-12">
             ─ ── SMA Muhammadiyah 3 Yogyakarta Menerapkan Digitalisasi Sekolah
         </h6>
 
-        <h4 class="text-3xl md:text-3xl font-bold text-white text-center mb-12">
+        <h4 class="text-base md:text-2xl font-bold text-white text-center mb-12">
             Terintegrasi dengan presentasi mandiri realtime
         </h4>
 
@@ -826,21 +747,23 @@ include 'includes/header.php';
         <div class="flex flex-row justify-center items-center gap-6">
 
             <div class="text-center">
-                <button class="glow-button overflow-hidden bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-semibold">
-                    <span class="relative z-10">View Presensi Siswa</span>
+                <button class="glow-button overflow-hidden bg-blue-600 hover:bg-blue-700 text-white px-4 py-3 lg:px-6 lg:py-3 rounded-full font-semibold">
+                    <span class="relative z-10 text-sm">View Presensi Siswa</span>
                 </button>
             </div>
 
             <div class="text-center">
-                <button class="glow-button overflow-hidden bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-semibold">
-                    <span class="relative z-10">View Presensi Guru</span>
+                <button class="glow-button overflow-hidden bg-blue-600 hover:bg-blue-700 text-white px-4 py-3 lg:px-8 lg:py-3 rounded-full font-semibold">
+                    <span class="relative z-10 text-sm">View Presensi Guru</span>
                 </button>
             </div>
 
         </div>
     </div>
 </section>
+<!-- ================= END PRESENSI REALTIME CTA ================= -->
 
+<!-- ================= START GALERI FOTO ================= -->
 <section class="py-16 px-4 bg-white">
     <div class="max-w-7xl mx-auto">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -930,7 +853,9 @@ include 'includes/header.php';
         </div>
     </div>
 </section>
+<!-- ================= END GALERI FOTO ================= -->
 
+<!-- ================= START VIDEO SECTION ================= -->
 <div id="videoModal" class="modal">
     <div class="modal-content">
         <div class="modal-close" onclick="closeModal()">×</div>
@@ -1096,13 +1021,13 @@ include 'includes/header.php';
 
                 <!-- Buttons -->
                 <div class="flex flex-row flex-wrap justify-center items-center gap-3">
-                    <button class="glow-button overflow-hidden bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full font-semibold">
+                    <a href="/Template-WebSekolah/pages/agenda.php" class="glow-button overflow-hidden bg-blue-600 hover:bg-blue-700 text-white px-4 py-3 lg:px-6 lg:py-2 rounded-full font-semibold">
                         <span class="relative z-10">Semua Agenda</span>
-                    </button>
+                    </a>
 
-                    <button class="glow-button overflow-hidden bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full font-semibold">
+                    <a href="/Template-WebSekolah/pages/pengumuman.php" class="glow-button overflow-hidden bg-blue-600 hover:bg-blue-700 text-white px-4 py-3 lg:px-6 lg:py-2 rounded-full font-semibold">
                         <span class="relative z-10">Semua Pengumuman</span>
-                    </button>
+                    </a>
                 </div>
 
             </div>
@@ -1110,6 +1035,8 @@ include 'includes/header.php';
         </div>
     </div>
 </section>
+<!-- ================= END VIDEO SECTION ================= -->
+
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="/Template-WebSekolah/assets/js/main.js"></script>
 <?php include 'includes/footer.php'; ?>

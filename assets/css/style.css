@@ -1,4 +1,4 @@
-/* STYLE BUTTON */
+/* ================= START GLOBAL CSS ================= */
 .glow-button {
   position: relative;
   overflow: hidden;
@@ -47,6 +47,7 @@
 .animate-fade-in {
   animation: fade-in 0.8s ease-out;
 }
+/* ================= END GLOBAL CSS ================= */
 
 /* Dropdown animations - PERBAIKAN */
 .nav-item {
@@ -457,6 +458,13 @@ html {
   transition: transform 0.5s ease;
 }
 
+.content-area-small {
+  padding: 1rem 1.5rem; /* p-4 dan p-6 */
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
 .service-card:hover img {
   transform: scale(1.08);
 }
@@ -479,6 +487,10 @@ html {
   animation: slash-animate 0.7s ease-in-out;
 }
 
+.service-card.card-small .image-wrapper {
+  height: 160px;
+}
+
 @keyframes slash-animate {
   0% {
     transform: translateX(-100%) skewX(-20deg);
@@ -486,6 +498,12 @@ html {
   100% {
     transform: translateX(300%) skewX(-20deg);
   }
+}
+
+@media (max-width: 1023px) {
+    .service-card.card-small .image-wrapper {
+        height: 220px;
+    }
 }
 
 .content-area {

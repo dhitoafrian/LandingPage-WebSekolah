@@ -121,25 +121,50 @@
                 </ul>
             </div>
 
-            <!-- Newsletter -->
             <div>
                 <h3 class="text-xl font-bold mb-6 relative inline-block">
-                    Newsletter
-                    <span class="absolute -bottom-2 left-0 w-12 h-1 bg-blue-500 rounded-full"></span>
+                    Statistik Website
+                    <span class="absolute -bottom-2 left-0 w-16 h-1.5 bg-blue-500 rounded-full"></span>
                 </h3>
-                <p class="text-gray-300 text-sm mb-4">
-                    Dapatkan informasi terbaru langsung di email Anda.
-                </p>
-                <form class="space-y-3" onsubmit="event.preventDefault(); alert('Terima kasih! Fitur ini akan segera tersedia.');">
-                    <input type="email" placeholder="Email Anda" required class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-500 transition-all">
-                    <button type="submit" class="w-full px-4 py-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold rounded-lg hover:from-blue-700 hover:to-blue-800 transition-all transform hover:scale-105">
-                        <i class="fas fa-paper-plane mr-2"></i>
-                        Berlangganan
-                    </button>
-                </form>
 
-                <!-- Akreditasi Badge -->
-                <div class="mt-6 p-4 bg-white/5 rounded-lg border border-white/10">
+                <!-- Stats Widget Container -->
+                <div class="bg-gradient-to-br from-blue-600/20 to-purple-600/20 rounded-xl p-6 border border-white/10 backdrop-blur-sm">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-12 h-12 bg-blue-600/40 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-chart-line text-blue-300 text-2xl"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm font-semibold text-white">Pengunjung</p>
+                            <p class="text-xs text-gray-400">Website Analytics</p>
+                        </div>
+                    </div>
+
+                    <!-- Stats Badge Image (Histats/Statcounter) -->
+                    <a href="https://www.histats.com"
+                        target="_blank"
+                        class="block overflow-hidden rounded-lg bg-white/5 p-4 hover:bg-white/10 transition group mb-4">
+                        <!-- GANTI URL ini dengan badge dari Histats/Statcounter lo -->
+                        <img src="https://via.placeholder.com/250x150/1e40af/ffffff?text=Stats+Badge+Here"
+                            alt="Website Statistics"
+                            class="w-full rounded opacity-90 group-hover:opacity-100 transition">
+                    </a>
+
+                    <!-- Link to Detail Stats -->
+                    <a href="https://www.histats.com"
+                        target="_blank"
+                        class="flex items-center justify-center gap-2 w-full px-4 py-2.5 bg-blue-600/40 hover:bg-blue-600/60 text-white text-center rounded-lg transition text-sm font-medium group">
+                        <i class="fas fa-external-link-alt text-xs group-hover:translate-x-0.5 transition-transform"></i>
+                        Lihat Detail Statistik
+                    </a>
+
+                    <p class="text-xs text-gray-400 text-center mt-3">
+                        <i class="fas fa-info-circle mr-1"></i>
+                        Real-time visitor tracking
+                    </p>
+                </div>
+
+                <!-- Akreditasi Badge (moved from newsletter) -->
+                <div class="mt-4 p-4 bg-white/5 rounded-lg border border-white/10 backdrop-blur-sm">
                     <div class="flex items-center gap-3">
                         <div class="text-3xl">🎓</div>
                         <div>
@@ -164,7 +189,10 @@
                 </div>
             </div>
         </div>
-    </div>
+
+
+
+
 </footer>
 
 <!-- Back to Top Button -->
@@ -176,6 +204,8 @@
 <a href="https://wa.me/6281234567890" target="_blank" class="fixed bottom-8 left-8 w-14 h-14 bg-green-500 text-white rounded-full shadow-lg hover:bg-green-600 transition-all transform hover:scale-110 z-40 flex items-center justify-center">
     <i class="fab fa-whatsapp text-2xl"></i>
 </a>
+
+
 
 <script src="/Template-WebSekolah/assets/js/navbar.js"></script>
 <script src="/Template-WebSekolah/assets/js/footer.js"></script>
