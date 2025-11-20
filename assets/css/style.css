@@ -1,4 +1,11 @@
 /* ================= START GLOBAL CSS ================= */
+
+/* untuk pages pages */
+.hero-gradient {
+  background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+}
+
+/* untuk effect buttons */
 .glow-button {
   position: relative;
   overflow: hidden;
@@ -27,7 +34,7 @@
   transform: translateX(100%) skewX(-20deg);
 }
 
-.glow-button:hover {
+.glow-button:hover {git 
   transform: translateY(-2px);
   box-shadow: 0 8px 15px rgba(0, 0, 255, 0.3);
 }
@@ -501,9 +508,9 @@ html {
 }
 
 @media (max-width: 1023px) {
-    .service-card.card-small .image-wrapper {
-        height: 220px;
-    }
+  .service-card.card-small .image-wrapper {
+    height: 220px;
+  }
 }
 
 .content-area {
