@@ -1,8 +1,26 @@
 <?php
+
 $page_title = 'Pengumuman Sekolah';
 include '../src/includes/header.php';
+
+// Data pengumuman yang lebih banyak untuk menguji fitur "Tampilkan Lainnya"
+$announcements = [
+    ['title' => 'Pengumuman Hasil PPDB Gelombang 1', 'date' => '19 Nov 2025', 'desc' => 'Hasil seleksi PPDB Gelombang 1 Tahun Ajaran 2025/2026 telah diumumkan. Peserta yang diterima diharapkan segera melakukan daftar ulang.'],
+    ['title' => 'Jadwal Ujian Akhir Semester Genap', 'date' => '18 Nov 2025', 'desc' => 'Informasi jadwal pelaksanaan Ujian Akhir Semester Genap untuk seluruh tingkat. Ujian akan dilaksanakan mulai tanggal 2-9 Desember 2025.'],
+    ['title' => 'Libur Semester Genap 2024/2025', 'date' => '15 Nov 2025', 'desc' => 'Sekolah akan libur semester genap mulai tanggal 15-31 Desember 2025. Masuk kembali pada tanggal 2 Januari 2026.'],
+    ['title' => 'Perubahan Jadwal Pelajaran Semester Genap', 'date' => '12 Nov 2025', 'desc' => 'Terdapat perubahan jadwal pelajaran untuk beberapa kelas. Mohon memeriksa jadwal baru yang telah ditempel di papan pengumuman.'],
+    ['title' => 'Pembayaran SPP Bulan Desember', 'date' => '10 Nov 2025', 'desc' => 'Kepada seluruh wali murid, kami mengingatkan untuk melakukan pembayaran SPP bulan Desember paling lambat tanggal 10 Desember 2025.'],
+    ['title' => 'Kegiatan Donor Darah Sekolah', 'date' => '8 Nov 2025', 'desc' => 'Sekolah akan mengadakan kegiatan donor darah bekerjasama dengan PMI pada tanggal 25 November 2025. Partisipasi sangat diharapkan.'],
+    // Card ke-7 dan seterusnya (Hidden by default)
+    ['title' => 'Lomba Karya Ilmiah Remaja (KIR)', 'date' => '5 Nov 2025', 'desc' => 'Pendaftaran lomba KIR tingkat sekolah sudah dibuka. Batas akhir pengumpulan karya pada tanggal 30 November 2025.'],
+    ['title' => 'Pelaksanaan Upacara Hari Guru Nasional', 'date' => '25 Okt 2025', 'desc' => 'Upacara Hari Guru Nasional akan dilaksanakan pada tanggal 25 November 2025. Seluruh siswa dan guru wajib hadir.'],
+    ['title' => 'Rapat Orang Tua Murid Kelas X', 'date' => '20 Okt 2025', 'desc' => 'Diadakan rapat wali murid kelas X untuk membahas persiapan semester baru. Dimohon kehadirannya di aula sekolah.'],
+    ['title' => 'Pengumuman Beasiswa Pendidikan', 'date' => '15 Okt 2025', 'desc' => 'Telah dibuka pendaftaran beasiswa pendidikan untuk siswa berprestasi dan kurang mampu. Segera daftarkan diri Anda!'],
+];
 ?>
 
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
@@ -10,33 +28,37 @@ include '../src/includes/header.php';
         font-family: 'Inter', sans-serif;
     }
 
+    /* Warna biru utama untuk tema */
     .hero-gradient {
         background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
     }
 
+    /* Card dengan border sederhana dan efek hover */
     .pengumuman-card {
         transition: all 0.3s ease;
+        border: 1px solid #e5e7eb;
+        /* gray-200 */
     }
 
     .pengumuman-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        border-color: #1e3a8a;
+        /* blue-500 */
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+        transform: translateY(-2px);
     }
 
-    .priority-badge {
-        animation: pulse 2s infinite;
+    /* Hover biru untuk judul */
+    .title-hover-blue:hover {
+        color: #1e3a8a;
+        /* blue-500 */
     }
 
-    @keyframes pulse {
-
-        0%,
-        100% {
-            opacity: 1;
-        }
-
-        50% {
-            opacity: .7;
-        }
+    /* Utilitas untuk membatasi baris deskripsi (Opsional, untuk konsistensi) */
+    .line-clamp-2 {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
     }
 </style>
 
@@ -54,10 +76,10 @@ include '../src/includes/header.php';
 
         <div class="text-center text-white">
             <h1 class="text-4xl md:text-5xl font-bold mb-4">
-                <i class="fas fa-bullhorn mr-3"></i>Pengumuman Sekolah
+                <i class="fas fa-bullhorn mr-3"></i>Pusat Informasi & Pengumuman
             </h1>
             <p class="text-lg text-white/90 max-w-2xl mx-auto">
-                Informasi penting dan pengumuman terbaru dari sekolah
+                Temukan semua berita dan informasi penting terbaru dari sekolah
             </p>
         </div>
     </div>
@@ -67,352 +89,173 @@ include '../src/includes/header.php';
 <section class="bg-gray-50 py-12">
     <div class="container mx-auto px-4">
 
-        <!-- Filter & Search -->
-        <div class="max-w-6xl mx-auto mb-8">
-            <div class="bg-white rounded-xl shadow-md p-6">
-                <div class="flex flex-col lg:flex-row gap-4 items-center justify-between">
-                    <!-- Search Bar -->
-                    <div class="w-full lg:w-1/2">
-                        <div class="relative">
-                            <i class="fas fa-search absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
-                            <input type="text"
-                                id="searchInput"
-                                placeholder="Cari pengumuman..."
-                                class="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg focus:border-red-500 transition focus:outline-none focus:ring-2 focus:ring-red-200">
-                        </div>
-                    </div>
-
-                    <!-- Filter Buttons -->
-                    <div class="flex flex-wrap gap-2">
-                        <button onclick="filterPengumuman('all')" class="filter-btn active px-5 py-2 rounded-full font-semibold bg-gray-100 text-gray-700 hover:bg-red-600 hover:text-white transition">
-                            <i class="fas fa-list mr-2"></i>Semua
-                        </button>
-                        <button onclick="filterPengumuman('urgent')" class="filter-btn px-5 py-2 rounded-full font-semibold bg-gray-100 text-gray-700 hover:bg-red-600 hover:text-white transition">
-                            <i class="fas fa-exclamation-triangle mr-2"></i>Penting
-                        </button>
-                        <button onclick="filterPengumuman('academic')" class="filter-btn px-5 py-2 rounded-full font-semibold bg-gray-100 text-gray-700 hover:bg-red-600 hover:text-white transition">
-                            <i class="fas fa-book mr-2"></i>Akademik
-                        </button>
-                        <button onclick="filterPengumuman('general')" class="filter-btn px-5 py-2 rounded-full font-semibold bg-gray-100 text-gray-700 hover:bg-red-600 hover:text-white transition">
-                            <i class="fas fa-info-circle mr-2"></i>Umum
-                        </button>
-                    </div>
+        <!-- Search Bar Sederhana -->
+        <div class="max-w-4xl mx-auto mb-10">
+            <div class="bg-white rounded-xl shadow-lg p-4">
+                <div class="relative">
+                    <i class="fas fa-search absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                    <input type="text"
+                        id="searchInput"
+                        placeholder="Cari pengumuman berdasarkan judul atau isi..."
+                        class="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg focus:border-blue-500 transition focus:outline-none focus:ring-2 focus:ring-blue-200">
                 </div>
             </div>
         </div>
 
         <!-- Pengumuman Grid -->
         <div class="max-w-6xl mx-auto">
-            <div id="pengumumanContainer" class="space-y-6">
+            <div id="pengumumanContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <?php foreach ($announcements as $index => $announcement): ?>
+                    <?php
+                    $is_hidden = $index >= 6 ? 'hidden' : '';
+                    // Tentukan warna ikon berdasarkan urgency (simulasi, tanpa BE)
+                    $icon_color = ($index < 2) ? 'text-red-500' : 'text-blue-500';
+                    ?>
 
-                <!-- Pengumuman Card 1 - Urgent -->
-                <article class="pengumuman-card bg-white rounded-xl shadow-md overflow-hidden" data-category="urgent" data-title="Pengumuman Hasil PPDB Gelombang 1">
-                    <div class="flex">
-                        <!-- Priority Badge -->
-                        <div class="bg-gradient-to-br from-red-500 to-red-700 text-white p-6 flex flex-col items-center justify-center min-w-[140px]">
-                            <i class="fas fa-exclamation-circle text-5xl mb-2 priority-badge"></i>
-                            <div class="text-sm font-bold text-center">PENTING</div>
-                        </div>
+                    <!-- Card Pengumuman -->
+                    <article id="card-<?= $index ?>" class="pengumuman-card bg-white rounded-xl overflow-hidden flex flex-col <?= $is_hidden ?>"
+                        data-title="<?= htmlspecialchars($announcement['title']) ?>"
+                        data-content="<?= htmlspecialchars($announcement['desc']) ?>">
 
-                        <!-- Content -->
-                        <div class="p-6 flex-grow">
-                            <div class="flex items-start justify-between mb-3">
-                                <div class="flex items-center gap-3">
-                                    <span class="bg-red-100 text-red-700 px-3 py-1 rounded-full text-xs font-semibold">
-                                        <i class="fas fa-star mr-1"></i>Penting
-                                    </span>
-                                    <span class="text-sm text-gray-500">
-                                        <i class="far fa-calendar mr-1"></i>19 Nov 2025
-                                    </span>
-                                </div>
+                        <a href="/pengumuman/detail-<?= $index ?>" class="p-6 flex-grow flex flex-col">
+
+                            <!-- Header seperti di gambar referensi (Tanggal) -->
+                            <div class="flex items-center gap-3 mb-4">
+                                <span class="text-sm font-medium px-3 py-1 rounded-full bg-blue-100 text-blue-600">
+                                    <i class="far fa-calendar-alt mr-2"></i><?= $announcement['date'] ?>
+                                </span>
                             </div>
-                            <h3 class="text-2xl font-bold text-gray-800 mb-3 hover:text-red-600 transition">
-                                Pengumuman Hasil PPDB Gelombang 1
+
+                            <!-- Title -->
+                            <h3 class="text-xl font-bold text-gray-800 mb-3 title-hover-blue transition">
+                                <?= $announcement['title'] ?>
                             </h3>
-                            <p class="text-gray-600 mb-4 leading-relaxed">
-                                Dengan ini kami sampaikan bahwa hasil seleksi PPDB Gelombang 1 Tahun Ajaran 2025/2026 telah diumumkan.
-                                Peserta yang diterima diharapkan segera melakukan daftar ulang paling lambat tanggal 25 November 2025.
+
+                            <!-- Description -->
+                            <p class="text-gray-600 mb-4 text-sm line-clamp-2">
+                                <?= $announcement['desc'] ?>
                             </p>
-                            <div class="flex flex-wrap items-center gap-4">
-                                <a href="/pengumuman/ppdb-gelombang-1" class="inline-flex items-center gap-2 bg-red-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-red-700 transition">
-                                    <i class="fas fa-eye"></i>
-                                    Lihat Pengumuman
-                                </a>
-                                <a href="#" class="inline-flex items-center gap-2 text-red-600 hover:text-red-700 font-semibold">
-                                    <i class="fas fa-download"></i>
-                                    Download PDF
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </article>
 
-                <!-- Pengumuman Card 2 - Academic -->
-                <article class="pengumuman-card bg-white rounded-xl shadow-md overflow-hidden" data-category="academic" data-title="Jadwal Ujian Akhir Semester Genap">
-                    <div class="flex">
-                        <!-- Category Badge -->
-                        <div class="bg-gradient-to-br from-blue-500 to-blue-700 text-white p-6 flex flex-col items-center justify-center min-w-[140px]">
-                            <i class="fas fa-graduation-cap text-5xl mb-2"></i>
-                            <div class="text-sm font-bold text-center">AKADEMIK</div>
-                        </div>
-
-                        <!-- Content -->
-                        <div class="p-6 flex-grow">
-                            <div class="flex items-start justify-between mb-3">
-                                <div class="flex items-center gap-3">
-                                    <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-semibold">
-                                        <i class="fas fa-book mr-1"></i>Akademik
-                                    </span>
-                                    <span class="text-sm text-gray-500">
-                                        <i class="far fa-calendar mr-1"></i>18 Nov 2025
-                                    </span>
-                                </div>
+                            <!-- Baca Selengkapnya (Seperti di gambar referensi) -->
+                            <div class="mt-auto pt-2">
+                                <span class="inline-flex items-center text-sm font-semibold text-blue-500 hover:text-blue-700 transition">
+                                    <i class="fas fa-arrow-right mr-2 text-xs"></i>
+                                    BACA SELENGKAPNYA
+                                </span>
                             </div>
-                            <h3 class="text-2xl font-bold text-gray-800 mb-3 hover:text-blue-600 transition">
-                                Jadwal Ujian Akhir Semester Genap
-                            </h3>
-                            <p class="text-gray-600 mb-4 leading-relaxed">
-                                Informasi jadwal pelaksanaan Ujian Akhir Semester Genap Tahun Ajaran 2024/2025 untuk seluruh tingkat.
-                                Ujian akan dilaksanakan mulai tanggal 2-9 Desember 2025.
-                            </p>
-                            <div class="flex flex-wrap items-center gap-4">
-                                <a href="/pengumuman/jadwal-uas" class="inline-flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
-                                    <i class="fas fa-eye"></i>
-                                    Lihat Pengumuman
-                                </a>
-                                <a href="#" class="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold">
-                                    <i class="fas fa-download"></i>
-                                    Download Jadwal
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </article>
+                        </a>
+                    </article>
+                <?php endforeach; ?>
+            </div>
 
-                <!-- Pengumuman Card 3 - General -->
-                <article class="pengumuman-card bg-white rounded-xl shadow-md overflow-hidden" data-category="general" data-title="Libur Semester Genap 2024/2025">
-                    <div class="flex">
-                        <!-- Category Badge -->
-                        <div class="bg-gradient-to-br from-green-500 to-green-700 text-white p-6 flex flex-col items-center justify-center min-w-[140px]">
-                            <i class="fas fa-info-circle text-5xl mb-2"></i>
-                            <div class="text-sm font-bold text-center">UMUM</div>
-                        </div>
-
-                        <!-- Content -->
-                        <div class="p-6 flex-grow">
-                            <div class="flex items-start justify-between mb-3">
-                                <div class="flex items-center gap-3">
-                                    <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs font-semibold">
-                                        <i class="fas fa-info-circle mr-1"></i>Umum
-                                    </span>
-                                    <span class="text-sm text-gray-500">
-                                        <i class="far fa-calendar mr-1"></i>15 Nov 2025
-                                    </span>
-                                </div>
-                            </div>
-                            <h3 class="text-2xl font-bold text-gray-800 mb-3 hover:text-green-600 transition">
-                                Libur Semester Genap 2024/2025
-                            </h3>
-                            <p class="text-gray-600 mb-4 leading-relaxed">
-                                Sekolah akan libur semester genap mulai tanggal 15-31 Desember 2025. Masuk kembali pada tanggal 2 Januari 2026
-                                dengan menggunakan seragam lengkap.
-                            </p>
-                            <div class="flex flex-wrap items-center gap-4">
-                                <a href="/pengumuman/libur-semester" class="inline-flex items-center gap-2 bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition">
-                                    <i class="fas fa-eye"></i>
-                                    Lihat Pengumuman
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Pengumuman Card 4 - Academic -->
-                <article class="pengumuman-card bg-white rounded-xl shadow-md overflow-hidden" data-category="academic" data-title="Perubahan Jadwal Pelajaran Semester Genap">
-                    <div class="flex">
-                        <!-- Category Badge -->
-                        <div class="bg-gradient-to-br from-blue-500 to-blue-700 text-white p-6 flex flex-col items-center justify-center min-w-[140px]">
-                            <i class="fas fa-graduation-cap text-5xl mb-2"></i>
-                            <div class="text-sm font-bold text-center">AKADEMIK</div>
-                        </div>
-
-                        <!-- Content -->
-                        <div class="p-6 flex-grow">
-                            <div class="flex items-start justify-between mb-3">
-                                <div class="flex items-center gap-3">
-                                    <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-semibold">
-                                        <i class="fas fa-book mr-1"></i>Akademik
-                                    </span>
-                                    <span class="text-sm text-gray-500">
-                                        <i class="far fa-calendar mr-1"></i>12 Nov 2025
-                                    </span>
-                                </div>
-                            </div>
-                            <h3 class="text-2xl font-bold text-gray-800 mb-3 hover:text-blue-600 transition">
-                                Perubahan Jadwal Pelajaran Semester Genap
-                            </h3>
-                            <p class="text-gray-600 mb-4 leading-relaxed">
-                                Terdapat perubahan jadwal pelajaran untuk beberapa kelas di semester genap. Mohon siswa dan wali kelas
-                                memeriksa jadwal baru yang telah ditempel di papan pengumuman.
-                            </p>
-                            <div class="flex flex-wrap items-center gap-4">
-                                <a href="/pengumuman/perubahan-jadwal" class="inline-flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
-                                    <i class="fas fa-eye"></i>
-                                    Lihat Pengumuman
-                                </a>
-                                <a href="#" class="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold">
-                                    <i class="fas fa-download"></i>
-                                    Download Jadwal Baru
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Pengumuman Card 5 - Urgent -->
-                <article class="pengumuman-card bg-white rounded-xl shadow-md overflow-hidden" data-category="urgent" data-title="Pembayaran SPP Bulan Desember">
-                    <div class="flex">
-                        <!-- Priority Badge -->
-                        <div class="bg-gradient-to-br from-red-500 to-red-700 text-white p-6 flex flex-col items-center justify-center min-w-[140px]">
-                            <i class="fas fa-exclamation-circle text-5xl mb-2 priority-badge"></i>
-                            <div class="text-sm font-bold text-center">PENTING</div>
-                        </div>
-
-                        <!-- Content -->
-                        <div class="p-6 flex-grow">
-                            <div class="flex items-start justify-between mb-3">
-                                <div class="flex items-center gap-3">
-                                    <span class="bg-red-100 text-red-700 px-3 py-1 rounded-full text-xs font-semibold">
-                                        <i class="fas fa-star mr-1"></i>Penting
-                                    </span>
-                                    <span class="text-sm text-gray-500">
-                                        <i class="far fa-calendar mr-1"></i>10 Nov 2025
-                                    </span>
-                                </div>
-                            </div>
-                            <h3 class="text-2xl font-bold text-gray-800 mb-3 hover:text-red-600 transition">
-                                Pembayaran SPP Bulan Desember
-                            </h3>
-                            <p class="text-gray-600 mb-4 leading-relaxed">
-                                Kepada seluruh wali murid, kami mengingatkan untuk melakukan pembayaran SPP bulan Desember paling lambat
-                                tanggal 10 Desember 2025. Pembayaran dapat dilakukan melalui transfer bank atau di bagian keuangan sekolah.
-                            </p>
-                            <div class="flex flex-wrap items-center gap-4">
-                                <a href="/pengumuman/pembayaran-spp" class="inline-flex items-center gap-2 bg-red-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-red-700 transition">
-                                    <i class="fas fa-eye"></i>
-                                    Lihat Pengumuman
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Pengumuman Card 6 - General -->
-                <article class="pengumuman-card bg-white rounded-xl shadow-md overflow-hidden" data-category="general" data-title="Kegiatan Donor Darah">
-                    <div class="flex">
-                        <!-- Category Badge -->
-                        <div class="bg-gradient-to-br from-green-500 to-green-700 text-white p-6 flex flex-col items-center justify-center min-w-[140px]">
-                            <i class="fas fa-info-circle text-5xl mb-2"></i>
-                            <div class="text-sm font-bold text-center">UMUM</div>
-                        </div>
-
-                        <!-- Content -->
-                        <div class="p-6 flex-grow">
-                            <div class="flex items-start justify-between mb-3">
-                                <div class="flex items-center gap-3">
-                                    <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs font-semibold">
-                                        <i class="fas fa-info-circle mr-1"></i>Umum
-                                    </span>
-                                    <span class="text-sm text-gray-500">
-                                        <i class="far fa-calendar mr-1"></i>8 Nov 2025
-                                    </span>
-                                </div>
-                            </div>
-                            <h3 class="text-2xl font-bold text-gray-800 mb-3 hover:text-green-600 transition">
-                                Kegiatan Donor Darah
-                            </h3>
-                            <p class="text-gray-600 mb-4 leading-relaxed">
-                                Sekolah akan mengadakan kegiatan donor darah bekerjasama dengan PMI pada tanggal 25 November 2025.
-                                Bagi siswa, guru, dan staff yang ingin berpartisipasi dapat mendaftar di ruang UKS.
-                            </p>
-                            <div class="flex flex-wrap items-center gap-4">
-                                <a href="/pengumuman/donor-darah" class="inline-flex items-center gap-2 bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition">
-                                    <i class="fas fa-eye"></i>
-                                    Lihat Pengumuman
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-
+            <!-- Tombol Tampilkan Lainnya -->
+            <div class="text-center mt-12">
+                <button id="showMoreBtn" onclick="toggleVisibility()"
+                    class="glow-button overflow-hidden px-8 py-3 bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-700">
+                    Tampilkan Lainnya
+                </button>
             </div>
 
             <!-- No Results Message -->
             <div id="noResults" class="hidden text-center py-12">
                 <i class="fas fa-search text-gray-300 text-6xl mb-4"></i>
                 <h3 class="text-xl font-bold text-gray-600 mb-2">Tidak Ada Pengumuman Ditemukan</h3>
-                <p class="text-gray-500">Coba ubah filter atau kata kunci pencarian Anda</p>
+                <p class="text-gray-500">Coba ubah kata kunci pencarian Anda.</p>
             </div>
         </div>
 
     </div>
 </section>
 
+<!-- Script untuk Show More dan Search -->
 <script>
-    // Filter Function
-    function filterPengumuman(category) {
-        const cards = document.querySelectorAll('.pengumuman-card');
-        const buttons = document.querySelectorAll('.filter-btn');
-        const noResults = document.getElementById('noResults');
-        let visibleCount = 0;
+    const MAX_INITIAL_CARDS = 6;
+    const cards = document.querySelectorAll('.pengumuman-card');
+    const showMoreBtn = document.getElementById('showMoreBtn');
+    const noResults = document.getElementById('noResults');
 
-        // Update active button
-        buttons.forEach(btn => btn.classList.remove('active', 'bg-red-600', 'text-white'));
-        event.target.closest('.filter-btn').classList.add('active', 'bg-red-600', 'text-white');
+    // --- 1. Logika Tampilkan Lainnya (Show More) ---
 
-        // Filter cards
-        cards.forEach(card => {
-            const cardCategory = card.getAttribute('data-category');
-
-            if (category === 'all' || cardCategory === category) {
-                card.style.display = 'block';
-                visibleCount++;
+    function initializeVisibility() {
+        let hiddenCount = 0;
+        cards.forEach((card, index) => {
+            // Sembunyikan jika index >= MAX_INITIAL_CARDS
+            if (index >= MAX_INITIAL_CARDS) {
+                card.classList.add('hidden');
+                hiddenCount++;
             } else {
-                card.style.display = 'none';
+                card.classList.remove('hidden');
             }
         });
 
-        // Show/hide no results message
-        noResults.classList.toggle('hidden', visibleCount > 0);
+        // Tampilkan tombol hanya jika ada kartu yang tersembunyi
+        if (hiddenCount > 0) {
+            showMoreBtn.classList.remove('hidden');
+            showMoreBtn.querySelector('span').textContent = `Tampilkan Lainnya (${hiddenCount})`;
+        } else {
+            showMoreBtn.classList.add('hidden');
+        }
     }
 
-    // Search Function
+    function toggleVisibility() {
+        let hiddenCount = 0;
+        let isFullyShown = true;
+
+        cards.forEach(card => {
+            // Jika card tersembunyi (hidden by default atau oleh search), tampilkan
+            if (card.style.display !== 'none') { // Hanya pertimbangkan card yang tidak di-hide oleh search
+                if (card.classList.contains('hidden')) {
+                    card.classList.remove('hidden');
+                    isFullyShown = false;
+                } else if (card.getAttribute('data-initial-hidden') === 'true') {
+                    // Ini mungkin tidak diperlukan lagi jika kita hanya menggunakan hidden class
+                }
+            }
+        });
+
+        // Setelah semua ditampilkan, sembunyikan tombol
+        showMoreBtn.classList.add('hidden');
+    }
+
+    // --- 2. Logika Pencarian (Search) ---
+
     document.getElementById('searchInput').addEventListener('input', function(e) {
-        const searchTerm = e.target.value.toLowerCase();
-        const cards = document.querySelectorAll('.pengumuman-card');
-        const noResults = document.getElementById('noResults');
+        const searchTerm = e.target.value.toLowerCase().trim();
         let visibleCount = 0;
 
         cards.forEach(card => {
             const title = card.getAttribute('data-title').toLowerCase();
-            const content = card.textContent.toLowerCase();
+            const content = card.getAttribute('data-content').toLowerCase();
 
-            if (title.includes(searchTerm) || content.includes(searchTerm)) {
+            const matchesSearch = title.includes(searchTerm) || content.includes(searchTerm);
+
+            if (matchesSearch) {
+                // Tampilkan card, dan hapus kelas 'hidden' untuk memastikan ia terlihat
                 card.style.display = 'block';
+                card.classList.remove('hidden');
                 visibleCount++;
             } else {
+                // Sembunyikan card
                 card.style.display = 'none';
             }
         });
 
-        // Show/hide no results message
+        // Periksa apakah tombol Show More harus ditampilkan.
+        // Tombol Show More hanya berguna ketika tidak ada pencarian (searchTerm kosong)
+        if (searchTerm === '') {
+            initializeVisibility(); // Re-initialize visibility to enforce the 6-card limit
+            showMoreBtn.classList.toggle('hidden', visibleCount <= MAX_INITIAL_CARDS);
+        } else {
+            // Jika sedang mencari, tombol Show More harus di-hide
+            showMoreBtn.classList.add('hidden');
+        }
+
+        // Tampilkan/sembunyikan pesan "No Results"
         noResults.classList.toggle('hidden', visibleCount > 0);
     });
 
-    // Add active class to first filter button on load
-    document.addEventListener('DOMContentLoaded', function() {
-        document.querySelector('.filter-btn').classList.add('bg-red-600', 'text-white');
-    });
+    // --- 3. Inisialisasi pada saat DOMContentLoaded ---
+    document.addEventListener('DOMContentLoaded', initializeVisibility);
 </script>
 
 <?php

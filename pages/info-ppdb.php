@@ -107,10 +107,6 @@ include '../src/includes/header.php';
                 <!-- Download Card 1 - Panduan -->
                 <article class="download-card bg-white rounded-xl shadow-md overflow-hidden" data-category="panduan" data-title="Panduan PPDB Tahun 2025">
                     <div class="flex">
-                        <!-- Icon Badge -->
-                        <div class="bg-gradient-to-br from-blue-500 to-blue-700 text-white p-6 flex items-center justify-center min-w-[120px]">
-                            <i class="fas fa-book text-4xl"></i>
-                        </div>
 
                         <!-- Content -->
                         <div class="p-6 flex-grow">
@@ -140,10 +136,6 @@ include '../src/includes/header.php';
                 <!-- Download Card 2 - Formulir -->
                 <article class="download-card bg-white rounded-xl shadow-md overflow-hidden" data-category="formulir" data-title="Formulir Pendaftaran PPDB">
                     <div class="flex">
-                        <!-- Icon Badge -->
-                        <div class="bg-gradient-to-br from-green-500 to-green-700 text-white p-6 flex items-center justify-center min-w-[120px]">
-                            <i class="fas fa-file-alt text-4xl"></i>
-                        </div>
 
                         <!-- Content -->
                         <div class="p-6 flex-grow">
@@ -173,10 +165,6 @@ include '../src/includes/header.php';
                 <!-- Download Card 3 - Jadwal -->
                 <article class="download-card bg-white rounded-xl shadow-md overflow-hidden" data-category="jadwal" data-title="Jadwal PPDB Tahun 2025">
                     <div class="flex">
-                        <!-- Icon Badge -->
-                        <div class="bg-gradient-to-br from-orange-500 to-orange-700 text-white p-6 flex items-center justify-center min-w-[120px]">
-                            <i class="fas fa-calendar text-4xl"></i>
-                        </div>
 
                         <!-- Content -->
                         <div class="p-6 flex-grow">
@@ -206,10 +194,6 @@ include '../src/includes/header.php';
                 <!-- Download Card 4 - Panduan -->
                 <article class="download-card bg-white rounded-xl shadow-md overflow-hidden" data-category="panduan" data-title="Persyaratan PPDB 2025">
                     <div class="flex">
-                        <!-- Icon Badge -->
-                        <div class="bg-gradient-to-br from-purple-500 to-purple-700 text-white p-6 flex items-center justify-center min-w-[120px]">
-                            <i class="fas fa-clipboard-list text-4xl"></i>
-                        </div>
 
                         <!-- Content -->
                         <div class="p-6 flex-grow">
@@ -239,10 +223,6 @@ include '../src/includes/header.php';
                 <!-- Download Card 5 - Formulir -->
                 <article class="download-card bg-white rounded-xl shadow-md overflow-hidden" data-category="formulir" data-title="Surat Pernyataan Orang Tua">
                     <div class="flex">
-                        <!-- Icon Badge -->
-                        <div class="bg-gradient-to-br from-teal-500 to-teal-700 text-white p-6 flex items-center justify-center min-w-[120px]">
-                            <i class="fas fa-signature text-4xl"></i>
-                        </div>
 
                         <!-- Content -->
                         <div class="p-6 flex-grow">
@@ -272,10 +252,6 @@ include '../src/includes/header.php';
                 <!-- Download Card 6 - Jadwal -->
                 <article class="download-card bg-white rounded-xl shadow-md overflow-hidden" data-category="jadwal" data-title="Timeline PPDB 2025">
                     <div class="flex">
-                        <!-- Icon Badge -->
-                        <div class="bg-gradient-to-br from-red-500 to-red-700 text-white p-6 flex items-center justify-center min-w-[120px]">
-                            <i class="fas fa-clock text-4xl"></i>
-                        </div>
 
                         <!-- Content -->
                         <div class="p-6 flex-grow">

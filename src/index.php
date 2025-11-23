@@ -327,37 +327,31 @@ include 'includes/header.php';
 <!-- ================= END SAMBUTAN & INFORMASI PPDB ================= -->
 
 <!-- ================= START SMARTSCHOOL STATISTICS ================= -->
-<section class="py-16 px-4 bg-[url('/Template-WebSekolah/assets/images/desktop.jpg')] bg-cover bg-center">
+<section id="stats-section" class="py-16 px-4 bg-[url('/Template-WebSekolah/assets/images/desktop.jpg')] bg-cover bg-center">
     <div class="max-w-7xl mx-auto">
-        <!-- Section Title -->
         <h2 class="text-2xl md:text-3xl font-bold text-white text-center mb-12">
             Smartschool Sistem SMA Muhammadiyah 3 Yogyakarta
         </h2>
 
-        <!-- Single Card with 4 Columns -->
         <div class="bg-cover bg-center bg-[url('/Template-WebSekolah/assets/images/desktop.jpg')] rounded-2xl shadow-xl p-6 md:p-8">
             <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-                <!-- Column 1: Tahun Ajaran -->
                 <div class="text-white text-center lg:text-left">
                     <h3 class="text-3xl md:text-4xl font-bold mb-2">2025/2026</h3>
                     <p class="text-base md:text-lg font-medium">Tahun Ajaran</p>
                 </div>
 
-                <!-- Column 2: Peserta Didik -->
                 <div class="text-white text-center lg:text-left">
-                    <h3 class="text-3xl md:text-4xl font-bold mb-2">595</h3>
+                    <h3 class="text-3xl md:text-4xl font-bold mb-2 counter-peserta">0</h3>
                     <p class="text-base md:text-lg font-medium">Peserta Didik</p>
                 </div>
 
-                <!-- Column 3: Guru Tendik -->
                 <div class="text-white text-center lg:text-left">
-                    <h3 class="text-3xl md:text-4xl font-bold mb-2">69</h3>
+                    <h3 class="text-3xl md:text-4xl font-bold mb-2 counter-guru">0</h3>
                     <p class="text-base md:text-lg font-medium">Guru Tendik</p>
                 </div>
 
-                <!-- Column 4: Kelas Rombel -->
                 <div class="text-white text-center lg:text-left">
-                    <h3 class="text-3xl md:text-4xl font-bold mb-2">34</h3>
+                    <h3 class="text-3xl md:text-4xl font-bold mb-2 counter-kelas">0</h3>
                     <p class="text-base md:text-lg font-medium">Kelas Rombel</p>
                 </div>
             </div>
@@ -1035,8 +1029,9 @@ include 'includes/header.php';
         </div>
     </div>
 </section>
-<!-- ================= END VIDEO SECTION ================= -->
 
+
+<!-- ================= END VIDEO SECTION ================= -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="/Template-WebSekolah/assets/js/main.js"></script>
 <?php include 'includes/footer.php'; ?>

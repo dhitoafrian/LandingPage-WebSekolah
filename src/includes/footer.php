@@ -190,9 +190,6 @@
             </div>
         </div>
 
-
-
-
 </footer>
 
 <!-- Back to Top Button -->
@@ -206,6 +203,7 @@
 </a>
 
 
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 <script src="/Template-WebSekolah/assets/js/navbar.js"></script>
 <script src="/Template-WebSekolah/assets/js/footer.js"></script>

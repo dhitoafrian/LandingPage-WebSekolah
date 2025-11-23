@@ -15,7 +15,7 @@ include '../src/includes/header.php';
         background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
     }
 
-    .accordion-content {
+.accordion-content {
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.4s ease-in-out;

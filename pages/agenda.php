@@ -103,13 +103,6 @@ include '../src/includes/header.php';
                 <!-- Agenda Card 1 - Upcoming -->
                 <article class="agenda-card bg-white rounded-xl shadow-md overflow-hidden" data-status="upcoming" data-title="Asesmen Sekolah Tahun 2025">
                     <div class="flex">
-                        <!-- Date Badge -->
-                        <div class="bg-gradient-to-br from-blue-500 to-blue-700 text-white p-6 flex flex-col items-center justify-center min-w-[120px]">
-                            <div class="text-3xl font-bold">15</div>
-                            <div class="text-sm">JANUARI</div>
-                            <div class="text-xs mt-1 opacity-90">2025</div>
-                        </div>
-
                         <!-- Content -->
                         <div class="p-6 flex-grow">
                             <div class="flex items-start justify-between mb-3">
@@ -138,20 +131,13 @@ include '../src/includes/header.php';
                 <!-- Agenda Card 2 - Upcoming -->
                 <article class="agenda-card bg-white rounded-xl shadow-md overflow-hidden" data-status="upcoming" data-title="Ujian Praktik Kelas XII Tahun 2024/2025">
                     <div class="flex">
-                        <!-- Date Badge -->
-                        <div class="bg-gradient-to-br from-purple-500 to-purple-700 text-white p-6 flex flex-col items-center justify-center min-w-[120px]">
-                            <div class="text-3xl font-bold">20</div>
-                            <div class="text-sm">JANUARI</div>
-                            <div class="text-xs mt-1 opacity-90">2025</div>
-                        </div>
-
                         <!-- Content -->
                         <div class="p-6 flex-grow">
                             <div class="flex items-start justify-between mb-3">
                                 <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs font-semibold">
                                     <i class="fas fa-clock mr-1"></i>Akan Datang
                                 </span>
-                                <i class="fas fa-pen-fancy text-purple-600 text-xl"></i>
+                                <i class="fas fa-calendar-check text-blue-600 text-xl"></i>
                             </div>
                             <h3 class="text-xl font-bold text-gray-800 mb-2 hover:text-blue-600 transition">
                                 Ujian Praktik Kelas XII Tahun 2024/2025
@@ -173,20 +159,13 @@ include '../src/includes/header.php';
                 <!-- Agenda Card 3 - Upcoming -->
                 <article class="agenda-card bg-white rounded-xl shadow-md overflow-hidden" data-status="upcoming" data-title="Sumatif Tengah Semester Genap 2024/2025">
                     <div class="flex">
-                        <!-- Date Badge -->
-                        <div class="bg-gradient-to-br from-orange-500 to-orange-700 text-white p-6 flex flex-col items-center justify-center min-w-[120px]">
-                            <div class="text-3xl font-bold">25</div>
-                            <div class="text-sm">JANUARI</div>
-                            <div class="text-xs mt-1 opacity-90">2025</div>
-                        </div>
-
                         <!-- Content -->
                         <div class="p-6 flex-grow">
                             <div class="flex items-start justify-between mb-3">
                                 <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs font-semibold">
                                     <i class="fas fa-clock mr-1"></i>Akan Datang
                                 </span>
-                                <i class="fas fa-book-open text-orange-600 text-xl"></i>
+                                <i class="fas fa-calendar-check text-blue-600 text-xl"></i>
                             </div>
                             <h3 class="text-xl font-bold text-gray-800 mb-2 hover:text-blue-600 transition">
                                 Sumatif Tengah Semester Genap 2024/2025
@@ -209,11 +188,6 @@ include '../src/includes/header.php';
                 <article class="agenda-card bg-white rounded-xl shadow-md overflow-hidden" data-status="upcoming" data-title="Seminar Pendidikan Tinggi dan Beasiswa Taiwan">
                     <div class="flex">
                         <!-- Date Badge -->
-                        <div class="bg-gradient-to-br from-teal-500 to-teal-700 text-white p-6 flex flex-col items-center justify-center min-w-[120px]">
-                            <div class="text-3xl font-bold">30</div>
-                            <div class="text-sm">JANUARI</div>
-                            <div class="text-xs mt-1 opacity-90">2025</div>
-                        </div>
 
                         <!-- Content -->
                         <div class="p-6 flex-grow">
@@ -221,7 +195,7 @@ include '../src/includes/header.php';
                                 <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs font-semibold">
                                     <i class="fas fa-clock mr-1"></i>Akan Datang
                                 </span>
-                                <i class="fas fa-graduation-cap text-teal-600 text-xl"></i>
+                                <i class="fas fa-calendar-check text-blue-600 text-xl"></i>
                             </div>
                             <h3 class="text-xl font-bold text-gray-800 mb-2 hover:text-blue-600 transition">
                                 Seminar Pendidikan Tinggi dan Beasiswa Taiwan
@@ -243,12 +217,6 @@ include '../src/includes/header.php';
                 <!-- Agenda Card 5 - Past -->
                 <article class="agenda-card bg-white rounded-xl shadow-md overflow-hidden" data-status="past" data-title="Delegasi International ke Turkiye">
                     <div class="flex">
-                        <!-- Date Badge -->
-                        <div class="bg-gradient-to-br from-gray-400 to-gray-600 text-white p-6 flex flex-col items-center justify-center min-w-[120px]">
-                            <div class="text-3xl font-bold">10</div>
-                            <div class="text-sm">DESEMBER</div>
-                            <div class="text-xs mt-1 opacity-90">2024</div>
-                        </div>
 
                         <!-- Content -->
                         <div class="p-6 flex-grow">
@@ -256,7 +224,7 @@ include '../src/includes/header.php';
                                 <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-semibold">
                                     <i class="fas fa-check-circle mr-1"></i>Selesai
                                 </span>
-                                <i class="fas fa-plane-departure text-gray-600 text-xl"></i>
+                                <i class="fas fa-calendar-check text-gray-600 text-xl"></i>
                             </div>
                             <h3 class="text-xl font-bold text-gray-800 mb-2 hover:text-blue-600 transition">
                                 Delegasi International ke Turkiye
@@ -278,12 +246,6 @@ include '../src/includes/header.php';
                 <!-- Agenda Card 6 - Past -->
                 <article class="agenda-card bg-white rounded-xl shadow-md overflow-hidden" data-status="past" data-title="Peringatan Hari Guru Nasional">
                     <div class="flex">
-                        <!-- Date Badge -->
-                        <div class="bg-gradient-to-br from-gray-400 to-gray-600 text-white p-6 flex flex-col items-center justify-center min-w-[120px]">
-                            <div class="text-3xl font-bold">25</div>
-                            <div class="text-sm">NOVEMBER</div>
-                            <div class="text-xs mt-1 opacity-90">2024</div>
-                        </div>
 
                         <!-- Content -->
                         <div class="p-6 flex-grow">
@@ -291,7 +253,7 @@ include '../src/includes/header.php';
                                 <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-semibold">
                                     <i class="fas fa-check-circle mr-1"></i>Selesai
                                 </span>
-                                <i class="fas fa-chalkboard-teacher text-gray-600 text-xl"></i>
+                                <i class="fas fa-calendar-check text-gray-600 text-xl"></i>
                             </div>
                             <h3 class="text-xl font-bold text-gray-800 mb-2 hover:text-blue-600 transition">
                                 Peringatan Hari Guru Nasional

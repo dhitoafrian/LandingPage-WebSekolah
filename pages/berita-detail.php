@@ -1,6 +1,6 @@
 <?php
 include '../src/includes/header.php';
-// Data dummy berita (sama dengan berita.php)
+
 $all_berita = [
     [
         'id' => 1,
@@ -493,8 +493,11 @@ if (!empty($sidebar_search)) {
     </div>
 </div>
 
-<!-- Swiper JS -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<?php
+include '../src/includes/footer.php';
+?>
+
 <script>
     const swiper = new Swiper('.beritaSwiper', {
         slidesPerView: 1,
@@ -516,7 +519,3 @@ if (!empty($sidebar_search)) {
         },
     });
 </script>
-
-<?php
-include '../src/includes/footer.php';
-?>

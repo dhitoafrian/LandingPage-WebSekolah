@@ -1,106 +1,67 @@
 <?php
-// Mendefinisikan judul halaman yang akan ditampilkan di title browser
 $page_title = 'Sambutan Kepala Sekolah';
-
-// Include file header yang berisi HTML head, navbar, dll
 include '../src/includes/header.php';
 
-// Include file banner yang menampilkan banner/hero section
-include '../pages/banner.php';
 ?>
 
-<!-- SECTION SAMBUTAN KEPALA SEKOLAH -->
-<!-- py-16: padding top & bottom 64px (4rem) -->
-<!-- bg-gradient-to-b: membuat gradient dari atas ke bawah -->
-<!-- from-blue-50: warna awal gradient (biru muda) -->
-<!-- to-white: warna akhir gradient (putih) -->
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+    * {
+        font-family: 'Inter', sans-serif;
+    }
+
+    .hero-gradient {
+        background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+    }
+</style>
+
+<!-- Hero Section -->
+<div class="hero-gradient relative overflow-hidden">
+    <div class="absolute inset-0 bg-black opacity-10"></div>
+    <div class="container mx-auto px-4 py-16 relative z-10">
+        <!-- Breadcrumb -->
+        <div class="text-white/80 text-sm mb-6">
+            <i class="fas fa-home mr-2"></i>
+            <a href="/template-websekolah/src/index.php" class="hover:text-white transition">Beranda</a>
+            <span class="mx-2">/</span>
+            <span class="text-white font-medium">Sambutan</span>
+        </div>
+
+        <div class="text-center text-white">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">
+                <i class="fas fa-user-tie mr-3"></i>Sambutan Kepala Sekolah
+            </h1>
+            <p class="text-lg text-white/90 max-w-2xl mx-auto">
+                sambutan hangat dari kepala sekolah kami, Drs. Nama Kepala Sekolah, M.Pd, yang mengajak seluruh civitas akademika untuk bersama-sama mewujudkan visi dan misi sekolah menuju masa depan yang gemilang.
+            </p>
+        </div>
+    </div>
+</div>
+
 <section class="py-16 bg-gradient-to-b from-blue-50 to-blue-100">
-
-    <!-- CONTAINER -->
-    <!-- max-w-6xl: lebar maksimal container 1152px (72rem) -->
-    <!-- mx-auto: margin left & right auto untuk center horizontal -->
-    <!-- px-4: padding left & right 16px (1rem) -->
-    <!-- sm:px-6: di screen small ke atas, padding jadi 24px -->
-    <!-- lg:px-8: di screen large ke atas, padding jadi 32px -->
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-
-        <!-- HEADER SECTION -->
-        <!-- text-center: text rata tengah -->
-        <!-- mb-12: margin bottom 48px (3rem) -->
         <div class="text-center mb-12">
-            <!-- text-3xl: ukuran font 30px (1.875rem) -->
-            <!-- md:text-4xl: di screen medium ke atas, font size 36px -->
-            <!-- font-bold: font weight 700 (tebal) -->
-            <!-- text-blue-900: warna text biru tua -->
-            <!-- mb-4: margin bottom 16px (1rem) -->
             <h1 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">
                 Sambutan Kepala Sekolah
             </h1>
-
-            <!-- GARIS DEKORATIF DI BAWAH JUDUL -->
-            <!-- w-24: width 96px (6rem) -->
-            <!-- h-1: height 4px (0.25rem) -->
-            <!-- bg-blue-600: background biru -->
-            <!-- mx-auto: center horizontal -->
-            <!-- rounded-full: border radius full (membulat sempurna) -->
             <div class="w-24 h-1 bg-blue-600 mx-auto rounded-full"></div>
         </div>
-
-        <!-- CONTENT WRAPPER -->
-        <!-- bg-white: background putih -->
-        <!-- rounded-2xl: border radius besar (16px) -->
-        <!-- shadow-xl: bayangan besar untuk efek elevasi -->
-        <!-- overflow-hidden: memotong konten yang keluar dari border -->
         <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
-
-            <!-- GRID LAYOUT -->
-            <!-- grid: menggunakan CSS Grid -->
-            <!-- md:grid-cols-3: di screen medium ke atas, 3 kolom -->
-            <!-- gap-0: tidak ada gap antar kolom -->
             <div class="grid md:grid-cols-3 gap-0">
-
-                <!-- KOLOM FOTO KEPALA SEKOLAH -->
-                <!-- md:col-span-1: mengambil 1 kolom dari 3 kolom total -->
-                <!-- bg-gradient-to-br: gradient dari top-left ke bottom-right -->
-                <!-- from-blue-600 to-blue-800: gradient dari biru ke biru tua -->
-                <!-- p-8: padding semua sisi 32px (2rem) -->
-                <!-- flex: display flex -->
-                <!-- items-center: align items vertikal center -->
-                <!-- justify-center: align items horizontal center -->
                 <div class="md:col-span-1 bg-gradient-to-br from-blue-600 to-blue-800 p-8 flex items-center justify-center">
                     <div class="text-center">
-                        <!-- PLACEHOLDER FOTO -->
-                        <!-- w-48: width 192px (12rem) -->
-                        <!-- h-48: height 192px (12rem) -->
-                        <!-- mx-auto: center horizontal -->
-                        <!-- mb-4: margin bottom 16px -->
-                        <!-- rounded-full: border radius full (bulat sempurna) -->
-                        <!-- bg-white: background putih -->
-                        <!-- shadow-2xl: bayangan sangat besar -->
-                        <!-- overflow-hidden: potong gambar yang keluar -->
-                        <!-- border-4: border 4px -->
-                        <!-- border-white: warna border putih -->
                         <div class="w-48 h-48 mx-auto mb-4 rounded-full bg-white shadow-2xl overflow-hidden border-4 border-blue-600">
-                            <!-- object-cover: gambar cover seluruh area tanpa distorsi -->
-                            <!-- w-full h-full: lebar dan tinggi 100% -->
                             <img
                                 src="/Template-WebSekolah/assets/images/kepala-sekolah.jpeg"
                                 alt="Foto Kepala Sekolah"
                                 class="w-full h-full object-cover">
                         </div>
-
-                        <!-- NAMA KEPALA SEKOLAH -->
-                        <!-- text-white: warna text putih -->
-                        <!-- font-bold: font weight tebal -->
-                        <!-- text-xl: ukuran font 20px (1.25rem) -->
-                        <!-- mb-2: margin bottom 8px (0.5rem) -->
                         <h3 class="text-white font-bold text-xl mb-2">
                             Drs. Nama Kepala Sekolah, M.Pd
                         </h3>
 
                         <!-- JABATAN -->
-                        <!-- text-blue-100: warna text biru sangat muda -->
-                        <!-- text-sm: ukuran font 14px (0.875rem) -->
                         <p class="text-blue-100 text-sm">
                             Kepala SMK Negeri 1 Saptosari
                         </p>
@@ -108,26 +69,15 @@ include '../pages/banner.php';
                 </div>
 
                 <!-- KOLOM KONTEN SAMBUTAN -->
-                <!-- md:col-span-2: mengambil 2 kolom dari 3 kolom total -->
-                <!-- p-8: padding semua sisi 32px -->
-                <!-- md:p-12: di screen medium ke atas, padding 48px -->
                 <div class="md:col-span-2 p-8 md:p-12">
 
                     <!-- SALAM PEMBUKA -->
-                    <!-- text-lg: ukuran font 18px (1.125rem) -->
-                    <!-- text-gray-700: warna text abu-abu gelap -->
-                    <!-- mb-6: margin bottom 24px (1.5rem) -->
-                    <!-- italic: font style italic/miring -->
                     <p class="text-lg text-gray-700 mb-6 italic">
                         Assalamu'alaikum Warahmatullahi Wabarakatuh
                     </p>
 
                     <!-- PARAGRAF SAMBUTAN -->
-                    <!-- space-y-4: memberikan spacing vertikal 16px antar child element -->
                     <div class="space-y-4">
-                        <!-- text-gray-600: warna text abu-abu medium -->
-                        <!-- leading-relaxed: line height 1.625 (jarak antar baris lebih lega) -->
-                        <!-- text-justify: text rata kiri-kanan -->
                         <p class="text-gray-600 leading-relaxed text-justify">
                             Selamat datang di website resmi <span class="font-semibold text-blue-800">SMK Negeri 1 Saptosari</span>.
                             Puji syukur kehadirat Allah SWT yang telah memberikan rahmat dan karunia-Nya,
@@ -157,10 +107,6 @@ include '../pages/banner.php';
                     </div>
 
                     <!-- PENUTUP -->
-                    <!-- mt-8: margin top 32px (2rem) -->
-                    <!-- pt-6: padding top 24px (1.5rem) -->
-                    <!-- border-t-2: border top 2px -->
-                    <!-- border-gray-200: warna border abu-abu muda -->
                     <div class="mt-8 pt-6 border-t-2 border-gray-200">
                         <p class="text-gray-600 leading-relaxed italic mb-4">
                             Wassalamu'alaikum Warahmatullahi Wabarakatuh
@@ -168,11 +114,10 @@ include '../pages/banner.php';
 
                         <!-- TANDA TANGAN -->
                         <div class="mt-6">
-                            <!-- text-right: text rata kanan -->
                             <p class="text-gray-700 font-semibold text-right">
                                 Kepala Sekolah
                             </p>
-                            <!-- mt-12: margin top 48px (untuk space tanda tangan) -->
+
                             <p class="text-gray-800 font-bold text-right mt-12">
                                 Drs. Nama Kepala Sekolah, M.Pd
                             </p>
@@ -186,26 +131,11 @@ include '../pages/banner.php';
             </div>
         </div>
 
-        <!-- QUOTE BOX DI BAWAH -->
-        <!-- mt-8: margin top 32px -->
         <div class="mt-8">
-            <!-- bg-blue-600: background biru -->
-            <!-- text-white: warna text putih -->
-            <!-- p-6: padding 24px semua sisi -->
-            <!-- rounded-xl: border radius besar -->
-            <!-- text-center: text rata tengah -->
-            <!-- shadow-lg: bayangan besar -->
             <div class="bg-blue-600 text-white p-6 rounded-xl text-center shadow-lg">
-                <!-- text-xl: ukuran font 20px -->
-                <!-- md:text-2xl: di screen medium ke atas, font 24px -->
-                <!-- font-semibold: font weight semi bold (600) -->
-                <!-- italic: font style miring -->
                 <p class="text-xl md:text-2xl font-semibold italic">
                     "Berprestasi, Berkarakter, Berdaya Saing"
                 </p>
-                <!-- text-blue-200: warna text biru muda -->
-                <!-- text-sm: ukuran font 14px -->
-                <!-- mt-2: margin top 8px -->
                 <p class="text-blue-200 text-sm mt-2">
                     Motto SMK Negeri 1 Saptosari
                 </p>
@@ -216,7 +146,5 @@ include '../pages/banner.php';
 </section>
 
 <?php
-// Include file footer (navbar bawah, copyright, dll)
-// Kamu bilang udah punya, jadi ini optional
 include '../src/includes/footer.php';
 ?>

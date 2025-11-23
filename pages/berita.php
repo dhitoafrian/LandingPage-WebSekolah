@@ -87,11 +87,9 @@ $all_berita = [
     ]
 ];
 
-// Konfigurasi
-$items_per_page = 6;
-$current_page = isset($_GET['page']) ? max(1, (int)$_GET['page']) : 1;
+// Search input
 $search = isset($_GET['search']) ? trim($_GET['search']) : '';
-$sort = isset($_GET['sort']) ? $_GET['sort'] : 'newest';
+$sort   = isset($_GET['sort']) ? $_GET['sort'] : 'newest';
 
 // Filter search
 $filtered_berita = $all_berita;
@@ -109,24 +107,22 @@ switch ($sort) {
             return $b['views'] - $a['views'];
         });
         break;
+
     case 'title':
         usort($filtered_berita, function ($a, $b) {
             return strcmp($a['title'], $b['title']);
         });
         break;
+
     case 'newest':
     default:
         break;
 }
 
-// Pagination
+// FINAL DATA (tidak pakai pagination)
+$current_berita = $filtered_berita;
 $total_items = count($filtered_berita);
-$total_pages = max(1, ceil($total_items / $items_per_page));
-$current_page = max(1, min($current_page, $total_pages));
-$offset = ($current_page - 1) * $items_per_page;
-$current_berita = array_slice($filtered_berita, $offset, $items_per_page);
 ?>
-
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
@@ -184,10 +180,10 @@ $current_berita = array_slice($filtered_berita, $offset, $items_per_page);
     }
 </style>
 
+<section id="berita-section" class="berita-wrapper">
 <!-- Hero Section -->
 <div class="hero-gradient relative">
     <div class="container mx-auto px-4 py-16 relative z-10">
-        <!-- Breadcrumb -->
         <div class="text-white/80 text-sm mb-6">
             <i class="fas fa-home mr-2"></i>
             <a href="/" class="breadcrumb-link hover:text-white">Beranda</a>
@@ -195,32 +191,27 @@ $current_berita = array_slice($filtered_berita, $offset, $items_per_page);
             <span class="text-white font-medium">Berita & Informasi</span>
         </div>
 
-        <!-- Title & Description -->
         <div class="text-center text-white">
             <h1 class="text-4xl md:text-5xl font-bold mb-4">
                 <i class="fas fa-newspaper mr-3"></i>Berita & Informasi
             </h1>
-            <p class="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
-                Update terbaru mengenai kegiatan, prestasi, dan pengumuman sekolah
-            </p>
 
-            <!-- Search Box -->
             <form method="GET" action="" class="max-w-2xl mx-auto">
                 <div class="relative">
                     <input
                         type="text"
                         name="search"
                         placeholder="Cari berita..."
+                        value="<?= htmlspecialchars($search) ?>"
                         class="w-full px-6 py-4 pr-24 rounded-xl text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-300 shadow-lg">
                     <button
                         type="submit"
                         class="absolute right-2 top-1/2 -translate-y-1/2 px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold transition">
                         <i class="fas fa-search"></i>
                     </button>
+
                     <?php if (!empty($search)): ?>
-                        <a
-                            href="?"
-                            class="inline-block mt-4 px-4 py-2 bg-white/20 hover:bg-white/30 text-white rounded-lg transition text-sm">
+                        <a href="?" class="inline-block mt-4 px-4 py-2 bg-white/20 hover:bg-white/30 text-white rounded-lg transition text-sm">
                             <i class="fas fa-times mr-1"></i>Reset
                         </a>
                     <?php endif; ?>
@@ -229,25 +220,24 @@ $current_berita = array_slice($filtered_berita, $offset, $items_per_page);
         </div>
     </div>
 </div>
+
 <div class="min-h-screen bg-gray-50 py-12">
     <div class="container mx-auto px-4">
 
-        <!-- Filter Section -->
+        <!-- Filter section -->
         <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-8">
-            <div>
-                <p class="text-gray-700 font-medium">
-                    Menampilkan <?= count($current_berita) ?> dari <?= $total_items ?> berita
-                    <?php if (!empty($search)): ?>
-                        untuk "<strong><?= htmlspecialchars($search) ?></strong>"
-                    <?php endif; ?>
-                </p>
-            </div>
+            <p class="text-gray-700 font-medium">
+                Menampilkan <?= count($current_berita) ?> dari <?= $total_items ?> berita
+                <?php if (!empty($search)): ?>
+                    untuk "<strong><?= htmlspecialchars($search) ?></strong>"
+                <?php endif; ?>
+            </p>
 
-            <!-- Sort Dropdown -->
             <form method="GET" class="flex items-center gap-2">
                 <?php if (!empty($search)): ?>
                     <input type="hidden" name="search" value="<?= htmlspecialchars($search) ?>">
                 <?php endif; ?>
+
                 <label class="text-sm font-medium text-gray-700">Urutkan:</label>
                 <select
                     name="sort"
@@ -260,16 +250,13 @@ $current_berita = array_slice($filtered_berita, $offset, $items_per_page);
             </form>
         </div>
 
-        <!-- News Grid -->
+        <!-- Grid Berita -->
         <?php if (empty($current_berita)): ?>
             <div class="text-center py-20">
                 <div class="bg-white rounded-xl p-12 shadow-sm max-w-md mx-auto">
-                    <div class="bg-blue-50 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-search text-3xl text-blue-600"></i>
-                    </div>
                     <h3 class="text-xl font-bold text-gray-800 mb-2">Tidak ada berita ditemukan</h3>
                     <p class="text-gray-600 mb-4">Coba gunakan kata kunci lain</p>
-                    <a href="?" class="inline-block px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold transition">
+                    <a href="?" class="px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold transition">
                         <i class="fas fa-redo mr-2"></i>Reset Pencarian
                     </a>
                 </div>
@@ -277,27 +264,14 @@ $current_berita = array_slice($filtered_berita, $offset, $items_per_page);
         <?php else: ?>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <?php foreach ($current_berita as $berita): ?>
-                    <a
-                        href="berita-detail.php?id=<?= $berita['id'] ?>"
-                        class="card-link bg-white rounded-xl shadow-sm overflow-hidden block">
-                        <div class="relative overflow-hidden h-48">
-                            <img
-                                src="<?= $berita['image'] ?>"
-                                alt="<?= htmlspecialchars($berita['title']) ?>"
-                                class="w-full h-full object-cover"
-                                loading="lazy">
+                    <a href="berita-detail.php?id=<?= $berita['id'] ?>" class="card-link bg-white rounded-xl shadow-sm overflow-hidden block">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="<?= $berita['image'] ?>" class="w-full h-full object-cover">
                         </div>
-
                         <div class="p-6">
                             <div class="flex items-center gap-4 text-xs text-gray-500 mb-3">
-                                <span class="flex items-center gap-1">
-                                    <i class="far fa-calendar"></i>
-                                    <?= $berita['date'] ?>
-                                </span>
-                                <span class="flex items-center gap-1">
-                                    <i class="far fa-eye"></i>
-                                    <?= $berita['views'] ?>
-                                </span>
+                                <span><i class="far fa-calendar"></i> <?= $berita['date'] ?></span>
+                                <span><i class="far fa-eye"></i> <?= $berita['views'] ?></span>
                             </div>
 
                             <h3 class="text-lg font-bold text-gray-800 mb-2 line-clamp-2 hover:text-blue-600 transition">
@@ -309,65 +283,29 @@ $current_berita = array_slice($filtered_berita, $offset, $items_per_page);
                             </p>
 
                             <div class="text-xs text-gray-500 pt-3 border-t border-gray-100">
-                                <i class="far fa-user mr-1"></i>
-                                <?= $berita['author'] ?>
+                                <i class="far fa-user mr-1"></i><?= $berita['author'] ?>
                             </div>
                         </div>
                     </a>
                 <?php endforeach; ?>
             </div>
-
-            <!-- Pagination -->
-            <?php if ($total_pages > 1): ?>
-                <div class="mt-12">
-                    <div class="flex flex-col md:flex-row items-center justify-between gap-4">
-                        <p class="text-sm text-gray-600">
-                            Halaman <?= $current_page ?> dari <?= $total_pages ?>
-                        </p>
-
-                        <div class="flex items-center gap-2">
-                            <?php if ($current_page > 1): ?>
-                                <a
-                                    href="?page=<?= $current_page - 1 ?><?= !empty($search) ? '&search=' . urlencode($search) : '' ?>&sort=<?= $sort ?>"
-                                    class="px-4 py-2 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition font-medium">
-                                    <i class="fas fa-chevron-left mr-2"></i>Sebelumnya
-                                </a>
-                            <?php endif; ?>
-
-                            <?php
-                            $start_page = max(1, $current_page - 2);
-                            $end_page = min($total_pages, $current_page + 2);
-
-                            for ($i = $start_page; $i <= $end_page; $i++):
-                            ?>
-                                <?php if ($i == $current_page): ?>
-                                    <span class="px-4 py-2 bg-blue-600 text-white rounded-lg font-bold">
-                                        <?= $i ?>
-                                    </span>
-                                <?php else: ?>
-                                    <a
-                                        href="?page=<?= $i ?><?= !empty($search) ? '&search=' . urlencode($search) : '' ?>&sort=<?= $sort ?>"
-                                        class="px-4 py-2 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition font-medium">
-                                        <?= $i ?>
-                                    </a>
-                                <?php endif; ?>
-                            <?php endfor; ?>
-
-                            <?php if ($current_page < $total_pages): ?>
-                                <a
-                                    href="?page=<?= $current_page + 1 ?><?= !empty($search) ? '&search=' . urlencode($search) : '' ?>&sort=<?= $sort ?>"
-                                    class="px-4 py-2 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition font-medium">
-                                    Selanjutnya<i class="fas fa-chevron-right ml-2"></i>
-                                </a>
-                            <?php endif; ?>
-                        </div>
-                    </div>
-                </div>
-            <?php endif; ?>
         <?php endif; ?>
     </div>
 </div>
+</section>
 
-<?php
-include '../src/includes/footer.php';
-?>
+<script>
+    // Auto scroll ketika halaman selesai dimuat
+    window.addEventListener("load", function () {
+        const target = document.getElementById("berita-section");
+        if (target) {
+            target.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+        }
+    });
+</script>
+
+
+<?php include '../src/includes/footer.php'; ?>

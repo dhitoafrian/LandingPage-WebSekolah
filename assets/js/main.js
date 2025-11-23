@@ -86,6 +86,68 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+//smartschool
+function animateCounter(element, target, duration = 2000) {
+  let start = 0;
+  const increment = target / (duration / 16); // 60fps
+
+  const updateCounter = () => {
+    start += increment;
+    if (start < target) {
+      element.textContent = Math.floor(start);
+      requestAnimationFrame(updateCounter);
+    } else {
+      element.textContent = target;
+    }
+  };
+
+  updateCounter();
+}
+
+// Intersection Observer untuk trigger animation saat scroll
+const observerOptions = {
+  threshold: 0.3, // Trigger ketika 30% element terlihat
+  rootMargin: "0px",
+};
+
+const statsObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      // Ambil semua angka yang mau di-animate
+      const pesertaDidik = entry.target.querySelector(".counter-peserta");
+      const guru = entry.target.querySelector(".counter-guru");
+      const kelas = entry.target.querySelector(".counter-kelas");
+
+      // Jalankan animasi
+      if (pesertaDidik && !pesertaDidik.classList.contains("animated")) {
+        animateCounter(pesertaDidik, 595);
+        pesertaDidik.classList.add("animated");
+      }
+
+      if (guru && !guru.classList.contains("animated")) {
+        animateCounter(guru, 69);
+        guru.classList.add("animated");
+      }
+
+      if (kelas && !kelas.classList.contains("animated")) {
+        animateCounter(kelas, 34);
+        kelas.classList.add("animated");
+      }
+      statsObserver.unobserve(entry.target);
+    }
+  });
+}, observerOptions);
+
+// Observe section stats
+document.addEventListener("DOMContentLoaded", () => {
+  const statsSection = document.querySelector(
+    "#stats-section" // INI PERUBAHAN UTAMA
+  );
+  if (statsSection) {
+    statsObserver.observe(statsSection);
+  }
+});
+
 //infografis
 const swiperPrestasi = new Swiper(".prestasi-swiper", {
   slidesPerView: 1,
@@ -156,31 +218,31 @@ const galeriSwiper = new Swiper(".galeri-swiper", {
 });
 // video dan agenda
 const videoSwiper = new Swiper(".video-swiper", {
-    slidesPerView: 1,
-    spaceBetween: 15,
-    
-    // ✅ 1. SLIDE INFINITY
-    loop: true,
-    
-    // ✅ 2. SLIDE OTOMATIS DAN MANUAL (Sudah Terpenuhi)
-    allowTouchMove: true,
-    touchRatio: 1,
-    threshold: 5,
-    autoplay: {
-        delay: 4000,
-        disableOnInteraction: false, // Lanjut auto-slide setelah manual interaksi
-    },
+  slidesPerView: 1,
+  spaceBetween: 15,
 
-    // ⛔ 3. PERBAIKI BUTTON: Tambahkan modul navigasi
-    navigation: {
-        nextEl: '.video-swiper-next',
-        prevEl: '.video-swiper-prev',
-    },
+  // ✅ 1. SLIDE INFINITY
+  loop: true,
 
-    breakpoints: {
-        768: {
-            slidesPerView: 2,
-            spaceBetween: 20,
-        },
+  // ✅ 2. SLIDE OTOMATIS DAN MANUAL (Sudah Terpenuhi)
+  allowTouchMove: true,
+  touchRatio: 1,
+  threshold: 5,
+  autoplay: {
+    delay: 4000,
+    disableOnInteraction: false, // Lanjut auto-slide setelah manual interaksi
+  },
+
+  // ⛔ 3. PERBAIKI BUTTON: Tambahkan modul navigasi
+  navigation: {
+    nextEl: ".video-swiper-next",
+    prevEl: ".video-swiper-prev",
+  },
+
+  breakpoints: {
+    768: {
+      slidesPerView: 2,
+      spaceBetween: 20,
     },
+  },
 });
