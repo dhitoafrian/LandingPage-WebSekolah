@@ -41,7 +41,7 @@
                 <i class="fas fa-book-open mr-3"></i>Kurikulum Sekolah
             </h1>
             <p class="text-lg text-white/90 max-w-2xl mx-auto">
-                Dokumen kurikulum dan panduan pembelajaran tahun ajaran 2024/2025
+                Dokumen kurikulum dan panduan pembelajaran tahun ajaran 2025/2026
             </p>
         </div>
     </div>
@@ -74,7 +74,7 @@
                 <div class="p-6">
                     <h3 class="text-xl font-bold text-gray-800 mb-2">Kurikulum Kelas X</h3>
                     <p class="text-gray-600 text-sm mb-4">
-                        Dokumen kurikulum lengkap untuk siswa kelas 10 tahun ajaran 2024/2025
+                        Dokumen kurikulum lengkap untuk siswa kelas 10 tahun ajaran 2025/2026
                     </p>
                     <div class="flex items-center justify-between text-xs text-gray-500 mb-4">
                         <span><i class="far fa-file-pdf mr-1"></i>PDF</span>
@@ -95,7 +95,7 @@
                 <div class="p-6">
                     <h3 class="text-xl font-bold text-gray-800 mb-2">Kurikulum Kelas XI</h3>
                     <p class="text-gray-600 text-sm mb-4">
-                        Dokumen kurikulum lengkap untuk siswa kelas 11 tahun ajaran 2024/2025
+                        Dokumen kurikulum lengkap untuk siswa kelas 11 tahun ajaran 2025/2026
                     </p>
                     <div class="flex items-center justify-between text-xs text-gray-500 mb-4">
                         <span><i class="far fa-file-pdf mr-1"></i>PDF</span>
@@ -116,7 +116,7 @@
                 <div class="p-6">
                     <h3 class="text-xl font-bold text-gray-800 mb-2">Kurikulum Kelas XII</h3>
                     <p class="text-gray-600 text-sm mb-4">
-                        Dokumen kurikulum lengkap untuk siswa kelas 12 tahun ajaran 2024/2025
+                        Dokumen kurikulum lengkap untuk siswa kelas 12 tahun ajaran 2025/2026
                     </p>
                     <div class="flex items-center justify-between text-xs text-gray-500 mb-4">
                         <span><i class="far fa-file-pdf mr-1"></i>PDF</span>
@@ -132,12 +132,12 @@
             <div class="download-card bg-white rounded-xl shadow-lg overflow-hidden">
                 <div class="bg-gradient-to-br from-orange-500 to-orange-600 p-8 text-center">
                     <i class="fas fa-calendar-alt text-white text-6xl mb-3"></i>
-                    <div class="text-white/90 text-sm font-medium">2024/2025</div>
+                    <div class="text-white/90 text-sm font-medium">2025/2026</div>
                 </div>
                 <div class="p-6">
                     <h3 class="text-xl font-bold text-gray-800 mb-2">Kalender Akademik</h3>
                     <p class="text-gray-600 text-sm mb-4">
-                        Jadwal kegiatan akademik dan libur sekolah tahun ajaran 2024/2025
+                        Jadwal kegiatan akademik dan libur sekolah tahun ajaran 2025/2026
                     </p>
                     <div class="flex items-center justify-between text-xs text-gray-500 mb-4">
                         <span><i class="far fa-file-pdf mr-1"></i>PDF</span>

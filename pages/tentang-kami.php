@@ -516,7 +516,7 @@ include '../src/includes/header.php';
 
             <div class="grid md:grid-cols-4 gap-6">
                 <!-- Link 1 -->
-                <a href="/template-websekolah/pages/visi-misi.php" class="bg-white/10 backdrop-blur-sm hover:bg-white/20 rounded-xl p-6 text-center transition group">
+                <a href="/Template-WebSekolah/pages/visi-misi.php" class="bg-white/10 backdrop-blur-sm hover:bg-white/20 rounded-xl p-6 text-center transition group">
                     <div class="bg-white/20 w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto group-hover:scale-110 transition">
                         <i class="fas fa-bullseye text-white text-3xl"></i>
                     </div>
@@ -525,7 +525,7 @@ include '../src/includes/header.php';
                 </a>
 
                 <!-- Link 2 -->
-                <a href="/template-websekolah/pages/struktur-organisasi.php" class="bg-white/10 backdrop-blur-sm hover:bg-white/20 rounded-xl p-6 text-center transition group">
+                <a href="/Template-WebSekolah/pages/struktur-organisasi.php" class="bg-white/10 backdrop-blur-sm hover:bg-white/20 rounded-xl p-6 text-center transition group">
                     <div class="bg-white/20 w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto group-hover:scale-110 transition">
                         <i class="fas fa-sitemap text-white text-3xl"></i>
                     </div>
@@ -534,7 +534,7 @@ include '../src/includes/header.php';
                 </a>
 
                 <!-- Link 3 -->
-                <a href="/template-websekolah/pages/galeri.php" class="bg-white/10 backdrop-blur-sm hover:bg-white/20 rounded-xl p-6 text-center transition group">
+                <a href="/Template-WebSekolah/pages/galeri.php" class="bg-white/10 backdrop-blur-sm hover:bg-white/20 rounded-xl p-6 text-center transition group">
                     <div class="bg-white/20 w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto group-hover:scale-110 transition">
                         <i class="fas fa-images text-white text-3xl"></i>
                     </div>
@@ -543,7 +543,7 @@ include '../src/includes/header.php';
                 </a>
 
                 <!-- Link 4 -->
-                <a href="/template-websekolah/pages/berita.php" class="bg-white/10 backdrop-blur-sm hover:bg-white/20 rounded-xl p-6 text-center transition group">
+                <a href="/Template-WebSekolah/pages/berita.php" class="bg-white/10 backdrop-blur-sm hover:bg-white/20 rounded-xl p-6 text-center transition group">
                     <div class="bg-white/20 w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto group-hover:scale-110 transition">
                         <i class="fa-duotone fa-solid fa-newspaper text-white text-3xl"></i>
                     </div>
@@ -567,11 +567,11 @@ include '../src/includes/header.php';
                         Tim kami siap membantu menjawab pertanyaan Anda tentang pendaftaran, program keahlian, atau informasi lainnya
                     </p>
                     <div class="flex flex-wrap gap-4 justify-center">
-                        <a href="/template-websekolah/pages/kontak.php" class="inline-flex items-center gap-2 bg-white text-blue-600 px-8 py-4 rounded-lg font-bold hover:bg-gray-100 transition shadow-lg">
+                        <a href="/Template-WebSekolah/pages/kontak.php" class="inline-flex items-center gap-2 bg-white text-blue-600 px-8 py-4 rounded-lg font-bold hover:bg-gray-100 transition shadow-lg">
                             <i class="fas fa-phone"></i>
                             Hubungi Kami
                         </a>
-                        <a href="/template-websekolah/pages/info-ppdb.php" class="inline-flex items-center gap-2 bg-red-600 text-white px-8 py-4 rounded-lg font-bold hover:bg-red-700 transition shadow-lg">
+                        <a href="/Template-WebSekolah/pages/info-ppdb.php" class="inline-flex items-center gap-2 bg-red-600 text-white px-8 py-4 rounded-lg font-bold hover:bg-red-700 transition shadow-lg">
                             <i class="fas fa-user-graduate"></i>
                             Informasi PPDB
                         </a>

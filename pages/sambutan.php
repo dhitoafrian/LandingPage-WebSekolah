@@ -1,7 +1,6 @@
 <?php
 $page_title = 'Sambutan Kepala Sekolah';
 include '../src/includes/header.php';
-
 ?>
 
 <style>
@@ -30,75 +29,76 @@ include '../src/includes/header.php';
 
         <div class="text-center text-white">
             <h1 class="text-4xl md:text-5xl font-bold mb-4">
-                <i class="fas fa-user-tie mr-3"></i>Sambutan Kepala Sekolah
+                Sambutan Kepala Sekolah
             </h1>
             <p class="text-lg text-white/90 max-w-2xl mx-auto">
-                sambutan hangat dari kepala sekolah kami, Drs. Nama Kepala Sekolah, M.Pd, yang mengajak seluruh civitas akademika untuk bersama-sama mewujudkan visi dan misi sekolah menuju masa depan yang gemilang.
+                Sambutan hangat dari Kepala SMK Negeri 1 Saptosari
             </p>
         </div>
     </div>
 </div>
 
-<section class="py-16 bg-gradient-to-b from-blue-50 to-blue-100">
+<!-- Main Content -->
+<section class="py-16 bg-gray-50">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-12">
-            <h1 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">
-                Sambutan Kepala Sekolah
-            </h1>
-            <div class="w-24 h-1 bg-blue-600 mx-auto rounded-full"></div>
-        </div>
-        <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
+        
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden">
             <div class="grid md:grid-cols-3 gap-0">
+                
+                <!-- Profile Section -->
                 <div class="md:col-span-1 bg-gradient-to-br from-blue-600 to-blue-800 p-8 flex items-center justify-center">
                     <div class="text-center">
-                        <div class="w-48 h-48 mx-auto mb-4 rounded-full bg-white shadow-2xl overflow-hidden border-4 border-blue-600">
+                        <div class="w-48 h-48 mx-auto mb-6 rounded-full bg-white shadow-xl overflow-hidden border-4 border-white">
                             <img
                                 src="/Template-WebSekolah/assets/images/kepala-sekolah.jpeg"
                                 alt="Foto Kepala Sekolah"
-                                class="w-full h-full object-cover">
+                                class="w-full h-full object-cover"
+                                loading="lazy">
                         </div>
                         <h3 class="text-white font-bold text-xl mb-2">
                             Drs. Nama Kepala Sekolah, M.Pd
                         </h3>
-
-                        <!-- JABATAN -->
-                        <p class="text-blue-100 text-sm">
-                            Kepala SMK Negeri 1 Saptosari
-                        </p>
+                        <div class="inline-block bg-white/20 backdrop-blur-sm px-4 py-2 rounded-lg">
+                            <p class="text-blue-100 text-sm font-medium">
+                                Kepala SMK Negeri 1 Saptosari
+                            </p>
+                        </div>
                     </div>
                 </div>
 
-                <!-- KOLOM KONTEN SAMBUTAN -->
+                <!-- Content Section -->
                 <div class="md:col-span-2 p-8 md:p-12">
 
-                    <!-- SALAM PEMBUKA -->
-                    <p class="text-lg text-gray-700 mb-6 italic">
-                        Assalamu'alaikum Warahmatullahi Wabarakatuh
-                    </p>
+                    <!-- Greeting -->
+                    <div class="bg-blue-50 border-l-4 border-blue-600 p-4 rounded-r-lg mb-6">
+                        <p class="text-gray-700 italic">
+                            Assalamu'alaikum Warahmatullahi Wabarakatuh
+                        </p>
+                    </div>
 
-                    <!-- PARAGRAF SAMBUTAN -->
-                    <div class="space-y-4">
-                        <p class="text-gray-600 leading-relaxed text-justify">
-                            Selamat datang di website resmi <span class="font-semibold text-blue-800">SMK Negeri 1 Saptosari</span>.
+                    <!-- Main Content -->
+                    <div class="space-y-4 text-gray-600 leading-relaxed">
+                        <p>
+                            Selamat datang di website resmi <strong class="text-blue-800">SMK Negeri 1 Saptosari</strong>.
                             Puji syukur kehadirat Allah SWT yang telah memberikan rahmat dan karunia-Nya,
                             sehingga kita dapat terus berkarya dan mengembangkan pendidikan di sekolah kita tercinta.
                         </p>
 
-                        <p class="text-gray-600 leading-relaxed text-justify">
+                        <p>
                             SMK Negeri 1 Saptosari merupakan lembaga pendidikan kejuruan yang berkomitmen
                             untuk menghasilkan lulusan yang kompeten, berkarakter, dan siap bersaing di dunia kerja.
                             Kami terus berupaya meningkatkan kualitas pembelajaran dengan mengintegrasikan
                             teknologi, pengembangan soft skills, dan kerjasama dengan dunia industri.
                         </p>
 
-                        <p class="text-gray-600 leading-relaxed text-justify">
+                        <p>
                             Website ini kami hadirkan sebagai media informasi dan komunikasi antara sekolah
                             dengan siswa, orang tua, alumni, dan masyarakat luas. Melalui website ini,
                             kami berharap dapat memberikan informasi yang transparan dan mudah diakses
                             mengenai berbagai kegiatan dan prestasi yang telah dicapai.
                         </p>
 
-                        <p class="text-gray-600 leading-relaxed text-justify">
+                        <p>
                             Kepada seluruh civitas akademika, mari kita bersama-sama menjaga nama baik sekolah
                             dan terus berinovasi untuk mencapai visi dan misi SMK Negeri 1 Saptosari.
                             Kepada orang tua siswa, kami mengucapkan terima kasih atas kepercayaan yang telah diberikan
@@ -106,22 +106,22 @@ include '../src/includes/header.php';
                         </p>
                     </div>
 
-                    <!-- PENUTUP -->
+                    <!-- Closing -->
                     <div class="mt-8 pt-6 border-t-2 border-gray-200">
-                        <p class="text-gray-600 leading-relaxed italic mb-4">
+                        <p class="text-gray-600 italic mb-8">
                             Wassalamu'alaikum Warahmatullahi Wabarakatuh
                         </p>
 
-                        <!-- TANDA TANGAN -->
-                        <div class="mt-6">
-                            <p class="text-gray-700 font-semibold text-right">
+                        <!-- Signature -->
+                        <div class="text-right">
+                            <p class="text-gray-600 text-sm mb-1">Hormat kami,</p>
+                            <p class="text-gray-700 font-semibold mb-16">
                                 Kepala Sekolah
                             </p>
-
-                            <p class="text-gray-800 font-bold text-right mt-12">
+                            <p class="text-gray-800 font-bold">
                                 Drs. Nama Kepala Sekolah, M.Pd
                             </p>
-                            <p class="text-gray-600 text-sm text-right">
+                            <p class="text-gray-600 text-sm">
                                 NIP. 19XXXXXXXXXX
                             </p>
                         </div>
@@ -131,15 +131,14 @@ include '../src/includes/header.php';
             </div>
         </div>
 
-        <div class="mt-8">
-            <div class="bg-blue-600 text-white p-6 rounded-xl text-center shadow-lg">
-                <p class="text-xl md:text-2xl font-semibold italic">
-                    "Berprestasi, Berkarakter, Berdaya Saing"
-                </p>
-                <p class="text-blue-200 text-sm mt-2">
-                    Motto SMK Negeri 1 Saptosari
-                </p>
-            </div>
+        <!-- Motto Section -->
+        <div class="mt-8 bg-gradient-to-r from-blue-600 to-blue-700 text-white p-8 rounded-xl text-center shadow-lg">
+            <p class="text-2xl md:text-3xl font-bold italic">
+                "Berprestasi, Berkarakter, Berdaya Saing"
+            </p>
+            <p class="text-blue-200 text-sm mt-2">
+                Motto SMK Negeri 1 Saptosari
+            </p>
         </div>
 
     </div>

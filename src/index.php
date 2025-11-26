@@ -4,230 +4,89 @@ include 'includes/header.php';
 ?>
 
 <style>
-    .video-thumbnail {
-        position: relative;
-        cursor: pointer;
-        overflow: hidden;
-        border-radius: 1rem;
-        transition: all 0.3s ease;
-    }
-
-    .video-thumbnail:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 20px 30px rgba(0, 0, 255, 0.3);
-    }
-
-    .video-thumbnail img {
-        transition: transform 0.4s ease;
-    }
-
-    .video-thumbnail:hover img {
-        transform: scale(1.05);
-    }
-
-    .play-button {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 70px;
-        height: 70px;
-        background: rgba(239, 68, 68, 0.95);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: all 0.3s ease;
-    }
-
-    .play-button::after {
-        content: "";
-        width: 0;
-        height: 0;
-        border-left: 20px solid white;
-        border-top: 12px solid transparent;
-        border-bottom: 12px solid transparent;
-        margin-left: 4px;
-    }
-
-    .video-thumbnail:hover .play-button {
-        transform: translate(-50%, -50%) scale(1.1);
-        background: rgba(239, 68, 68, 1);
-    }
-
-    .modal {
-        display: none;
-        position: fixed;
-        inset: 0;
-        background: rgba(0, 0, 0, 0.85);
-        z-index: 9999;
-        align-items: center;
-        justify-content: center;
-        padding: 1rem;
-        animation: fadeIn 0.3s ease;
-    }
-
-    .modal.active {
-        display: flex;
-    }
-
-    @keyframes fadeIn {
-        from {
-            opacity: 0;
-        }
-
-        to {
-            opacity: 1;
-        }
-    }
-
-    .modal-content {
-        position: relative;
-        width: 100%;
-        max-width: 900px;
-        background: #000;
-        border-radius: 1rem;
-        overflow: hidden;
-        animation: slideUp 0.4s ease;
-    }
-
-    @keyframes slideUp {
-        from {
-            opacity: 0;
-            transform: translateY(50px);
-        }
-
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    .modal-close {
-        position: absolute;
-        top: -40px;
-        right: 0;
-        width: 40px;
-        height: 40px;
-        background: white;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        font-size: 24px;
-        color: #333;
-        transition: all 0.3s ease;
-        z-index: 10;
-    }
-
-    .modal-close:hover {
-        background: #ef4444;
-        color: white;
-        transform: rotate(90deg);
-    }
-
-    .agenda-card {
-        transition: all 0.3s ease;
-        cursor: pointer;
-    }
-
-    .agenda-card:hover {
-        transform: translateX(8px);
-        box-shadow: 0 10px 20px rgba(0, 0, 255, 0.3);
-    }
-
-    .video-swiper {
-        overflow: hidden;
-    }
+ 
 </style>
 
 <!-- ================= START BANNER SWIPER SECTION ================= -->
-<section id="hero" class="relative w-full h-[60vh] md:h-[70vh] lg:h-[80vh] overflow-hidden bg-black">
-    <div class="swiper h-full w-full" id="heroSwiper">
-        <div class="swiper-wrapper" id="sliderTrack">
+<section id="hero" class="relative w-full overflow-hidden">
+    <div class="swiper-banner heroSwiper">
+        <div class="swiper-wrapper">
 
-            <div class="swiper-slide" data-slide="0">
-                <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=1920" alt="Program Desain Komunikasi Visual" class="w-full h-full object-cover user-select-none pointer-events-none">
-                <div class="absolute inset-0 flex items-center justify-center z-10">
-                    <div class="text-center text-white px-6 max-w-4xl animate-slideUp">
-                        <h1 class="text-5xl md:text-7xl font-bold mb-6 drop-shadow-2xl">Program Desain Komunikasi Visual</h1>
-                        <p class="text-xl md:text-2xl font-light drop-shadow-lg mb-8">Mengembangkan Kreativitas dan Inovasi Digital</p>
-                        <div class="flex gap-4 justify-center flex-wrap">
-                            <a href="#profil" class="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105">
-                                Lihat Profil
-                            </a>
-                            <a href="#kontak" class="px-8 py-4 bg-white hover:bg-gray-100 text-blue-600 font-semibold rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105">
-                                Hubungi Kami
-                            </a>
-                        </div>
-                    </div>
+            <!-- Slide 1 -->
+            <div class="swiper-slide">
+                <img src="https://images.unsplash.com/photo-1562774053-701939374585?w=1920&h=1080&fit=crop"
+                    alt="Gedung Sekolah">
+
+
+                <div class="slide-content fade-in-up">
+                    <h1 class="text-3xl md:text-4xl font-bold text-white mb-3 drop-shadow-lg">
+                        SMK Negeri 1 Yogyakarta
+                    </h1>
+                    <p class="text-base md:text-lg text-white/90 mb-6 drop-shadow-md">
+                        Mencetak Generasi Unggul & Berakhlak Mulia
+                    </p>
+                    <a href="#ppdb" class="glow-button overflow-hidden bg-blue-600 hover:bg-blue-700 inline-block px-6 py-3 text-white font-semibold rounded-full">
+                        Daftar Sekarang
+                    </a>
                 </div>
             </div>
 
-            <div class="swiper-slide" data-slide="1">
-                <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=1920" alt="Teknik Komputer dan Jaringan" class="w-full h-full object-cover user-select-none pointer-events-none">
-                <div class="absolute inset-0 flex items-center justify-center z-10">
-                    <div class="text-center text-white px-6 max-w-4xl animate-slideUp">
-                        <h1 class="text-5xl md:text-7xl font-bold mb-6 drop-shadow-2xl">Teknik Komputer dan Jaringan</h1>
-                        <p class="text-xl md:text-2xl font-light drop-shadow-lg mb-8">Menguasai Teknologi Informasi Masa Depan</p>
-                        <div class="flex gap-4 justify-center flex-wrap">
-                            <a href="#program" class="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105">
-                                Lihat Program
-                            </a>
-                            <a href="#daftar" class="px-8 py-4 bg-white hover:bg-gray-100 text-blue-600 font-semibold rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105">
-                                Daftar Sekarang
-                            </a>
-                        </div>
-                    </div>
+            <!-- Slide 2 -->
+            <div class="swiper-slide">
+                <img src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=600&h=900&fit=crop" alt="Jalur Prestasi">
+
+                <div class="slide-content fade-in-up">
+                    <h1 class="text-3xl md:text-4xl font-bold text-white mb-3 drop-shadow-lg">
+                        Teknik Komputer dan Jaringan
+                    </h1>
+                    <p class="text-base md:text-lg text-white/90 mb-6 drop-shadow-md">
+                        Menguasai Teknologi Informasi Masa Depan
+                    </p>
+                    <a href="#program" class="glow-button overflow-hidden bg-blue-600 hover:bg-blue-700 inline-block px-6 py-3 text-white font-semibold rounded-full">
+                        Lihat Program
+                    </a>
                 </div>
             </div>
 
-            <div class="swiper-slide" data-slide="2">
-                <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1920" alt="Rekayasa Perangkat Lunak" class="w-full h-full object-cover user-select-none pointer-events-none">
-                <div class="absolute inset-0 flex items-center justify-center z-10">
-                    <div class="text-center text-white px-6 max-w-4xl animate-slideUp">
-                        <h1 class="text-5xl md:text-7xl font-bold mb-6 drop-shadow-2xl">Rekayasa Perangkat Lunak</h1>
-                        <p class="text-xl md:text-2xl font-light drop-shadow-lg mb-8">Menciptakan Solusi Digital Inovatif</p>
-                        <div class="flex gap-4 justify-center flex-wrap">
-                            <a href="#fasilitas" class="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105">
-                                Lihat Fasilitas
-                            </a>
-                            <a href="#galeri" class="px-8 py-4 bg-white hover:bg-gray-100 text-blue-600 font-semibold rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105">
-                                Galeri Kegiatan
-                            </a>
-                        </div>
-                    </div>
+            <!-- Slide 3 -->
+            <div class="swiper-slide">
+                <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1920&q=80" alt="Rekayasa Perangkat Lunak">
+
+                <div class="slide-content fade-in-up">
+                    <h1 class="text-3xl md:text-4xl font-bold text-white mb-3 drop-shadow-lg">
+                        Rekayasa Perangkat Lunak
+                    </h1>
+                    <p class="text-base md:text-lg text-white/90 mb-6 drop-shadow-md">
+                        Menciptakan Solusi Digital Inovatif
+                    </p>
+                    <a href="#fasilitas" class="glow-button overflow-hidden bg-blue-600 hover:bg-blue-700 inline-block px-6 py-3 text-white font-semibold rounded-full">
+                        Lihat Fasilitas
+                    </a>
                 </div>
             </div>
 
-            <div class="swiper-slide" data-slide="3">
-                <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=1920" alt="Multimedia Broadcasting" class="w-full h-full object-cover user-select-none pointer-events-none">
-                <div class="absolute inset-0 flex items-center justify-center z-10">
-                    <div class="text-center text-white px-6 max-w-4xl animate-slideUp">
-                        <h1 class="text-5xl md:text-7xl font-bold mb-6 drop-shadow-2xl">Multimedia Broadcasting</h1>
-                        <p class="text-xl md:text-2xl font-light drop-shadow-lg mb-8">Berkarya di Industri Media dan Pertelevisian</p>
-                        <div class="flex gap-4 justify-center flex-wrap">
-                            <a href="#prestasi" class="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105">
-                                Lihat Prestasi
-                            </a>
-                            <a href="#alumni" class="px-8 py-4 bg-white hover:bg-gray-100 text-blue-600 font-semibold rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105">
-                                Testimoni Alumni
-                            </a>
-                        </div>
-                    </div>
+            <!-- Slide 4 -->
+            <div class="swiper-slide">
+                <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=1920" alt="PPDB 2025">
+
+                <div class="slide-content fade-in-up">
+                    <h1 class="text-3xl md:text-4xl font-bold text-white mb-3 drop-shadow-lg">
+                        Multimedia Broadcasting
+                    </h1>
+                    <p class="text-base md:text-lg text-white/90 mb-6 drop-shadow-md">
+                        Berkarya di Industri Media dan Pertelevisian
+                    </p>
+                    <a href="#prestasi" class="glow-button overflow-hidden bg-blue-600 hover:bg-blue-700 inline-block px-6 py-3 text-white font-semibold rounded-full">
+                        Lihat Prestasi
+                    </a>
                 </div>
             </div>
         </div>
+
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
     </div>
-
-    <button id="prevBtn" class="swiper-button-prev hidden absolute left-8 top-1/2 -translate-y-1/2 z-30 w-14 h-14 md:w-16 md:h-16 bg-blue-600/80 hover:bg-blue-600 text-white rounded-md md:flex items-center justify-center transition-all duration-300 transform hover:scale-110 shadow-xl disabled:opacity-50">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M15 19l-7-7 7-7" />
-    </button>
-
-    <button id="nextBtn" class="swiper-button-next hidden absolute right-8 top-1/2 -translate-y-1/2 z-30 w-14 h-14 md:w-16 md:h-16 bg-blue-600/80 hover:bg-blue-600 text-white rounded-md md:flex items-center justify-center transition-all duration-300 transform hover:scale-110 shadow-xl disabled:opacity-50">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7" />
-    </button>
 </section>
 <!-- ================= END BANNER SWIPER SECTION ================= -->
 
@@ -440,80 +299,6 @@ include 'includes/header.php';
 </section>
 <!-- ================= END PRESTASI INFOGRAPHIC ================= -->
 
-<!-- ================= START LAYANAN KHUSUS / KELAS BELAJAR ================= -->
-<section class="py-16 px-4">
-    <div class="max-w-7xl mx-auto">
-
-        <div class="mb-10">
-            <h2 class="text-blue-600 text-xl md:text-2xl font-bold mb-2">
-                <span class="inline-block">─ ──</span> Layanan Khusus
-            </h2>
-            <h3 class="text-2xl md:text-3xl font-bold text-gray-800">KELAS BELAJAR & ASRAMA</h3>
-        </div>
-
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-
-            <div class="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-6 lg:border-r lg:pr-6 border-gray-200 order-2 lg:order-none">
-
-                <div class="service-card card-small mb-6 sm:mb-0 sm:col-span-1">
-                    <div class="image-wrapper">
-                        <img src="https://images.unsplash.com/photo-1580537659466-0a9bfa916a54?w=600&h=400&fit=crop"
-                            alt="Kelas Tahfidz">
-                        <div class="slash-overlay"></div>
-                    </div>
-                    <div class="content-area-small p-4 sm:p-6 flex flex-col flex-grow">
-                        <h4 class="text-xl font-bold text-gray-800 mb-3">Kelas Tahfidz</h4>
-                        <p class="text-gray-600 mb-4 flex-grow leading-relaxed line-clamp-2 text-sm">
-                            Kelas tahfidz merupakan program pendidikan untuk menghafal Al-Qur'an.
-                        </p>
-                        <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full font-semibold inline-block text-center text-sm mt-auto">
-                            <span class="relative z-10">Selengkapnya</span>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="service-card card-small sm:col-span-1">
-                    <div class="image-wrapper">
-                        <img src="https://images.unsplash.com/photo-1561998338-13ad7883b20f?w=600&h=400&fit=crop"
-                            alt="Kelas DKV">
-                        <div class="slash-overlay"></div>
-                    </div>
-                    <div class="content-area-small p-4 sm:p-6 flex flex-col flex-grow">
-                        <h4 class="text-xl font-bold text-gray-800 mb-3">Kelas DKV</h4>
-                        <p class="text-gray-600 mb-4 flex-grow leading-relaxed line-clamp-2 text-sm">
-                            Desain Komunikasi Visual (DKV) mengajarkan penyampaian pesan secara visual.
-                        </p>
-                        <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full font-semibold inline-block text-center text-sm mt-auto">
-                            <span class="relative z-10">Selengkapnya</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="lg:col-span-1 col-span-full order-1 lg:order-none">
-                <div class="service-card">
-                    <div class="image-wrapper h-64">
-                        <img src="https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=600&h=400&fit=crop"
-                            alt="Asrama Putri">
-                        <div class="slash-overlay"></div>
-                    </div>
-                    <div class="content-area p-6 flex flex-col flex-grow">
-                        <h4 class="text-xl font-bold text-gray-800 mb-3">Asrama Putri</h4>
-                        <p class="text-gray-600 mb-6 flex-grow leading-relaxed line-clamp-3">
-                            Asrama putri adalah fasilitas yang dirancang khusus untuk memberikan tempat tinggal yang aman dan nyaman bagi siswi.
-                        </p>
-                        <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded-full font-semibold inline-block text-center mt-auto">
-                            <span class="relative z-10">Selengkapnya</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
-<!-- ================= END LAYANAN KHUSUS / KELAS BELAJAR ================= -->
-
 <!-- ================= START BERITA & ARTIKEL ================= -->
 <section class="py-16 px-4">
     <div class="max-w-7xl mx-auto">
@@ -714,9 +499,9 @@ include 'includes/header.php';
 
                 <!-- Button Semua Artikel -->
                 <div class="text-center">
-                    <button class="glow-button bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-semibold w-full">
+                    <a href="/Template-WebSekolah/pages/artikel.php" class="glow-button bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-semibold w-full">
                         <span class="relative z-10">Semua Artikel</span>
-                    </button>
+                    </a>
                 </div>
             </div>
         </div>
@@ -770,7 +555,7 @@ include 'includes/header.php';
                     <div class="mb-6">
                         <p class="text-gray-700 font-semibold mb-2">Galeri Foto</p>
                         <p class="text-gray-600 leading-relaxed">
-                            Lihat lebih banyak foto kegiatan kami. <a href="/galeri" class="link-selengkapnya text-blue-600 font-semibold">Selengkapnya</a>
+                            Lihat lebih banyak foto kegiatan kami. <a href="/Template-WebSekolah/pages/galeri.php" class="link-selengkapnya text-blue-600 font-semibold">Selengkapnya</a>
                         </p>
                     </div>
                 </div>
@@ -882,7 +667,7 @@ include 'includes/header.php';
                     <div class="video-thumbnail" onclick="openModal('dQw4w9WgXcQ')">
                         <img src="https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg"
                             alt="Video Utama"
-                            class="w-full h-80 object-cover">
+                            class="w-full h-full object-cover">
                         <div class="play-button"></div>
                     </div>
                 </div>
@@ -895,7 +680,7 @@ include 'includes/header.php';
                             <div class="video-thumbnail" onclick="openModal('jNQXAC9IVRw')">
                                 <img src="https://img.youtube.com/vi/jNQXAC9IVRw/hqdefault.jpg"
                                     alt="Video 1"
-                                    class="w-full h-48 object-cover">
+                                    class="w-full h-full object-cover">
                                 <div class="play-button" style="width: 50px; height: 50px;">
                                 </div>
                             </div>
@@ -906,7 +691,7 @@ include 'includes/header.php';
                             <div class="video-thumbnail" onclick="openModal('9bZkp7q19f0')">
                                 <img src="https://img.youtube.com/vi/9bZkp7q19f0/hqdefault.jpg"
                                     alt="Video 2"
-                                    class="w-full h-48 object-cover">
+                                    class="w-full h-full object-cover">
                                 <div class="play-button" style="width: 50px; height: 50px;">
                                 </div>
                             </div>
@@ -917,7 +702,7 @@ include 'includes/header.php';
                             <div class="video-thumbnail" onclick="openModal('L_jWHffIx5E')">
                                 <img src="https://img.youtube.com/vi/L_jWHffIx5E/hqdefault.jpg"
                                     alt="Video 3"
-                                    class="w-full h-48 object-cover">
+                                    class="w-full h-full object-cover">
                                 <div class="play-button" style="width: 50px; height: 50px;">
                                 </div>
                             </div>
@@ -928,7 +713,7 @@ include 'includes/header.php';
                             <div class="video-thumbnail" onclick="openModal('kJQP7kiw5Fk')">
                                 <img src="https://img.youtube.com/vi/kJQP7kiw5Fk/hqdefault.jpg"
                                     alt="Video 4"
-                                    class="w-full h-48 object-cover">
+                                    class="w-full h-full object-cover">
                                 <div class="play-button" style="width: 50px; height: 50px;">
                                 </div>
                             </div>

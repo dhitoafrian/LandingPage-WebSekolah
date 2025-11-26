@@ -110,12 +110,6 @@
                                         <div class="text-xs text-gray-500">Program Khusus</div>
                                     </div>
                                 </a>
-                                <a href="/Template-WebSekolah/pages/kalender-akademik.php" class="flex items-center gap-3 px-4 py-3 hover:bg-blue-50 transition-colors group"><i class="fas fa-calendar-alt w-5 transition-transform group-hover:text-blue-600"></i>
-                                    <div>
-                                        <div class="font-medium text-gray-900 group-hover:text-blue-600">Kalender Akademik</div>
-                                        <div class="text-xs text-gray-500">Jadwal Kegiatan</div>
-                                    </div>
-                                </a>
                                 <a href="/Template-WebSekolah/pages/ekstrakurikuler.php" class="flex items-center gap-3 px-4 py-3 hover:bg-blue-50 transition-colors group"><i class="fas fa-users w-5 transition-transform group-hover:text-blue-600"></i>
                                     <div>
                                         <div class="font-medium text-gray-900 group-hover:text-blue-600">Ekstrakurikuler</div>
@@ -149,12 +143,6 @@
                                     <div>
                                         <div class="font-medium text-gray-900 group-hover:text-blue-600">Alur Pendaftaran</div>
                                         <div class="text-xs text-gray-500">Cara Daftar</div>
-                                    </div>
-                                </a>
-                                <a href="/Template-WebSekolah/pages/daftar-online.php" class="flex items-center gap-3 px-4 py-3 hover:bg-blue-50 transition-colors group"><i class="fas fa-edit w-5 transition-transform group-hover:text-blue-600"></i>
-                                    <div>
-                                        <div class="font-medium text-gray-900 group-hover:text-blue-600">Daftar Online</div>
-                                        <div class="text-xs text-gray-500">Pendaftaran Online</div>
                                     </div>
                                 </a>
                             </div>
@@ -272,8 +260,7 @@
                     <div class="mobile-dropdown-content max-h-0 overflow-hidden transition-all duration-300">
                         <div class="pl-4 pt-2 space-y-1 border-l-2 border-blue-200 ml-6">
                             <a href="/Template-WebSekolah/pages/kurikulum.php" class="block px-4 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg">Kurikulum</a>
-                            <a href="/Template-WebSekolah/pages/program-unggulan.php" class="block px-4 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg">Program Unggulan</a>
-                            <a href="/Template-WebSekolah/pages/kalender-akademik.php" class="block px-4 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg">Kalender Akademik</a>
+                            <a href="/Template-WebSekolah/pages/programunggulan.php" class="block px-4 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg">Program Unggulan</a>
                             <a href="/Template-WebSekolah/pages/ekstrakurikuler.php" class="block px-4 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg">Ekstrakurikuler</a>
                         </div>
                     </div>
@@ -289,7 +276,6 @@
                             <a href="/Template-WebSekolah/pages/info-ppdb.php" class="block px-4 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg">Informasi PPDB</a>
                             <a href="/Template-WebSekolah/pages/syarat-ketentuan.php" class="block px-4 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg">Syarat Pendaftaran</a>
                             <a href="/Template-WebSekolah/pages/alur-pendaftaran.php" class="block px-4 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg">Alur Pendaftaran</a>
-                            <a href="/Template-WebSekolah/pages/daftar-online.php" class="block px-4 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg">Daftar Online</a>
                         </div>
                     </div>
                 </div>

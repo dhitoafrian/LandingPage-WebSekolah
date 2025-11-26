@@ -231,33 +231,9 @@ if (!empty($sidebar_search)) {
         -webkit-box-orient: vertical;
         overflow: hidden;
     }
-
-    .swiper-button-next,
-    .swiper-button-prev {
-        color: #3b82f6 !important;
-        background: white;
-        width: 40px !important;
-        height: 40px !important;
-        border-radius: 50%;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    .swiper-button-next:after,
-    .swiper-button-prev:after {
-        font-size: 20px !important;
-    }
-
-    .swiper-pagination-bullet {
-        background: #3b82f6 !important;
-        opacity: 0.5;
-    }
-
-    .swiper-pagination-bullet-active {
-        opacity: 1 !important;
-    }
 </style>
 
-<div class="min-h-screen bg-gray-50 py-8">
+<section class="py-12 bg-gray-100 min-h-screen">
     <div class="container mx-auto px-4">
         <!-- Breadcrumb -->
         <div class="mb-6">
@@ -492,7 +468,7 @@ if (!empty($sidebar_search)) {
         <?php endif; ?>
     </div>
 </div>
-
+</section>
 
 <?php
 include '../src/includes/footer.php';

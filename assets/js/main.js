@@ -3,31 +3,28 @@ document.addEventListener("DOMContentLoaded", function () {
   // ========================================
   // S1: HERO SLIDER (Fix Touch & Scroll Conflict)
   // ========================================
-  const heroSwiper = new Swiper("#heroSwiper", {
+  const swiper = new Swiper(".heroSwiper", {
     loop: true,
-    speed: 1000,
-    effect: "slide",
-
-    // 🛑 FIX UTAMA TOUCH: Mengatur Threshold dan Touch Ratio
-    touchRatio: 0.5, // Mengurangi sensitivitas geser horizontal
-    longSwipesRatio: 0.1, // Geser harus lebih cepat untuk memicu swipe slider
-    threshold: 20, // Gerakan harus lebih dari 20px agar dianggap swipe slider
-    touchMoveStopPropagation: true, // Mencegah event sentuhan menyebar ke elemen lain
-
     autoplay: {
-      delay: 5000,
+      delay: 5000, // Lebih lama dikit biar gak terburu-buru
       disableOnInteraction: false,
-      pauseOnMouseEnter: true,
     },
-
+    speed: 800, // Smooth transition
+    effect: "fade",
+    fadeEffect: {
+      crossFade: true,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
     navigation: {
-      nextEl: "#nextBtn",
-      prevEl: "#prevBtn",
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
     },
-
-    slidesPerView: 1,
-    spaceBetween: 0,
   });
+
+  // GAK PERLU slideChange event lagi, CSS udah handle animasi
 
   // ========================================
   // S2: PPDB SLIDER (Fix Layout Mobile & Click/Drag)
@@ -233,11 +230,6 @@ const videoSwiper = new Swiper(".video-swiper", {
     disableOnInteraction: false, // Lanjut auto-slide setelah manual interaksi
   },
 
-  // ⛔ 3. PERBAIKI BUTTON: Tambahkan modul navigasi
-  navigation: {
-    nextEl: ".video-swiper-next",
-    prevEl: ".video-swiper-prev",
-  },
 
   breakpoints: {
     768: {
