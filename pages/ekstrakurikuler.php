@@ -76,10 +76,12 @@ include '../src/includes/header.php';
             <!-- Card 1: Futsal -->
             <div class="col-span-1">
                 <div class="ekskul-card bg-white rounded-xl shadow-lg overflow-hidden">
-                <div class="bg-gradient-to-br from-blue-500 to-blue-600 p-8 text-center">
-                    <i class="fas fa-futbol text-white text-6xl mb-3"></i>
-                    <h3 class="text-xl font-bold text-white">Futsal Team</h3>
-                </div>
+                    <div class="relative h-48 overflow-hidden">
+                        <img
+                            src="/Template-WebSekolah/assets/images/ekskul/futsal.jpg"
+                            alt="Futsal Team"
+                            class="w-full h-full object-cover">
+                    </div>
                     <div class="p-6">
                         <p class="text-gray-600 text-sm mb-4 leading-relaxed">
                             Pembinaan teknik, taktik, dan fisik untuk kompetisi tingkat provinsi dan nasional.
@@ -131,9 +133,11 @@ include '../src/includes/header.php';
             <!-- Card 2: Basket -->
             <div class="col-span-1">
                 <div class="ekskul-card bg-white rounded-xl shadow-lg overflow-hidden">
-                    <div class="bg-gradient-to-br from-orange-500 to-orange-600 p-8 text-center">
-                        <i class="fas fa-basketball-ball text-white text-6xl mb-3"></i>
-                        <h3 class="text-xl font-bold text-white">Basket</h3>
+                    <div class="relative h-48 overflow-hidden">
+                        <img
+                            src="/Template-WebSekolah/assets/images/ekskul/basket.jpg"
+                            alt="Basket Team"
+                            class="w-full h-full object-cover">
                     </div>
                     <div class="p-6">
                         <p class="text-gray-600 text-sm mb-4 leading-relaxed">
@@ -186,9 +190,11 @@ include '../src/includes/header.php';
             <!-- Card 3: Pramuka -->
             <div class="col-span-1">
                 <div class="ekskul-card bg-white rounded-xl shadow-lg overflow-hidden">
-                    <div class="bg-gradient-to-br from-green-600 to-green-700 p-8 text-center">
-                        <i class="fas fa-hiking text-white text-6xl mb-3"></i>
-                        <h3 class="text-xl font-bold text-white">Pramuka</h3>
+                    <div class="relative h-48 overflow-hidden">
+                        <img
+                            src="/Template-WebSekolah/assets/images/ekskul/pramuka.jpg"
+                            alt="Pramuka"
+                            class="w-full h-full object-cover">
                     </div>
                     <div class="p-6">
                         <p class="text-gray-600 text-sm mb-4 leading-relaxed">
@@ -240,10 +246,12 @@ include '../src/includes/header.php';
 
             <!-- Card 4: English Club -->
             <div class="col-span-1">
-                <div class="ekskul-card bg-white rounded-xl shadow-lg overflow-hidden">
-                    <div class="bg-gradient-to-br from-purple-500 to-purple-600 p-8 text-center">
-                        <i class="fas fa-globe text-white text-6xl mb-3"></i>
-                        <h3 class="text-xl font-bold text-white">English Club</h3>
+                <ddiv class="ekskul-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="relative h-48 overflow-hidden">
+                        <img
+                            src="/Template-WebSekolah/assets/images/ekskul/english-club.jpg"
+                            alt="English Club"
+                            class="w-full h-full object-cover">
                     </div>
                     <div class="p-6">
                         <p class="text-gray-600 text-sm mb-4 leading-relaxed">
@@ -261,7 +269,7 @@ include '../src/includes/header.php';
                             <i class="fas fa-chevron-down toggle-icon text-sm"></i>
                         </button>
                     </div>
-                </div>
+                </ddiv>
 
                 <div id="detail-english" class="detail-content bg-white p-6 rounded-xl shadow-lg border-l-4 border-purple-600">
                     <h4 class="text-lg font-bold text-purple-800 mb-4 flex items-center gap-2">
@@ -296,9 +304,11 @@ include '../src/includes/header.php';
             <!-- Card 5: Robotik -->
             <div class="col-span-1">
                 <div class="ekskul-card bg-white rounded-xl shadow-lg overflow-hidden">
-                    <div class="bg-gradient-to-br from-red-500 to-red-600 p-8 text-center">
-                        <i class="fas fa-robot text-white text-6xl mb-3"></i>
-                        <h3 class="text-xl font-bold text-white">Robotik</h3>
+                    <div class="relative h-48 overflow-hidden">
+                        <img
+                            src="/Template-WebSekolah/assets/images/ekskul/robotika.jpg"
+                            alt="Robotik Club"
+                            class="w-full h-full object-cover">
                     </div>
                     <div class="p-6">
                         <p class="text-gray-600 text-sm mb-4 leading-relaxed">
@@ -381,7 +391,7 @@ include '../src/includes/header.php';
                 } else {
                     targetElement.classList.add("show");
                     icon.classList.add("rotate");
-                    
+
                     // Smooth scroll to detail
                     setTimeout(() => {
                         targetElement.scrollIntoView({
