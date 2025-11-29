@@ -1,9 +1,8 @@
 <?php
-
 $page_title = 'Artikel & Jurnal';
 include '../src/includes/header.php';
 
-// Data artikel yang lebih banyak untuk menguji fitur "Tampilkan Lainnya"
+// Data artikel (sama seperti sebelumnya)
 $articles = [
     [
         'title' => 'Berdzikir dengan Ikhlas',
@@ -108,15 +107,15 @@ $articles = [
         font-family: 'Inter', sans-serif;
     }
 
-    /* Warna biru utama untuk tema */
     .hero-gradient {
         background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
     }
 
-    /* Card dengan border sederhana dan efek hover */
     .artikel-card {
         transition: all 0.3s ease;
         border: 1px solid #e5e7eb;
+        height: 100%;
+        /* Tambahkan ini untuk konsistensi tinggi */
     }
 
     .artikel-card:hover {
@@ -133,12 +132,11 @@ $articles = [
         transform: scale(1.05);
     }
 
-    /* Hover biru untuk judul */
     .title-hover-blue:hover {
         color: #3b82f6;
     }
 
-    /* Badge category colors */
+    /* Badge category colors (tetap sama) */
     .badge-keagamaan {
         background: #dbeafe;
         color: #1e40af;
@@ -179,7 +177,6 @@ $articles = [
         color: #3730a3;
     }
 
-    /* Utilitas untuk membatasi baris deskripsi */
     .line-clamp-2 {
         display: -webkit-box;
         -webkit-line-clamp: 2;
@@ -192,6 +189,23 @@ $articles = [
         -webkit-line-clamp: 3;
         -webkit-box-orient: vertical;
         overflow: hidden;
+    }
+
+    /* Fix untuk card height consistency */
+    .card-content {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .card-body {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .card-footer {
+        margin-top: auto;
     }
 </style>
 
@@ -255,71 +269,72 @@ $articles = [
             <div id="artikelContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 <?php foreach ($articles as $index => $article): ?>
                     <?php
-                    $is_hidden = $index >= 6 ? 'hidden' : '';
-
-                    // Tentukan class badge berdasarkan kategori
+                    $is_hidden = $index >= 6 ? 'hidden more-card' : 'initial-card';
                     $badge_class = 'badge-' . strtolower($article['category']);
                     ?>
 
-                    <!-- Card Artikel -->
-                    <article id="card-<?= $index ?>" class="artikel-card bg-white rounded-xl overflow-hidden flex flex-col <?= $is_hidden ?>"
+                    <!-- Card Artikel - PERBAIKI STRUKTUR INI -->
+                    <article id="card-<?= $index ?>" class="artikel-card bg-white rounded-xl overflow-hidden <?= $is_hidden ?>"
                         data-title="<?= htmlspecialchars($article['title']) ?>"
                         data-author="<?= htmlspecialchars($article['author']) ?>"
                         data-category="<?= htmlspecialchars($article['category']) ?>"
                         data-content="<?= htmlspecialchars($article['desc']) ?>">
 
-                        <!-- Image -->
-                        <div class="overflow-hidden h-48">
-                            <img src="<?= $article['image'] ?>"
-                                alt="<?= htmlspecialchars($article['title']) ?>"
-                                class="w-full h-full object-cover">
+                        <div class="card-content">
+                            <!-- Image -->
+                            <div class="overflow-hidden h-48">
+                                <img src="<?= $article['image'] ?>"
+                                    alt="<?= htmlspecialchars($article['title']) ?>"
+                                    class="w-full h-full object-cover">
+                            </div>
+
+                            <div class="p-6 card-body">
+                                <!-- Category Badge & Date -->
+                                <div class="flex items-center justify-between mb-3">
+                                    <span class="text-xs font-semibold px-3 py-1 rounded-full <?= $badge_class ?>">
+                                        <?= $article['category'] ?>
+                                    </span>
+                                    <span class="text-xs text-gray-500">
+                                        <i class="far fa-calendar-alt mr-1"></i><?= $article['date'] ?>
+                                    </span>
+                                </div>
+
+                                <!-- Title -->
+                                <h3 class="text-xl font-bold text-gray-800 mb-3 title-hover-blue transition line-clamp-2">
+                                    <a href="/artikel/detail-<?= $index ?>" class="hover:text-blue-600">
+                                        <?= $article['title'] ?>
+                                    </a>
+                                </h3>
+
+                                <!-- Description -->
+                                <p class="text-gray-600 mb-4 text-sm line-clamp-3 flex-grow">
+                                    <?= $article['desc'] ?>
+                                </p>
+
+                                <!-- Author & Read Time -->
+                                <div class="flex items-center justify-between text-xs text-gray-500 mb-4">
+                                    <span>
+                                        <i class="fas fa-user-circle mr-1"></i><?= $article['author'] ?>
+                                    </span>
+                                    <span>
+                                        <i class="far fa-clock mr-1"></i><?= $article['read_time'] ?> baca
+                                    </span>
+                                </div>
+
+                                <!-- Baca Selengkapnya -->
+                                <div class="card-footer pt-2">
+                                    <a href="/Template-WebSekolah/pages/artikel-detail.php"
+                                        class="inline-flex items-center text-sm font-semibold text-blue-500 hover:text-blue-700 transition">
+                                        <i class="fas fa-arrow-right mr-2 text-xs"></i>
+                                        BACA SELENGKAPNYA
+                                    </a>
+                                </div>
+                            </div>
                         </div>
-
-                        <a href="/artikel/detail-<?= $index ?>" class="p-6 flex-grow flex flex-col">
-
-                            <!-- Category Badge & Date -->
-                            <div class="flex items-center justify-between mb-3">
-                                <span class="text-xs font-semibold px-3 py-1 rounded-full <?= $badge_class ?>">
-                                    <?= $article['category'] ?>
-                                </span>
-                                <span class="text-xs text-gray-500">
-                                    <i class="far fa-calendar-alt mr-1"></i><?= $article['date'] ?>
-                                </span>
-                            </div>
-
-                            <!-- Title -->
-                            <h3 class="text-xl font-bold text-gray-800 mb-3 title-hover-blue transition line-clamp-2">
-                                <?= $article['title'] ?>
-                            </h3>
-
-                            <!-- Description -->
-                            <p class="text-gray-600 mb-4 text-sm line-clamp-3">
-                                <?= $article['desc'] ?>
-                            </p>
-
-                            <!-- Author & Read Time -->
-                            <div class="flex items-center justify-between text-xs text-gray-500 mb-4">
-                                <span>
-                                    <i class="fas fa-user-circle mr-1"></i><?= $article['author'] ?>
-                                </span>
-                                <span>
-                                    <i class="far fa-clock mr-1"></i><?= $article['read_time'] ?> baca
-                                </span>
-                            </div>
-
-                            <!-- Baca Selengkapnya -->
-                            <div class="mt-auto pt-2">
-                                <a href="/Template-WebSekolah/pages/artikel-detail.php" class="inline-flex items-center text-sm font-semibold text-blue-500 hover:text-blue-700 transition">
-                                    <i class="fas fa-arrow-right mr-2 text-xs"></i>
-                                    BACA SELENGKAPNYA
-                                </a>
-                            </div>
-                        </a>
                     </article>
                 <?php endforeach; ?>
             </div>
 
-            <!-- Tombol Tampilkan Lainnya -->
             <div class="text-center mt-12">
                 <button id="showMoreBtn" onclick="toggleVisibility()"
                     class="glow-button overflow-hidden px-8 py-3 bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-700 transition">
@@ -334,92 +349,125 @@ $articles = [
                 <p class="text-gray-500">Coba ubah kata kunci pencarian atau filter kategori Anda.</p>
             </div>
         </div>
-
     </div>
 </section>
 
 <!-- Script untuk Show More, Search, dan Filter -->
 <script>
     const MAX_INITIAL_CARDS = 6;
-    const cards = document.querySelectorAll('.artikel-card');
-    const showMoreBtn = document.getElementById('showMoreBtn');
-    const noResults = document.getElementById('noResults');
-    const searchInput = document.getElementById('searchInput');
-    const filterCategory = document.getElementById('filterCategory');
+    let isShowingAll = false;
 
-    // --- 1. Logika Tampilkan Lainnya (Show More) ---
-    function initializeVisibility() {
-        let hiddenCount = 0;
-        cards.forEach((card, index) => {
+    document.addEventListener('DOMContentLoaded', function() {
+        const allCards = document.querySelectorAll('.artikel-card');
+        const showMoreBtn = document.getElementById('showMoreBtn');
+        const showMoreText = showMoreBtn.querySelector('span');
+        const noResults = document.getElementById('noResults');
+        const searchInput = document.getElementById('searchInput');
+        const filterCategory = document.getElementById('filterCategory');
+
+        // INITIALIZE
+        allCards.forEach((card, index) => {
             if (index >= MAX_INITIAL_CARDS) {
-                card.classList.add('hidden');
-                hiddenCount++;
-            } else {
-                card.classList.remove('hidden');
-            }
-        });
-
-        if (hiddenCount > 0) {
-            showMoreBtn.classList.remove('hidden');
-            showMoreBtn.querySelector('span').textContent = `Tampilkan Lainnya (${hiddenCount})`;
-        } else {
-            showMoreBtn.classList.add('hidden');
-        }
-    }
-
-    function toggleVisibility() {
-        cards.forEach(card => {
-            if (card.style.display !== 'none') {
-                card.classList.remove('hidden');
-            }
-        });
-        showMoreBtn.classList.add('hidden');
-    }
-
-    // --- 2. Logika Pencarian & Filter ---
-    function filterArticles() {
-        const searchTerm = searchInput.value.toLowerCase().trim();
-        const selectedCategory = filterCategory.value;
-        let visibleCount = 0;
-
-        cards.forEach(card => {
-            const title = card.getAttribute('data-title').toLowerCase();
-            const author = card.getAttribute('data-author').toLowerCase();
-            const content = card.getAttribute('data-content').toLowerCase();
-            const category = card.getAttribute('data-category');
-
-            const matchesSearch = title.includes(searchTerm) ||
-                author.includes(searchTerm) ||
-                content.includes(searchTerm);
-            const matchesCategory = selectedCategory === '' || category === selectedCategory;
-
-            if (matchesSearch && matchesCategory) {
-                card.style.display = 'block';
-                card.classList.remove('hidden');
-                visibleCount++;
-            } else {
+                card.classList.add('more-card', 'hidden');
                 card.style.display = 'none';
+            } else {
+                card.classList.add('initial-card');
             }
         });
 
-        // Show More button logic
-        if (searchTerm === '' && selectedCategory === '') {
-            initializeVisibility();
-        } else {
-            showMoreBtn.classList.add('hidden');
+        const hasMoreCards = allCards.length > MAX_INITIAL_CARDS;
+        showMoreBtn.style.display = hasMoreCards ? '' : 'none';
+
+        // TOGGLE FUNCTION
+        function toggleVisibility() {
+            console.log('Toggle clicked! Current state:', isShowingAll); // Debug
+
+            isShowingAll = !isShowingAll;
+
+            const moreCards = document.querySelectorAll('.more-card');
+            console.log('More cards found:', moreCards.length); // Debug
+
+            moreCards.forEach(card => {
+                if (isShowingAll) {
+                    card.classList.remove('hidden');
+                    card.style.display = '';
+                } else {
+                    card.classList.add('hidden');
+                    card.style.display = 'none';
+                }
+            });
+
+            showMoreText.textContent = isShowingAll ? 'Tampilkan Lebih Sedikit' : 'Tampilkan Lainnya';
+
+            if (!isShowingAll) {
+                window.scrollTo({
+                    top: document.getElementById('artikelContainer').offsetTop - 100,
+                    behavior: 'smooth'
+                });
+            }
         }
 
-        // No results message
-        noResults.classList.toggle('hidden', visibleCount > 0);
-    }
+        // FILTER FUNCTION
+        function filterArticles() {
+            const searchTerm = searchInput.value.toLowerCase().trim();
+            const selectedCategory = filterCategory.value;
+            let visibleCount = 0;
+            let hasFilteredMoreCards = false;
 
-    searchInput.addEventListener('input', filterArticles);
-    filterCategory.addEventListener('change', filterArticles);
+            const isFiltering = searchTerm !== '' || selectedCategory !== '';
 
-    // --- 3. Inisialisasi ---
-    document.addEventListener('DOMContentLoaded', initializeVisibility);
+            allCards.forEach((card, index) => {
+                const title = card.getAttribute('data-title').toLowerCase();
+                const author = card.getAttribute('data-author').toLowerCase();
+                const content = card.getAttribute('data-content').toLowerCase();
+                const category = card.getAttribute('data-category');
+
+                const matchesSearch = title.includes(searchTerm) || author.includes(searchTerm) || content.includes(searchTerm);
+                const matchesCategory = selectedCategory === '' || category === selectedCategory;
+
+                if (matchesSearch && matchesCategory) {
+                    visibleCount++;
+
+                    if (isFiltering) {
+                        card.style.display = '';
+                        card.classList.remove('hidden');
+                    } else {
+                        if (index >= MAX_INITIAL_CARDS) {
+                            hasFilteredMoreCards = true;
+                            if (isShowingAll) {
+                                card.style.display = '';
+                                card.classList.remove('hidden');
+                            } else {
+                                card.style.display = 'none';
+                                card.classList.add('hidden');
+                            }
+                        } else {
+                            card.style.display = '';
+                            card.classList.remove('hidden');
+                        }
+                    }
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            if (isFiltering) {
+                showMoreBtn.style.display = 'none';
+            } else {
+                showMoreBtn.style.display = hasFilteredMoreCards ? '' : 'none';
+            }
+
+            noResults.classList.toggle('hidden', visibleCount > 0);
+        }
+
+        // EVENT LISTENERS
+        searchInput.addEventListener('input', filterArticles);
+        filterCategory.addEventListener('change', filterArticles);
+        showMoreBtn.addEventListener('click', toggleVisibility);
+
+        console.log('Script loaded successfully!'); // Debug
+    });
 </script>
-
 <?php
 include '../src/includes/footer.php';
 ?>

@@ -29,7 +29,7 @@ foreach ($gallery_items as $gallery_item) {
 
 // Redirect if not found
 if (!$item) {
-    header('Location: gallery.php');
+    header('Location: galeri.php');
     exit;
 }
 ?>

@@ -59,9 +59,11 @@ include '../src/includes/header.php';
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
             <div class="card-program bg-white rounded-xl shadow-xl overflow-hidden transform hover:rotate-1 hover:scale-[1.02]">
-                <div class="bg-gradient-to-br from-blue-600 to-blue-700 p-8 text-center">
-                    <i class="fas fa-microchip text-white text-6xl mb-3"></i>
-                    <div class="text-white/90 text-sm font-medium mt-2">Fokus Teknologi & Sains</div>
+                <div class="relative h-48 overflow-hidden">
+                    <img
+                        src="/Template-WebSekolah/assets/images/keunggulan/teknologi.jpg"
+                        alt="Teknologi and sains"
+                        class="w-full h-full object-cover">
                 </div>
                 <div class="p-6">
                     <h3 class="text-2xl font-bold text-gray-800 mb-4 border-b pb-2">STEM & Digital Class</h3>
@@ -77,9 +79,11 @@ include '../src/includes/header.php';
             </div>
 
             <div class="card-program bg-white rounded-xl shadow-xl overflow-hidden transform hover:rotate-1 hover:scale-[1.02]">
-                <div class="bg-gradient-to-br from-green-600 to-green-700 p-8 text-center">
-                    <i class="fas fa-quran text-white text-6xl mb-3"></i>
-                    <div class="text-white/90 text-sm font-medium mt-2">Program Hafalan Intensif</div>
+                <div class="relative h-48 overflow-hidden">
+                    <img
+                        src="/Template-WebSekolah/assets/images/keunggulan/tahfidz.jpg"
+                        alt="Tahfidz Premier"
+                        class="w-full h-full object-cover">
                 </div>
                 <div class="p-6">
                     <h3 class="text-2xl font-bold text-gray-800 mb-4 border-b pb-2">Tahfidz Premier</h3>
@@ -95,9 +99,11 @@ include '../src/includes/header.php';
             </div>
 
             <div class="card-program bg-white rounded-xl shadow-xl overflow-hidden transform hover:rotate-1 hover:scale-[1.02]">
-                <div class="bg-gradient-to-br from-purple-600 to-purple-700 p-8 text-center">
-                    <i class="fas fa-chart-line text-white text-6xl mb-3"></i>
-                    <div class="text-white/90 text-sm font-medium mt-2">Mencetak Pemimpin Masa Depan</div>
+                <div class="relative h-48 overflow-hidden">
+                    <img
+                        src="/Template-WebSekolah/assets/images/keunggulan/preneurship.jpg"
+                        alt="Digitalpreneurship"
+                        class="w-full h-full object-cover">
                 </div>
                 <div class="p-6">
                     <h3 class="text-2xl font-bold text-gray-800 mb-4 border-b pb-2">Digitalpreneurship</h3>

@@ -1,21 +1,19 @@
 <?php
-
 $page_title = 'Pengumuman Sekolah';
 include '../src/includes/header.php';
 
 // Data pengumuman yang lebih banyak untuk menguji fitur "Tampilkan Lainnya"
 $announcements = [
-    ['title' => 'Pengumuman Hasil PPDB Gelombang 1', 'date' => '19 Nov 2025', 'desc' => 'Hasil seleksi PPDB Gelombang 1 Tahun Ajaran 2025/2026 telah diumumkan. Peserta yang diterima diharapkan segera melakukan daftar ulang.'],
-    ['title' => 'Jadwal Ujian Akhir Semester Genap', 'date' => '18 Nov 2025', 'desc' => 'Informasi jadwal pelaksanaan Ujian Akhir Semester Genap untuk seluruh tingkat. Ujian akan dilaksanakan mulai tanggal 2-9 Desember 2025.'],
-    ['title' => 'Libur Semester Genap 2024/2025', 'date' => '15 Nov 2025', 'desc' => 'Sekolah akan libur semester genap mulai tanggal 15-31 Desember 2025. Masuk kembali pada tanggal 2 Januari 2026.'],
-    ['title' => 'Perubahan Jadwal Pelajaran Semester Genap', 'date' => '12 Nov 2025', 'desc' => 'Terdapat perubahan jadwal pelajaran untuk beberapa kelas. Mohon memeriksa jadwal baru yang telah ditempel di papan pengumuman.'],
-    ['title' => 'Pembayaran SPP Bulan Desember', 'date' => '10 Nov 2025', 'desc' => 'Kepada seluruh wali murid, kami mengingatkan untuk melakukan pembayaran SPP bulan Desember paling lambat tanggal 10 Desember 2025.'],
-    ['title' => 'Kegiatan Donor Darah Sekolah', 'date' => '8 Nov 2025', 'desc' => 'Sekolah akan mengadakan kegiatan donor darah bekerjasama dengan PMI pada tanggal 25 November 2025. Partisipasi sangat diharapkan.'],
-    // Card ke-7 dan seterusnya (Hidden by default)
-    ['title' => 'Lomba Karya Ilmiah Remaja (KIR)', 'date' => '5 Nov 2025', 'desc' => 'Pendaftaran lomba KIR tingkat sekolah sudah dibuka. Batas akhir pengumpulan karya pada tanggal 30 November 2025.'],
-    ['title' => 'Pelaksanaan Upacara Hari Guru Nasional', 'date' => '25 Okt 2025', 'desc' => 'Upacara Hari Guru Nasional akan dilaksanakan pada tanggal 25 November 2025. Seluruh siswa dan guru wajib hadir.'],
-    ['title' => 'Rapat Orang Tua Murid Kelas X', 'date' => '20 Okt 2025', 'desc' => 'Diadakan rapat wali murid kelas X untuk membahas persiapan semester baru. Dimohon kehadirannya di aula sekolah.'],
-    ['title' => 'Pengumuman Beasiswa Pendidikan', 'date' => '15 Okt 2025', 'desc' => 'Telah dibuka pendaftaran beasiswa pendidikan untuk siswa berprestasi dan kurang mampu. Segera daftarkan diri Anda!'],
+    ['id' => 1, 'title' => 'Pengumuman Hasil PPDB Gelombang 1', 'date' => '19 Nov 2025', 'desc' => 'Hasil seleksi PPDB Gelombang 1 Tahun Ajaran 2025/2026 telah diumumkan. Peserta yang diterima diharapkan segera melakukan daftar ulang.'],
+    ['id' => 2, 'title' => 'Jadwal Ujian Akhir Semester Genap', 'date' => '18 Nov 2025', 'desc' => 'Informasi jadwal pelaksanaan Ujian Akhir Semester Genap untuk seluruh tingkat. Ujian akan dilaksanakan mulai tanggal 2-9 Desember 2025.'],
+    ['id' => 3, 'title' => 'Libur Semester Genap 2024/2025', 'date' => '15 Nov 2025', 'desc' => 'Sekolah akan libur semester genap mulai tanggal 15-31 Desember 2025. Masuk kembali pada tanggal 2 Januari 2026.'],
+    ['id' => 4, 'title' => 'Perubahan Jadwal Pelajaran Semester Genap', 'date' => '12 Nov 2025', 'desc' => 'Terdapat perubahan jadwal pelajaran untuk beberapa kelas. Mohon memeriksa jadwal baru yang telah ditempel di papan pengumuman.'],
+    ['id' => 5, 'title' => 'Pembayaran SPP Bulan Desember', 'date' => '10 Nov 2025', 'desc' => 'Kepada seluruh wali murid, kami mengingatkan untuk melakukan pembayaran SPP bulan Desember paling lambat tanggal 10 Desember 2025.'],
+    ['id' => 6, 'title' => 'Kegiatan Donor Darah Sekolah', 'date' => '8 Nov 2025', 'desc' => 'Sekolah akan mengadakan kegiatan donor darah bekerjasama dengan PMI pada tanggal 25 November 2025. Partisipasi sangat diharapkan.'],
+    ['id' => 7, 'title' => 'Lomba Karya Ilmiah Remaja (KIR)', 'date' => '5 Nov 2025', 'desc' => 'Pendaftaran lomba KIR tingkat sekolah sudah dibuka. Batas akhir pengumpulan karya pada tanggal 30 November 2025.'],
+    ['id' => 8, 'title' => 'Pelaksanaan Upacara Hari Guru Nasional', 'date' => '25 Okt 2025', 'desc' => 'Upacara Hari Guru Nasional akan dilaksanakan pada tanggal 25 November 2025. Seluruh siswa dan guru wajib hadir.'],
+    ['id' => 9, 'title' => 'Rapat Orang Tua Murid Kelas X', 'date' => '20 Okt 2025', 'desc' => 'Diadakan rapat wali murid kelas X untuk membahas persiapan semester baru. Dimohon kehadirannya di aula sekolah.'],
+    ['id' => 10, 'title' => 'Pengumuman Beasiswa Pendidikan', 'date' => '15 Okt 2025', 'desc' => 'Telah dibuka pendaftaran beasiswa pendidikan untuk siswa berprestasi dan kurang mampu. Segera daftarkan diri Anda!'],
 ];
 ?>
 
@@ -31,7 +29,7 @@ $announcements = [
         background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
     }
 
-/* Card dengan border sederhana dan efek hover */
+    /* Card dengan border sederhana dan efek hover */
     .pengumuman-card {
         transition: all 0.3s ease;
         border: 1px solid #e5e7eb;
@@ -115,7 +113,7 @@ $announcements = [
                         data-title="<?= htmlspecialchars($announcement['title']) ?>"
                         data-content="<?= htmlspecialchars($announcement['desc']) ?>">
 
-                        <a href="/pengumuman/detail-<?= $index ?>" class="p-6 flex-grow flex flex-col">
+                        <a href="pengumuman-detail.php?id=<?= $index ?>" class="p-6 flex-grow flex flex-col">
 
                             <!-- Header seperti di gambar referensi (Tanggal) -->
                             <div class="flex items-center gap-3 mb-4">
@@ -146,11 +144,10 @@ $announcements = [
                 <?php endforeach; ?>
             </div>
 
-            <!-- Tombol Tampilkan Lainnya -->
-            <div class="text-center mt-12">
-                <button id="showMoreBtn" onclick="toggleVisibility()"
-                    class="glow-button overflow-hidden px-8 py-3 bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-700">
-                    Tampilkan Lainnya
+            <div class="text-center mt-12 ">
+                <button id="showMoreBtn"
+                    class="glow-button px-8 py-3 bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-700">
+                    <span>Tampilkan Lainnya</span>
                 </button>
             </div>
 
@@ -165,96 +162,79 @@ $announcements = [
     </div>
 </section>
 
-<!-- Script untuk Show More dan Search -->
 <script>
-    const MAX_INITIAL_CARDS = 6;
-    const cards = document.querySelectorAll('.pengumuman-card');
-    const showMoreBtn = document.getElementById('showMoreBtn');
-    const noResults = document.getElementById('noResults');
+    document.addEventListener('DOMContentLoaded', () => {
+        const MAX = 6;
+        let expanded = false;
 
-    // --- 1. Logika Tampilkan Lainnya (Show More) ---
+        const cards = Array.from(document.querySelectorAll('.pengumuman-card'));
+        const showMoreBtn = document.getElementById('showMoreBtn');
+        const showMoreText = showMoreBtn.querySelector('span');
+        const noResults = document.getElementById('noResults');
+        const searchInput = document.getElementById('searchInput');
 
-    function initializeVisibility() {
-        let hiddenCount = 0;
-        cards.forEach((card, index) => {
-            // Sembunyikan jika index >= MAX_INITIAL_CARDS
-            if (index >= MAX_INITIAL_CARDS) {
-                card.classList.add('hidden');
-                hiddenCount++;
-            } else {
-                card.classList.remove('hidden');
-            }
-        });
+        const extraCards = cards.slice(MAX);
 
-        // Tampilkan tombol hanya jika ada kartu yang tersembunyi
-        if (hiddenCount > 0) {
-            showMoreBtn.classList.remove('hidden');
-            showMoreBtn.querySelector('span').textContent = `Tampilkan Lainnya (${hiddenCount})`;
-        } else {
-            showMoreBtn.classList.add('hidden');
+        // Initialize
+        extraCards.forEach(c => c.classList.add('hidden'));
+        showMoreBtn.style.display = extraCards.length > 0 ? '' : 'none';
+
+        function updateButtonLabel() {
+            showMoreText.textContent = expanded ?
+                'Tampilkan Lebih Sedikit' :
+                'Tampilkan Lainnya';
         }
-    }
 
-    function toggleVisibility() {
-        let hiddenCount = 0;
-        let isFullyShown = true;
+        function toggleShow() {
+            expanded = !expanded;
 
-        cards.forEach(card => {
-            // Jika card tersembunyi (hidden by default atau oleh search), tampilkan
-            if (card.style.display !== 'none') { // Hanya pertimbangkan card yang tidak di-hide oleh search
-                if (card.classList.contains('hidden')) {
-                    card.classList.remove('hidden');
-                    isFullyShown = false;
-                } else if (card.getAttribute('data-initial-hidden') === 'true') {
-                    // Ini mungkin tidak diperlukan lagi jika kita hanya menggunakan hidden class
+            extraCards.forEach(c => {
+                if (c.dataset.hidden !== 'true') {
+                    c.classList.toggle('hidden', !expanded);
                 }
+            });
+
+            // 🔥 Scroll hanya saat collapse
+            if (!expanded) {
+                showMoreBtn.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center'
+                });
             }
-        });
 
-        // Setelah semua ditampilkan, sembunyikan tombol
-        showMoreBtn.classList.add('hidden');
-    }
-
-    // --- 2. Logika Pencarian (Search) ---
-
-    document.getElementById('searchInput').addEventListener('input', function(e) {
-        const searchTerm = e.target.value.toLowerCase().trim();
-        let visibleCount = 0;
-
-        cards.forEach(card => {
-            const title = card.getAttribute('data-title').toLowerCase();
-            const content = card.getAttribute('data-content').toLowerCase();
-
-            const matchesSearch = title.includes(searchTerm) || content.includes(searchTerm);
-
-            if (matchesSearch) {
-                // Tampilkan card, dan hapus kelas 'hidden' untuk memastikan ia terlihat
-                card.style.display = 'block';
-                card.classList.remove('hidden');
-                visibleCount++;
-            } else {
-                // Sembunyikan card
-                card.style.display = 'none';
-            }
-        });
-
-        // Periksa apakah tombol Show More harus ditampilkan.
-        // Tombol Show More hanya berguna ketika tidak ada pencarian (searchTerm kosong)
-        if (searchTerm === '') {
-            initializeVisibility(); // Re-initialize visibility to enforce the 6-card limit
-            showMoreBtn.classList.toggle('hidden', visibleCount <= MAX_INITIAL_CARDS);
-        } else {
-            // Jika sedang mencari, tombol Show More harus di-hide
-            showMoreBtn.classList.add('hidden');
+            updateButtonLabel();
         }
 
-        // Tampilkan/sembunyikan pesan "No Results"
-        noResults.classList.toggle('hidden', visibleCount > 0);
-    });
+        searchInput.addEventListener('input', () => {
+            const term = searchInput.value.toLowerCase().trim();
+            let visibleCount = 0;
 
-    // --- 3. Inisialisasi pada saat DOMContentLoaded ---
-    document.addEventListener('DOMContentLoaded', initializeVisibility);
+            cards.forEach(card => {
+                const title = card.dataset.title.toLowerCase();
+                const content = card.dataset.content.toLowerCase();
+                const match = title.includes(term) || content.includes(term);
+
+                card.dataset.hidden = match ? 'false' : 'true';
+                card.classList.toggle('hidden', !match);
+
+                if (match) {
+                    visibleCount++;
+                }
+            });
+
+            // Show/hide button when searching
+            showMoreBtn.style.display =
+                term === '' && extraCards.length > 0 ? '' : 'none';
+
+            noResults.classList.toggle('hidden', visibleCount !== 0);
+        });
+
+        showMoreBtn.addEventListener('click', toggleShow);
+
+        updateButtonLabel();
+    });
 </script>
+
 
 <?php
 include '../src/includes/footer.php';

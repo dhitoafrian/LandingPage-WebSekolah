@@ -566,3 +566,4 @@ $other_articles = array_filter($all_articles, function ($item) use ($id) {
 <?php
 include '../src/includes/footer.php';
 ?>
+
