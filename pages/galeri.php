@@ -15,15 +15,7 @@ $gallery_items = [
     ['id' => 9, 'title' => 'Kegiatan Pramuka', 'image' => 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=500', 'desc' => 'Latihan rutin pramuka setiap Jumat'],
 ];
 
-// Pagination setup
-$items_per_page = 6;
-$current_page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
-$total_items = count($gallery_items);
-$total_pages = ceil($total_items / $items_per_page);
-$offset = ($current_page - 1) * $items_per_page;
-
-// Get items for current page
-$current_items = array_slice($gallery_items, $offset, $items_per_page);
+$items_per_page = 6; // Item yang ditampilkan pertama kali
 ?>
 
 <style>
@@ -35,6 +27,16 @@ $current_items = array_slice($gallery_items, $offset, $items_per_page);
 
     .hero-gradient {
         background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+    }
+    
+    /* Style untuk tombol */
+    .glow-button {
+        transition: all 0.3s ease;
+    }
+    
+    .glow-button:hover {
+        box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+        transform: translateY(-2px);
     }
 </style>
 
@@ -52,17 +54,17 @@ $current_items = array_slice($gallery_items, $offset, $items_per_page);
 
         <div class="text-center text-white">
             <h1 class="text-4xl md:text-5xl font-bold mb-4">
-                <i class="fas fa-file-contract mr-3"></i>Galeri Sekolah
+                <i class="fas fa-images mr-3"></i>Galeri Sekolah
             </h1>
             <p class="text-lg text-white/90 max-w-2xl mx-auto">
                 Jelajahi momen-momen berharga dan kegiatan seru di sekolah kami melalui galeri foto yang penuh warna ini.
             </p>
         </div>
     </div>
-</div
-    <!-- Gallery Section -->
-<section class="py-16 px-4 bg-gray-50">
+</div>
 
+<!-- Gallery Section -->
+<section class="py-16 px-4 bg-gray-50">
     <div class="max-w-7xl mx-auto">
         <!-- Section Header -->
         <div class="text-center mb-12">
@@ -71,9 +73,15 @@ $current_items = array_slice($gallery_items, $offset, $items_per_page);
         </div>
 
         <!-- Gallery Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-            <?php foreach ($current_items as $item): ?>
-                <a href="galeri-detail.php?id=<?= $item['id'] ?>" class="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+        <div id="galleryContainer" class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+            <?php foreach ($gallery_items as $index => $item): ?>
+                <?php 
+                $is_hidden = $index >= $items_per_page ? 'hidden' : '';
+                ?>
+                <a href="galeri-detail.php?id=<?= $item['id'] ?>" 
+                   class="gallery-item group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 <?= $is_hidden ?>"
+                   data-title="<?= htmlspecialchars($item['title']) ?>"
+                   data-desc="<?= htmlspecialchars($item['desc']) ?>">
                     <div class="aspect-w-16 aspect-h-12 bg-gray-200">
                         <img src="<?= $item['image'] ?>" alt="<?= $item['title'] ?>" class="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500">
                     </div>
@@ -93,37 +101,65 @@ $current_items = array_slice($gallery_items, $offset, $items_per_page);
             <?php endforeach; ?>
         </div>
 
-        <!-- Pagination -->
-        <?php if ($total_pages > 1): ?>
-            <div class="flex justify-center items-center space-x-2">
-                <!-- Previous Button -->
-                <?php if ($current_page > 1): ?>
-                    <a href="?page=<?= $current_page - 1 ?>" class="px-4 py-2 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-                        </svg>
-                    </a>
-                <?php endif; ?>
-
-                <!-- Page Numbers -->
-                <?php for ($i = 1; $i <= $total_pages; $i++): ?>
-                    <a href="?page=<?= $i ?>" class="px-4 py-2 rounded-lg transition-colors <?= $i === $current_page ? 'bg-blue-600 text-white' : 'bg-white border border-gray-300 hover:bg-gray-50' ?>">
-                        <?= $i ?>
-                    </a>
-                <?php endfor; ?>
-
-                <!-- Next Button -->
-                <?php if ($current_page < $total_pages): ?>
-                    <a href="?page=<?= $current_page + 1 ?>" class="px-4 py-2 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                        </svg>
-                    </a>
-                <?php endif; ?>
+        <!-- Tombol Tampilkan Lainnya/Lebih Sedikit -->
+        <?php if (count($gallery_items) > $items_per_page): ?>
+            <div class="text-center">
+                <button id="showMoreBtn" class="glow-button px-8 py-3 bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-700 transition-colors">
+                    <span>Tampilkan Lainnya</span>
+                </button>
             </div>
         <?php endif; ?>
     </div>
 </section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const MAX_ITEMS = <?= $items_per_page ?>;
+        let expanded = false;
+
+        const galleryItems = Array.from(document.querySelectorAll('.gallery-item'));
+        const showMoreBtn = document.getElementById('showMoreBtn');
+        const showMoreText = showMoreBtn ? showMoreBtn.querySelector('span') : null;
+
+        // Pisahkan item yang akan di-toggle
+        const extraItems = galleryItems.slice(MAX_ITEMS);
+
+        // Initialize - sembunyikan extra items
+        if (showMoreBtn) {
+            extraItems.forEach(item => item.classList.add('hidden'));
+            
+            function updateButtonLabel() {
+                showMoreText.textContent = expanded ? 
+                    'Tampilkan Lebih Sedikit' : 
+                    'Tampilkan Lainnya';
+            }
+
+            function toggleShow() {
+                expanded = !expanded;
+
+                // Toggle visibility extra items
+                extraItems.forEach(item => {
+                    if (item.style.display !== 'none') {
+                        item.classList.toggle('hidden', !expanded);
+                    }
+                });
+
+                // Scroll ke tombol saat collapse
+                if (!expanded) {
+                    showMoreBtn.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'center'
+                    });
+                }
+
+                updateButtonLabel();
+            }
+
+            showMoreBtn.addEventListener('click', toggleShow);
+            updateButtonLabel();
+        }
+    });
+</script>
 
 <?php
 include '../src/includes/footer.php';

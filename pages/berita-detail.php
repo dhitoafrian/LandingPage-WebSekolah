@@ -240,8 +240,8 @@ if (!empty($sidebar_search)) {
             <nav class="flex" aria-label="Breadcrumb">
                 <ol class="inline-flex items-center space-x-1 md:space-x-3">
                     <li class="inline-flex items-center">
-                        <a href="../index.php" class="text-gray-600 hover:text-blue-600 transition">
-                            <i class="fas fa-home mr-2"></i>Home
+                        <a href="/Template-WebSekolah/src/index.php" class="text-gray-600 hover:text-blue-600 transition">
+                            <i class="fas fa-home mr-2"></i>Beranda
                         </a>
                     </li>
                     <li>

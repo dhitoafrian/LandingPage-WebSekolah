@@ -272,7 +272,7 @@ $other_articles = array_filter($all_articles, function ($item) use ($id) {
             <nav class="flex" aria-label="Breadcrumb">
                 <ol class="inline-flex items-center space-x-1 md:space-x-3">
                     <li class="inline-flex items-center">
-                        <a href="../index.php" class="text-gray-600 hover:text-blue-600 transition">
+                        <a href="/Template-WebSekolah/src/index.php" class="text-gray-600 hover:text-blue-600 transition">
                             <i class="fas fa-home mr-2"></i>Home
                         </a>
                     </li>

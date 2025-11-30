@@ -3,10 +3,6 @@ $page_title = "Beranda";
 include 'includes/header.php';
 ?>
 
-<style>
- 
-</style>
-
 <!-- ================= START BANNER SWIPER SECTION ================= -->
 <section id="hero" class="relative w-full overflow-hidden">
     <div class="swiper-banner heroSwiper">
@@ -112,7 +108,7 @@ include 'includes/header.php';
                 </div>
 
                 <h3 class="text-gray-900 text-2xl font-bold mb-1">Fitri Sari Sukmawati, M.Pd</h3>
-                <p class="text-gray-500 text-sm mb-4">SMA Muhammadiyah 3 Yogyakarta</p>
+                <p class="text-gray-500 text-sm mb-4">SMK Negeri Indoensia</p>
 
                 <div class="bg-gray-50 rounded-lg p-4 mb-6 border border-gray-200">
                     <p class="text-gray-700 text-sm leading-relaxed line-clamp-4 text-justify">
@@ -172,7 +168,7 @@ include 'includes/header.php';
                                 </div>
                                 <h4 class="text-white text-xl font-bold mb-2">Fasilitas Lengkap</h4>
                                 <p class="text-white/90 text-sm mb-4">Lab Komputer, Studio & Lebih</p>
-                                <button class="px-6 py-2.5 bg-white text-blue -600 rounded-lg text-sm font-semibold hover:bg-gray-100 transition shadow-lg pointer-events-auto">
+                                <button class="px-6 py-2.5 bg-white text-blue-600 rounded-lg text-sm font-semibold hover:bg-gray-100 transition shadow-lg pointer-events-auto">
                                     Lihat Fasilitas →
                                 </button>
                             </div>
@@ -189,7 +185,7 @@ include 'includes/header.php';
 <section id="stats-section" class="py-16 px-4 bg-[url('/Template-WebSekolah/assets/images/desktop.jpg')] bg-cover bg-center">
     <div class="max-w-7xl mx-auto">
         <h2 class="text-2xl md:text-3xl font-bold text-white text-center mb-12">
-            Smartschool Sistem SMA Muhammadiyah 3 Yogyakarta
+            Smartschool Sistem SMK Negeri Indoensia
         </h2>
 
         <div class="bg-cover bg-center bg-[url('/Template-WebSekolah/assets/images/desktop.jpg')] rounded-2xl shadow-xl p-6 md:p-8">
@@ -228,7 +224,7 @@ include 'includes/header.php';
                 <span class="inline-block">─ ──</span> Infografis
             </h2>
             <h3 class="text-2xl md:text-3xl font-bold text-gray-800 mb-2">Prestasi</h3>
-            <p class="text-gray-600 text-lg">Prestasi Sekolah dan Siswa SMA Muhammadiyah 3 Yogyakarta</p>
+            <p class="text-gray-600 text-lg">Prestasi Sekolah dan Siswa SMK Negeri Indoensia</p>
         </div>
 
         <!-- Swiper Slider -->
@@ -507,14 +503,14 @@ include 'includes/header.php';
         </div>
     </div>
 </section>
-<!-- ================= START BERITA & ARTIKEL ================= -->
+<!-- ================= END BERITA & ARTIKEL ================= -->
 
 <!-- ================= START PRESENSI REALTIME CTA ================= -->
 <section class="py-16 px-4 bg-[url('/Template-WebSekolah/assets/images/desktop.jpg')] bg-cover bg-center">
     <div class="max-w-7xl mx-auto">
         <!-- Section Title -->
         <h6 class="text-2xl md:text-3xl font-bold text-white text-center mb-12">
-            ─ ── SMA Muhammadiyah 3 Yogyakarta Menerapkan Digitalisasi Sekolah
+            ─ ── SMK Negeri Indoensia Menerapkan Digitalisasi Sekolah
         </h6>
 
         <h4 class="text-base md:text-2xl font-bold text-white text-center mb-12">
@@ -575,7 +571,7 @@ include 'includes/header.php';
                         <!-- Slide 1 -->
                         <div class="swiper-slide galeri-slide">
                             <div class="overflow-hidden rounded-2xl shadow-lg">
-                                <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=600&h=400&fit=cropv"
+                                <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=600&h=400&fit=crop"
                                     alt="Galeri 1"
                                     class="w-full h-64 object-cover">
                             </div>
@@ -635,187 +631,6 @@ include 'includes/header.php';
 <!-- ================= END GALERI FOTO ================= -->
 
 <!-- ================= START VIDEO SECTION ================= -->
-<div id="videoModal" class="modal">
-    <div class="modal-content">
-        <div class="modal-close" onclick="closeModal()">×</div>
-        <div class="aspect-video">
-            <iframe id="youtubePlayer"
-                width="100%"
-                height="100%"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen>
-            </iframe>
-        </div>
-    </div>
-</div>
-
-<section class="py-16 px-4">
-    <div class="max-w-7xl mx-auto">
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-
-            <!-- KIRI: Video Section (2 kolom) -->
-            <div class="lg:col-span-2">
-                <!-- Header -->
-                <div class="mb-8">
-                    <p class="text-blue-600 font-semibold text-lg mb-2">─ ── Video Terbaru</p>
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Video Seputar Sekolah</h2>
-                </div>
-
-                <!-- Video Besar -->
-                <div class="mb-6">
-                    <div class="video-thumbnail" onclick="openModal('dQw4w9WgXcQ')">
-                        <img src="https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg"
-                            alt="Video Utama"
-                            class="w-full h-full object-cover">
-                        <div class="play-button"></div>
-                    </div>
-                </div>
-
-                <!-- Swiper Video Kecil -->
-                <div class="swiper video-swiper">
-                    <div class="swiper-wrapper">
-                        <!-- Video 1 -->
-                        <div class="swiper-slide">
-                            <div class="video-thumbnail" onclick="openModal('jNQXAC9IVRw')">
-                                <img src="https://img.youtube.com/vi/jNQXAC9IVRw/hqdefault.jpg"
-                                    alt="Video 1"
-                                    class="w-full h-full object-cover">
-                                <div class="play-button" style="width: 50px; height: 50px;">
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Video 2 -->
-                        <div class="swiper-slide">
-                            <div class="video-thumbnail" onclick="openModal('9bZkp7q19f0')">
-                                <img src="https://img.youtube.com/vi/9bZkp7q19f0/hqdefault.jpg"
-                                    alt="Video 2"
-                                    class="w-full h-full object-cover">
-                                <div class="play-button" style="width: 50px; height: 50px;">
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Video 3 -->
-                        <div class="swiper-slide">
-                            <div class="video-thumbnail" onclick="openModal('L_jWHffIx5E')">
-                                <img src="https://img.youtube.com/vi/L_jWHffIx5E/hqdefault.jpg"
-                                    alt="Video 3"
-                                    class="w-full h-full object-cover">
-                                <div class="play-button" style="width: 50px; height: 50px;">
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Video 4 -->
-                        <div class="swiper-slide">
-                            <div class="video-thumbnail" onclick="openModal('kJQP7kiw5Fk')">
-                                <img src="https://img.youtube.com/vi/kJQP7kiw5Fk/hqdefault.jpg"
-                                    alt="Video 4"
-                                    class="w-full h-full object-cover">
-                                <div class="play-button" style="width: 50px; height: 50px;">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- KANAN: Agenda Section (1 kolom) -->
-            <div>
-                <!-- Header -->
-                <div class="mb-8">
-                    <p class="text-blue-600 font-semibold text-lg mb-2">─ ── Informasi</p>
-                    <h2 class="text-2xl md:text-3xl font-bold text-gray-800">PENGUMUMAN & AGENDA</h2>
-                </div>
-
-                <!-- Agenda Cards -->
-                <div class="space-y-4 mb-6">
-                    <!-- Card 1 -->
-                    <a href="/agenda/asesmen-sekolah" class="agenda-card block bg-white rounded-xl p-5 shadow-md">
-                        <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                                <i class="fa-solid fa-calendar-days "></i>
-                            </div>
-                            <div>
-                                <p class="text-blue-600 text-sm font-semibold mb-1">Agenda</p>
-                                <h3 class="text-gray-800 font-bold text-base leading-tight">Asesmen Sekolah Tahun 2025</h3>
-                            </div>
-                        </div>
-                    </a>
-
-                    <!-- Card 2 -->
-                    <a href="/agenda/ujian-praktik" class="agenda-card block bg-white rounded-xl p-5 shadow-md">
-                        <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                                <i class="fa-solid fa-calendar-days "></i>
-                            </div>
-                            <div>
-                                <p class="text-blue-600 text-sm font-semibold mb-1">Agenda</p>
-                                <h3 class="text-gray-800 font-bold text-base leading-tight">Ujian Praktik Kelas XII Tahun 2024/2025</h3>
-                            </div>
-                        </div>
-                    </a>
-
-                    <!-- Card 3 -->
-                    <a href="/agenda/sumatif-tengah-semester" class="agenda-card block bg-white rounded-xl p-5 shadow-md">
-                        <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                                <i class="fa-solid fa-calendar-days "></i>
-                            </div>
-                            <div>
-                                <p class="text-blue-600 text-sm font-semibold mb-1">Agenda</p>
-                                <h3 class="text-gray-800 font-bold text-base leading-tight">Sumatif Tengah Semester Genap 2024/2025</h3>
-                            </div>
-                        </div>
-                    </a>
-
-                    <!-- Card 4 -->
-                    <a href="/agenda/seminar-pendidikan" class="agenda-card block bg-white rounded-xl p-5 shadow-md">
-                        <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                                <i class="fa-solid fa-calendar-days "></i>
-                            </div>
-                            <div>
-                                <p class="text-blue-600 text-sm font-semibold mb-1">Agenda</p>
-                                <h3 class="text-gray-800 font-bold text-base leading-tight">Seminar Pendidikan Tinggi dan Beasiswa Taiwan</h3>
-                            </div>
-                        </div>
-                    </a>
-
-                    <!-- Card 5 -->
-                    <a href="/agenda/delegasi-turkiye" class="agenda-card block bg-white rounded-xl p-5 shadow-md">
-                        <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                                <i class="fa-solid fa-calendar-days "></i>
-                            </div>
-                            <div>
-                                <p class="text-blue-600 text-sm font-semibold mb-1">Agenda</p>
-                                <h3 class="text-gray-800 font-bold text-base leading-tight">Delegasi International ke Turkiye</h3>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-
-                <!-- Buttons -->
-                <div class="flex flex-row flex-wrap justify-center items-center gap-3">
-                    <a href="/Template-WebSekolah/pages/agenda.php" class="glow-button overflow-hidden bg-blue-600 hover:bg-blue-700 text-white px-4 py-3 lg:px-6 lg:py-2 rounded-full font-semibold">
-                        <span class="relative z-10">Semua Agenda</span>
-                    </a>
-
-                    <a href="/Template-WebSekolah/pages/pengumuman.php" class="glow-button overflow-hidden bg-blue-600 hover:bg-blue-700 text-white px-4 py-3 lg:px-6 lg:py-2 rounded-full font-semibold">
-                        <span class="relative z-10">Semua Pengumuman</span>
-                    </a>
-                </div>
-
-            </div>
-
-        </div>
-    </div>
-</section>
-
-
 <!-- ================= END VIDEO SECTION ================= -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="/Template-WebSekolah/assets/js/main.js"></script>

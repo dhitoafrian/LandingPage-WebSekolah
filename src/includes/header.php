@@ -260,7 +260,7 @@
                     <div class="mobile-dropdown-content max-h-0 overflow-hidden transition-all duration-300">
                         <div class="pl-4 pt-2 space-y-1 border-l-2 border-blue-200 ml-6">
                             <a href="/Template-WebSekolah/pages/kurikulum.php" class="block px-4 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg">Kurikulum</a>
-                            <a href="/Template-WebSekolah/pages/programunggulan.php" class="block px-4 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg">Program Unggulan</a>
+                            <a href="/Template-WebSekolah/pages/program-unggulan.php" class="block px-4 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg">Program Unggulan</a>
                             <a href="/Template-WebSekolah/pages/ekstrakurikuler.php" class="block px-4 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg">Ekstrakurikuler</a>
                         </div>
                     </div>

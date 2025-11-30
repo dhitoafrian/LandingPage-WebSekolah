@@ -367,7 +367,7 @@ include '../src/includes/header.php';
         </div>
 
         <!-- Agreement Section -->
-        <div class="max-w-5xl mx-auto mt-12 bg-gradient-to-r from-blue-600 to-blue-700 rounded-xl shadow-lg p-8 text-white">
+        <div class="max-w-5xl mx-auto mt-12 bg-gradient-to-r from-blue-600 to-blue-700 rounded-xl shadow-lg p-4 md:p-8 text-white">
             <div class="flex items-start gap-4">
                 <div class="bg-white/20 p-4 rounded-lg">
                     <i class="fas fa-check-circle text-4xl"></i>

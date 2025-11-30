@@ -216,7 +216,7 @@ $articles = [
         <!-- Breadcrumb -->
         <div class="text-white/80 text-sm mb-6">
             <i class="fas fa-home mr-2"></i>
-            <a href="/" class="hover:text-white transition">Beranda</a>
+            <a href="/Template-WebSekolah/src/index.php" class="hover:text-white transition">Beranda</a>
             <span class="mx-2">/</span>
             <span class="text-white font-medium">Artikel & Jurnal</span>
         </div>
@@ -400,9 +400,9 @@ $articles = [
             showMoreText.textContent = isShowingAll ? 'Tampilkan Lebih Sedikit' : 'Tampilkan Lainnya';
 
             if (!isShowingAll) {
-                window.scrollTo({
-                    top: document.getElementById('artikelContainer').offsetTop - 100,
-                    behavior: 'smooth'
+                showMoreBtn.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center'
                 });
             }
         }

@@ -36,13 +36,29 @@ if (!$item) {
 
 <section class="py-16 px-4 bg-gray-50">
     <div class="max-w-5xl mx-auto">
-        <a href="gallery.php" class="inline-flex items-center text-blue-600 hover:text-blue-700 mb-8 transition-colors">
-            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-            </svg>
-            Kembali ke Galeri
-        </a>
-
+        <div class="mb-6">
+            <nav class="flex" aria-label="Breadcrumb">
+                <ol class="inline-flex items-center space-x-1 md:space-x-3">
+                    <li class="inline-flex items-center">
+                        <a href="/Template-WebSekolah/src/index.php" class="text-gray-600 hover:text-blue-600 transition">
+                            <i class="fas fa-home mr-2"></i>Beranda
+                        </a>
+                    </li>
+                    <li>
+                        <div class="flex items-center">
+                            <span class="mx-2 text-gray-400">/</span>
+                            <a href="galeri.php" class="text-gray-600 hover:text-blue-600 transition">Galeri</a>
+                        </div>
+                    </li>
+                    <li aria-current="page">
+                        <div class="flex items-center">
+                            <span class="mx-2 text-gray-400">/</span>
+                            <span class="text-gray-500">Detail</span>
+                        </div>
+                    </li>
+                </ol>
+            </nav>
+        </div>
         <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
             <div class="relative h-96 md:h-[500px] bg-gray-200">
                 <img src="<?= $item['image'] ?>" alt="<?= $item['title'] ?>" class="w-full h-full object-cover">

@@ -52,7 +52,7 @@ include '../src/includes/header.php';
         <!-- Breadcrumb -->
         <div class="text-white/80 text-sm mb-6">
             <i class="fas fa-home mr-2"></i>
-            <a href="/template-websekolah/src/index.php" class="hover:text-white transition">Beranda</a>
+            <a href="/Template-WebSekolah/src/index.php" class="hover:text-white transition">Beranda</a>
             <span class="mx-2">/</span>
             <span class="text-white font-medium">Ekstrakurikuler</span>
         </div>
