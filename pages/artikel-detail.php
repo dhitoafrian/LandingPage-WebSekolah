@@ -179,12 +179,6 @@ $other_articles = array_filter($all_articles, function ($item) use ($id) {
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
-
-    * {
-        font-family: 'Inter', sans-serif;
-    }
-
     .line-clamp-2 {
         display: -webkit-box;
         -webkit-line-clamp: 2;

@@ -18,28 +18,6 @@ $gallery_items = [
 $items_per_page = 6; // Item yang ditampilkan pertama kali
 ?>
 
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
-
-    * {
-        font-family: 'Inter', sans-serif;
-    }
-
-    .hero-gradient {
-        background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
-    }
-    
-    /* Style untuk tombol */
-    .glow-button {
-        transition: all 0.3s ease;
-    }
-    
-    .glow-button:hover {
-        box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
-        transform: translateY(-2px);
-    }
-</style>
-
 <!-- Hero Section -->
 <div class="hero-gradient relative overflow-hidden">
     <div class="absolute inset-0 bg-black opacity-10"></div>

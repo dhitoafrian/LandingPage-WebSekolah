@@ -111,16 +111,6 @@ $articles = [
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
-
-    * {
-        font-family: 'Inter', sans-serif;
-    }
-
-    .hero-gradient {
-        background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
-    }
-
     .artikel-card {
         transition: all 0.3s ease;
         border: 1px solid #e5e7eb;

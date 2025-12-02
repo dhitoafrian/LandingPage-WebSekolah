@@ -127,18 +127,6 @@ $total_items = count($filtered_berita);
 ?>
 
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-
-    * {
-        font-family: 'Inter', sans-serif;
-    }
-
-    .hero-gradient {
-        background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
-        position: relative;
-        overflow: hidden;
-    }
-
     .hero-gradient::before {
         content: '';
         position: absolute;

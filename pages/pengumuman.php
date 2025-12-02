@@ -17,38 +17,21 @@ $announcements = [
 ?>
 
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
-
-    * {
-        font-family: 'Inter', sans-serif;
-    }
-
-    /* Warna biru utama untuk tema */
-    .hero-gradient {
-        background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
-    }
-
-    /* Card dengan border sederhana dan efek hover */
     .pengumuman-card {
         transition: all 0.3s ease;
         border: 1px solid #e5e7eb;
-        /* gray-200 */
     }
 
     .pengumuman-card:hover {
         border-color: #1e3a8a;
-        /* blue-500 */
         box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
         transform: translateY(-2px);
     }
 
-    /* Hover biru untuk judul */
     .title-hover-blue:hover {
         color: #1e3a8a;
-        /* blue-500 */
     }
 
-    /* Utilitas untuk membatasi baris deskripsi (Opsional, untuk konsistensi) */
     .line-clamp-2 {
         display: -webkit-box;
         -webkit-line-clamp: 2;

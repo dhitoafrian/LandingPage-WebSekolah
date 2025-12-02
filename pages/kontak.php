@@ -31,16 +31,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 ?>
 
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-
-    * {
-        font-family: 'Inter', sans-serif;
-    }
-
-    .hero-gradient {
-        background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
-    }
-
     .contact-card {
         transition: all 0.3s ease;
     }
