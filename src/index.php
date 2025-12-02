@@ -216,81 +216,184 @@ include 'includes/header.php';
 <!-- ================= END SMARTSCHOOL STATISTICS ================= -->
 
 <!-- ================= START PRESTASI INFOGRAPHIC ================= -->
-<section class="py-16 px-4">
+<section class="py-16 px-4 bg-gradient-to-b from-white to-blue-50">
     <div class="max-w-7xl mx-auto">
-        <!-- Header Text - Center -->
+
+        <!-- Header Text - Upgraded -->
         <div class="text-center mb-12">
-            <h2 class="text-3xl md:text-4xl font-bold text-blue-600 mb-3">
-                <span class="inline-block">─ ──</span> Infografis
+            <!-- Badge -->
+            <div class="inline-flex items-center gap-3 bg-blue-100 px-6 py-2 rounded-full mb-4 shadow-sm">
+                <i class="fas fa-trophy text-blue-600 text-lg"></i>
+                <span class="text-blue-700 font-semibold">Prestasi Terbaik Kami</span>
+            </div>
+
+            <!-- Main Title -->
+            <h2 class="text-3xl md:text-5xl font-bold text-gray-800 mb-3">
+                Infografis <span class="text-blue-600">Prestasi</span>
             </h2>
-            <h3 class="text-2xl md:text-3xl font-bold text-gray-800 mb-2">Prestasi</h3>
-            <p class="text-gray-600 text-lg">Prestasi Sekolah dan Siswa SMK Negeri Indoensia</p>
+
+            <!-- Description -->
+            <p class="text-gray-600 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
+                Berbagai pencapaian membanggakan yang telah diraih oleh siswa-siswi SMK Negeri Indonesia di tingkat lokal, nasional, hingga internasional
+            </p>
         </div>
 
         <!-- Swiper Slider -->
         <div class="swiper prestasi-swiper">
             <div class="swiper-wrapper">
-                <!-- Slide 1 -->
+
+                <!-- Slide 1 - Nasional -->
                 <div class="swiper-slide">
                     <div class="infografis-card">
+                        <!-- Badge Kategori -->
+                        <div class="absolute top-4 right-4 z-10">
+                            <span class="bg-yellow-400 text-yellow-900 px-3 py-1.5 rounded-full text-xs font-bold shadow-lg">
+                                🥇 Nasional
+                            </span>
+                        </div>
+
                         <div class="photo-card">
                             <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=600&h=800&fit=crop"
-                                alt="Prestasi 1">
+                                alt="Lomba Robotik Nasional">
                             <div class="slash-info"></div>
+
+                            <!-- Info Overlay -->
+                            <div class="card-info">
+                                <span class="text-xs text-blue-300 font-semibold uppercase tracking-wide">Teknologi</span>
+                                <h4 class="text-white font-bold text-lg mt-1 mb-1">Juara 1 Lomba Robotik Nasional</h4>
+                                <p class="text-white/90 text-sm flex items-center gap-2">
+                                    <i class="fas fa-map-marker-alt text-xs"></i>
+                                    Jakarta, Desember 2024
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Slide 2 -->
+                <!-- Slide 2 - Internasional -->
                 <div class="swiper-slide">
                     <div class="infografis-card">
+                        <div class="absolute top-4 right-4 z-10">
+                            <span class="bg-red-500 text-white px-3 py-1.5 rounded-full text-xs font-bold shadow-lg">
+                                🌍 Internasional
+                            </span>
+                        </div>
+
                         <div class="photo-card">
                             <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600&h=800&fit=crop"
-                                alt="Prestasi 2">
+                                alt="Olimpiade Matematika">
                             <div class="slash-info"></div>
+
+                            <div class="card-info">
+                                <span class="text-xs text-blue-300 font-semibold uppercase tracking-wide">Akademik</span>
+                                <h4 class="text-white font-bold text-lg mt-1 mb-1">Medali Perak Olimpiade Matematika</h4>
+                                <p class="text-white/90 text-sm flex items-center gap-2">
+                                    <i class="fas fa-map-marker-alt text-xs"></i>
+                                    Singapore, November 2024
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Slide 3 -->
+                <!-- Slide 3 - Lokal -->
                 <div class="swiper-slide">
                     <div class="infografis-card">
+                        <div class="absolute top-4 right-4 z-10">
+                            <span class="bg-green-500 text-white px-3 py-1.5 rounded-full text-xs font-bold shadow-lg">
+                                📍 Lokal
+                            </span>
+                        </div>
+
                         <div class="photo-card">
                             <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=600&h=800&fit=crop"
-                                alt="Prestasi 3">
+                                alt="Lomba Debat">
                             <div class="slash-info"></div>
+
+                            <div class="card-info">
+                                <span class="text-xs text-blue-300 font-semibold uppercase tracking-wide">Bahasa</span>
+                                <h4 class="text-white font-bold text-lg mt-1 mb-1">Juara 1 Lomba Debat Bahasa Inggris</h4>
+                                <p class="text-white/90 text-sm flex items-center gap-2">
+                                    <i class="fas fa-map-marker-alt text-xs"></i>
+                                    Yogyakarta, Oktober 2024
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Slide 4 -->
+                <!-- Slide 4 - Nasional -->
                 <div class="swiper-slide">
                     <div class="infografis-card">
+                        <div class="absolute top-4 right-4 z-10">
+                            <span class="bg-yellow-400 text-yellow-900 px-3 py-1.5 rounded-full text-xs font-bold shadow-lg">
+                                🥇 Nasional
+                            </span>
+                        </div>
+
                         <div class="photo-card">
                             <img src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=600&h=800&fit=crop"
-                                alt="Prestasi 4">
+                                alt="Lomba Karya Ilmiah">
                             <div class="slash-info"></div>
+
+                            <div class="card-info">
+                                <span class="text-xs text-blue-300 font-semibold uppercase tracking-wide">Sains</span>
+                                <h4 class="text-white font-bold text-lg mt-1 mb-1">Juara 2 Lomba Karya Ilmiah Remaja</h4>
+                                <p class="text-white/90 text-sm flex items-center gap-2">
+                                    <i class="fas fa-map-marker-alt text-xs"></i>
+                                    Bandung, September 2024
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Slide 5 -->
+                <!-- Slide 5 - Lokal -->
                 <div class="swiper-slide">
                     <div class="infografis-card">
+                        <div class="absolute top-4 right-4 z-10">
+                            <span class="bg-green-500 text-white px-3 py-1.5 rounded-full text-xs font-bold shadow-lg">
+                                📍 Lokal
+                            </span>
+                        </div>
+
                         <div class="photo-card">
                             <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=600&h=800&fit=crop"
-                                alt="Prestasi 5">
+                                alt="Lomba Desain">
                             <div class="slash-info"></div>
+
+                            <div class="card-info">
+                                <span class="text-xs text-blue-300 font-semibold uppercase tracking-wide">Seni & Desain</span>
+                                <h4 class="text-white font-bold text-lg mt-1 mb-1">Juara 1 Lomba Desain Grafis</h4>
+                                <p class="text-white/90 text-sm flex items-center gap-2">
+                                    <i class="fas fa-map-marker-alt text-xs"></i>
+                                    Semarang, Agustus 2024
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
+
             </div>
 
-            <!-- Navigation buttons -->
+            <!-- Navigation buttons - Desktop only -->
             <div class="hidden md:flex swiper-button-next"></div>
             <div class="hidden md:flex swiper-button-prev"></div>
 
+            <!-- Pagination - Mobile & Desktop -->
+            <div class="swiper-pagination mt-8"></div>
         </div>
+
+        <!-- CTA Button -->
+        <div class="text-center mt-12">
+            <a href="/Template-WebSekolah/pages/prestasi.php">
+                <button class="glow-button -flex items-center gap-3 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold px-8 py-4 rounded-full transition-all shadow-lg hover:shadow-xl transform hover:scale-105">
+                    <span>Lihat Semua Prestasi</span>
+                    <i class="fas fa-arrow-right text-sm"></i>
+                </button>
+            </a>
+        </div>
+
     </div>
 </section>
 <!-- ================= END PRESTASI INFOGRAPHIC ================= -->

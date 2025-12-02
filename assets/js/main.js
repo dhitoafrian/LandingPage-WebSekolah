@@ -23,7 +23,6 @@ document.addEventListener("DOMContentLoaded", function () {
     },
   });
 
-
   // ========================================
   // S2: PPDB SLIDER
   // ========================================
@@ -75,9 +74,9 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-  // ========================================
-  // S2: SMARTSCHOOL
-  // ========================================
+// ========================================
+// S2: SMARTSCHOOL
+// ========================================
 function animateCounter(element, target, duration = 2000) {
   let start = 0;
   const increment = target / (duration / 16);
@@ -127,34 +126,38 @@ const statsObserver = new IntersectionObserver((entries) => {
 }, observerOptions);
 
 document.addEventListener("DOMContentLoaded", () => {
-  const statsSection = document.querySelector(
-    "#stats-section"
-  );
+  const statsSection = document.querySelector("#stats-section");
   if (statsSection) {
     statsObserver.observe(statsSection);
   }
 });
 
-  // ========================================
-  // S2: INFOGRAFIS
-  // ========================================
+// ========================================
+// S2: INFOGRAFIS
+// ========================================
 const swiperPrestasi = new Swiper(".prestasi-swiper", {
   slidesPerView: 1,
   spaceBetween: 20,
   loop: true,
   autoplay: {
-    delay: 3000,
+    delay: 4000,
     disableOnInteraction: false,
+    pauseOnMouseEnter: true,
   },
   pagination: {
     el: ".swiper-pagination",
     clickable: true,
+    dynamicBullets: true,
   },
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
   },
   breakpoints: {
+    640: {
+      slidesPerView: 1.5,
+      spaceBetween: 20,
+    },
     768: {
       slidesPerView: 2,
       spaceBetween: 30,
@@ -166,9 +169,9 @@ const swiperPrestasi = new Swiper(".prestasi-swiper", {
   },
 });
 
-  // ========================================
-  // S2: BERITA
-  // ========================================
+// ========================================
+// S2: BERITA
+// ========================================
 const swiperBerita = new Swiper(".swiper-hero", {
   loop: true,
   freeMode: {

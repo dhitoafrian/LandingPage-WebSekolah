@@ -309,7 +309,6 @@ html {
 
 /* ================= END INDEX (HERO-BANNER) ================= */
 
-
 /* ================= START INDEX (PPDB) ================= */
 .slider-ppdb-wrapper {
   position: relative;
@@ -424,26 +423,6 @@ html {
 /* ================= END INDEX (PPDB) ================= */
 
 /* ================= START INDEX (INFOGRAFIS) ================= */
-.photo-card {
-  position: relative;
-  overflow: hidden;
-  border-radius: 1rem;
-}
-
-.photo-card img {
-  position: relative;
-  overflow: hidden;
-}
-
-.swiper-button-next,
-.swiper-button-prev {
-  color: #3b82f6 !important;
-}
-
-.swiper-pagination-bullet-active {
-  background: #3b82f6 !important;
-}
-
 .infografis-card {
   background: white;
   border-radius: 1rem;
@@ -454,19 +433,60 @@ html {
   height: 100%;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .infografis-card:hover {
-  box-shadow: 0 20px 25px -5px rgba(59, 130, 246, 0.15),
-    0 10px 10px -5px rgba(59, 130, 246, 0.08);
+  box-shadow: 0 20px 25px -5px rgba(59, 130, 246, 0.2),
+    0 10px 10px -5px rgba(59, 130, 246, 0.1);
+  transform: translateY(-5px);
 }
 
-.infografis-card img {
+/* Photo Card */
+.photo-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
+}
+
+.photo-card img {
   width: 100%;
   height: 384px;
   object-fit: cover;
+  transition: transform 0.5s ease;
 }
 
+.infografis-card:hover .photo-card img {
+  transform: scale(1.08);
+}
+
+/* Info Overlay - Gradient Bottom */
+.card-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.9) 0%,
+    rgba(0, 0, 0, 0.7) 50%,
+    transparent 100%
+  );
+  padding: 1.5rem;
+  transform: translateY(0);
+  transition: all 0.3s ease;
+}
+
+.infografis-card:hover .card-info {
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.95) 0%,
+    rgba(0, 0, 0, 0.8) 60%,
+    transparent 100%
+  );
+}
+
+/* Slash Animation Effect */
 .slash-info {
   position: absolute;
   inset: 0;
@@ -479,6 +499,7 @@ html {
   );
   width: 50%;
   pointer-events: none;
+  z-index: 5;
 }
 
 .infografis-card:hover .slash-info {
@@ -493,8 +514,62 @@ html {
     transform: translateX(300%) skewX(-20deg);
   }
 }
-/* ================= END INDEX (INFOGRAFIS) ================= */
 
+/* Swiper Navigation */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #3b82f6 !important;
+  background: white;
+  width: 48px !important;
+  height: 48px !important;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-size: 20px !important;
+  font-weight: bold;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background: #3b82f6;
+  color: white !important;
+  transform: scale(1.1);
+}
+
+/* Swiper Pagination */
+.swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background: #cbd5e1;
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+.swiper-pagination-bullet-active {
+  background: #3b82f6 !important;
+  width: 32px;
+  border-radius: 6px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 767px) {
+  .infografis-card img {
+    height: 320px;
+  }
+
+  .card-info h4 {
+    font-size: 1rem;
+  }
+
+  .card-info p {
+    font-size: 0.813rem;
+  }
+}
+/* ================= END INDEX (INFOGRAFIS) ================= */
 
 /* ================= START INDEX (BERITA & ARTIKEL) ================= */
 .swiper-hero {
@@ -585,4 +660,3 @@ html {
   color: #1d4ed8;
 }
 /* ================= END INDEX (GALERI) ================= */
-
