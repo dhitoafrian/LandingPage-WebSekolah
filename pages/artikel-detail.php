@@ -248,21 +248,6 @@ $other_articles = array_filter($all_articles, function ($item) use ($id) {
         color: #3730a3;
     }
 
-    /* Swiper Navigation */
-    .artikelSwiper .swiper-button-next,
-    .artikelSwiper .swiper-button-prev {
-        color: #3b82f6;
-        background: white;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    }
-
-    .artikelSwiper .swiper-button-next:after,
-    .artikelSwiper .swiper-button-prev:after {
-        font-size: 20px;
-    }
 </style>
 
 <section class="py-12 bg-gray-100 min-h-screen">
@@ -273,7 +258,7 @@ $other_articles = array_filter($all_articles, function ($item) use ($id) {
                 <ol class="inline-flex items-center space-x-1 md:space-x-3">
                     <li class="inline-flex items-center">
                         <a href="/Template-WebSekolah/src/index.php" class="text-gray-600 hover:text-blue-600 transition">
-                            <i class="fas fa-home mr-2"></i>Home
+                            <i class="fas fa-home mr-2"></i>Beranda
                         </a>
                     </li>
                     <li>
@@ -527,9 +512,6 @@ $other_articles = array_filter($all_articles, function ($item) use ($id) {
                         <?php endforeach; ?>
                     </div>
 
-                    <!-- Navigation -->
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
                 </div>
             </div>
         <?php endif; ?>
@@ -545,10 +527,6 @@ $other_articles = array_filter($all_articles, function ($item) use ($id) {
         autoplay: {
             delay: 3000,
             disableOnInteraction: false,
-        },
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
         },
         breakpoints: {
             640: {

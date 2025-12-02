@@ -27,16 +27,15 @@ function toggleMobileDropdown(button) {
   const content = dropdown.querySelector(".mobile-dropdown-content");
   const icon = button.querySelector(".fa-chevron-down");
 
-  // Close other dropdowns & remove active style
   document.querySelectorAll(".mobile-dropdown").forEach((other) => {
     if (other !== dropdown) {
-      const otherButton = other.querySelector("button"); // Dapatkan tombol dropdown lain
+      const otherButton = other.querySelector("button"); 
       const otherContent = other.querySelector(".mobile-dropdown-content");
       const otherIcon = other.querySelector(".fa-chevron-down");
 
       // Hapus style aktif/focus
       otherButton.classList.remove("text-blue-600", "bg-blue-50");
-      otherButton.classList.add("text-gray-700"); // Kembalikan ke warna default
+      otherButton.classList.add("text-gray-700"); 
 
       // Tutup konten
       otherContent.style.maxHeight = "0";
@@ -50,17 +49,14 @@ function toggleMobileDropdown(button) {
     content.style.maxHeight = "0";
     icon.style.transform = "rotate(0deg)";
 
-    // Hapus style aktif/focus pada tombol
     button.classList.remove("text-blue-600", "bg-blue-50");
     button.classList.add("text-gray-700");
   } else {
-    // SEDANG TERTUTUP -> BUKA
     content.style.maxHeight = content.scrollHeight + "px";
     icon.style.transform = "rotate(180deg)";
 
-    // Tambahkan style aktif/focus pada tombol
-    button.classList.remove("text-gray-700"); // Hapus warna default
-    button.classList.add("text-blue-600", "bg-blue-50"); // Tambahkan warna aktif
+    button.classList.remove("text-gray-700"); 
+    button.classList.add("text-blue-600", "bg-blue-50");
   }
 }
 // Sticky Navbar
@@ -73,12 +69,10 @@ window.addEventListener("scroll", function () {
   }
 });
 
-// Solusi tambahan untuk mencegah gap pada dropdown desktop
 document.addEventListener("DOMContentLoaded", function () {
   const dropdowns = document.querySelectorAll(".nav-item");
 
   dropdowns.forEach((dropdown) => {
-    // Tambahkan event listener untuk mouseenter dan mouseleave
     dropdown.addEventListener("mouseenter", function () {
       this.classList.add("hovering");
     });
@@ -93,12 +87,10 @@ function handleResize() {
   const width = window.innerWidth;
 
   if (width >= 640) {
-    //tutup sidebar jika terbuka
     if (!sidebar.classList.contains("-translate-x-full")) {
       toggleSidebar();
     }
 
-    //tutuo semua dropdown mobile
     document.querySelectorAll(".mobile-dropdown-content").forEach((content) => {
       content.style.maxHeight = "0";
     });
@@ -111,10 +103,8 @@ function handleResize() {
   }
 }
 
-//panggil saat resize
 window.addEventListener("resize", handleResize);
 
-//panggil sekali saat load untuk pastikan state konsisten
 window.addEventListener("load", handleResize);
 
 const desktopLangDropdown = document.getElementById("desktopLangDropdown");
@@ -132,18 +122,15 @@ desktopLangDropdown.addEventListener("mouseleave", () => {
   desktopMenu.style.transform = "translateY(10px)";
 });
 
-// FUNGSI UTAMA: MENGATUR PEMILIHAN BAHASA (DESKTOP DAN MOBILE)
 function handleLanguageSelection(targetButton) {
   const lang = targetButton.getAttribute("data-lang");
   const flagCode = targetButton.getAttribute("data-flag");
   const flagUrl = `https://flagsapi.com/${flagCode}/flat/24.png`;
   const langText = targetButton.textContent.trim();
 
-  // 1. UPDATE BENDERA & GAYA DI DESKTOP
   const currentFlagDesktop = document.getElementById("currentFlagDesktop");
   currentFlagDesktop.src = flagUrl;
 
-  // Atur gaya aktif (Bold) di menu dropdown desktop
   document.querySelectorAll(".language-select").forEach((btn) => {
     btn.classList.remove("font-semibold", "text-gray-900");
     btn.classList.add("text-gray-700");
@@ -155,13 +142,10 @@ function handleLanguageSelection(targetButton) {
     .querySelector(`[data-lang="${lang}"]`)
     .classList.remove("text-gray-700");
 
-  // 2. UPDATE BENDERA & GAYA DI MOBILE
   const mobileDropdownContainer = document.getElementById("mobileLangDropdown");
-  // Update teks tampilan di tombol trigger mobile
   const mobileTriggerSpan = mobileDropdownContainer.querySelector("span");
   mobileTriggerSpan.innerHTML = `<img src="${flagUrl}" alt="${lang} Flag" id="currentFlagMobile" class="w-6 h-auto inline mr-2 rounded-full"> ${langText}`;
 
-  // Atur gaya aktif (Bold) di menu dropdown mobile
   document.querySelectorAll(".language-select-mobile").forEach((btn) => {
     btn.classList.remove("font-semibold", "text-blue-600");
     btn.classList.add("text-gray-700");
@@ -173,13 +157,11 @@ function handleLanguageSelection(targetButton) {
     .querySelector(`[data-lang="${lang}"]`)
     .classList.remove("text-gray-700");
 
-  // 3. TUTUP MENU DESKTOP & MOBILE
-  // Tutup dropdown desktop setelah klik
+
   desktopMenu.style.opacity = "0";
   desktopMenu.style.visibility = "hidden";
   desktopMenu.style.transform = "translateY(10px)";
 
-  // Cek dan tutup dropdown mobile jika terbuka
   const mobileContent = mobileDropdownContainer.querySelector(
     ".mobile-dropdown-content"
   );
@@ -188,20 +170,17 @@ function handleLanguageSelection(targetButton) {
     toggleMobileDropdown(dropdownButton);
   }
 
-  // --- TEMPAT LOGIC BAHASA SESUNGGUHNYA ---
   console.log(
     `Language changed to: ${lang.toUpperCase()}. Anda bisa menambahkan logic untuk mengganti konten halaman/mengatur cookie di sini.`
   );
 }
 
-// Event Listeners untuk Pemilihan Bahasa Desktop
 document.querySelectorAll(".language-select").forEach((button) => {
   button.addEventListener("click", function () {
     handleLanguageSelection(this);
   });
 });
 
-// Event Listeners untuk Pemilihan Bahasa Mobile
 document.querySelectorAll(".language-select-mobile").forEach((button) => {
   button.addEventListener("click", function () {
     handleLanguageSelection(this);

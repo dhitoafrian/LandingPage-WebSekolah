@@ -1,6 +1,12 @@
 /* ================= START GLOBAL CSS ================= */
 
-/* untuk pages pages */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+* {
+  font-family: "Inter", sans-serif;
+}
+
+/* untuk hero pages pages */
 .hero-gradient {
   background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
 }
@@ -56,13 +62,12 @@
 }
 /* ================= END GLOBAL CSS ================= */
 
-/* Dropdown animations - PERBAIKAN */
+/* ================= START HEADER ================= */
 .nav-item {
   position: relative;
   padding: 8px 0;
 }
 
-/* Tambahkan area hover yang lebih besar */
 .nav-item::after {
   content: "";
   position: absolute;
@@ -83,7 +88,6 @@
   z-index: 1000;
   top: 100%;
   margin-top: 8px;
-  /* Hilangkan gap */
 }
 
 .nav-item:hover .dropdown-menu {
@@ -92,10 +96,8 @@
   transform: translateY(0);
   pointer-events: auto;
   transition-delay: 0.1s;
-  /* Delay untuk mencegah flicker */
 }
 
-/* Arrow pointer for dropdown */
 .dropdown-arrow {
   position: absolute;
   top: -8px;
@@ -131,15 +133,12 @@
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
-/* Perbaikan untuk mencegah gap */
 .nav-item .dropdown-trigger {
   display: flex;
   align-items: center;
   cursor: pointer;
 }
 
-/* CSS Tambahan Khusus untuk Dropdown Bahasa Desktop */
-/* Pastikan style ini dipertahankan karena Anda menggunakan logic JS untuk toggle visibility/opacity */
 .language-dropdown-desktop .dropdown-menu {
   opacity: 0;
   visibility: hidden;
@@ -165,6 +164,7 @@
   visibility: visible;
   transform: translateY(0);
 }
+/* ================= END HEADER ================= */
 
 body,
 html {
@@ -189,9 +189,7 @@ html {
   animation: slideUp 1s ease-out;
 }
 
-/* ========================================
-  SECTION 1: HERO SLIDER STYLES (SWIPER)
-   ======================================== */
+/* ================= START INDEX (HERO-BANNER) ================= */
 .swiper-banner {
   position: relative;
   overflow: hidden;
@@ -229,7 +227,6 @@ html {
   touch-action: pan-y !important;
 }
 
-/* Content Positioning - HAPUS fade-in-up class dari HTML */
 .slide-content {
   position: absolute;
   bottom: 4rem;
@@ -241,13 +238,11 @@ html {
   transition: opacity 0.6s ease 0.3s, transform 0.6s ease 0.3s;
 }
 
-/* Active slide content muncul smooth */
 .swiper-slide-active .slide-content {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* Navigation Button - Design Modern */
 .swiper-banner .swiper-button-prev,
 .swiper-banner .swiper-button-next {
   width: 50px;
@@ -281,7 +276,6 @@ html {
   transform: scale(1.1);
 }
 
-/* Pagination - Dot Style Modern */
 .swiper-banner .swiper-pagination {
   bottom: 2rem !important;
 }
@@ -300,7 +294,6 @@ html {
   background: white;
 }
 
-/* Mobile Responsive */
 @media (max-width: 768px) {
   .swiper-banner {
     height: 70vh;
@@ -314,9 +307,10 @@ html {
   }
 }
 
-/* ========================================
-   SECTION 2: PPDB SLIDER STYLES (SWIPER)
-   ======================================== */
+/* ================= END INDEX (HERO-BANNER) ================= */
+
+
+/* ================= START INDEX (PPDB) ================= */
 .slider-ppdb-wrapper {
   position: relative;
   width: 100%;
@@ -391,10 +385,9 @@ html {
 
 @media (max-width: 768px) {
   .slider-ppdb-wrapper {
-    height: 380px; /* ← INI PENTING! */
+    height: 380px;
   }
 
-  /* ✅ FIX: Enable pointer events di mobile */
   .ppdb-custom-slide .info {
     pointer-events: auto;
   }
@@ -403,12 +396,10 @@ html {
     pointer-events: auto;
   }
 
-  /* Nonaktifkan hover di mobile */
   .ppdb-custom-slide:hover .info {
     bottom: -120px;
   }
 
-  /* Aktifkan dengan class .active */
   .ppdb-custom-slide.active .info {
     bottom: 0;
   }
@@ -420,18 +411,19 @@ html {
 
 @media (max-width: 480px) {
   .slider-ppdb-wrapper {
-    height: 320px; /* ← INI JUGA PENTING! */
+    height: 320px;
   }
 }
 
-/* Desktop: PPDB Sisi Kanan FLAT */
 @media (min-width: 769px) {
   .ppdb-custom-slide {
     border-radius: 12px 0 0 12px;
   }
 }
 
-/* infografis */
+/* ================= END INDEX (PPDB) ================= */
+
+/* ================= START INDEX (INFOGRAFIS) ================= */
 .photo-card {
   position: relative;
   overflow: hidden;
@@ -452,7 +444,6 @@ html {
   background: #3b82f6 !important;
 }
 
-/* untuk infografis */
 .infografis-card {
   background: white;
   border-radius: 1rem;
@@ -502,41 +493,10 @@ html {
     transform: translateX(300%) skewX(-20deg);
   }
 }
+/* ================= END INDEX (INFOGRAFIS) ================= */
 
-.content-area {
-  padding: 1.5rem;
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-}
 
-.service-btn {
-  position: relative;
-  overflow: hidden;
-  display: inline-block;
-  transition: all 0.3s ease;
-}
-
-.service-btn::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(255, 255, 255, 0.2);
-  transform: translateX(-100%) skewX(-20deg);
-  transition: transform 0.5s ease;
-}
-
-.service-btn:hover::before {
-  transform: translateX(100%) skewX(-20deg);
-}
-
-.service-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 15px rgba(59, 130, 246, 0.3);
-}
-
-/* berita */
-
+/* ================= START INDEX (BERITA & ARTIKEL) ================= */
 .swiper-hero {
   border-radius: 1rem;
   overflow: hidden;
@@ -575,8 +535,9 @@ html {
   transform: translateY(-2px);
   box-shadow: 0 8px 15px rgba(0, 0, 255, 0.3);
 }
+/* ================= END INDEX (BERITA & ARTIKEL) ================= */
 
-/* galeri */
+/* ================= START INDEX (GALERI) ================= */
 .galeri-swiper {
   overflow: hidden;
 }
@@ -623,3 +584,5 @@ html {
 .link-selengkapnya:hover {
   color: #1d4ed8;
 }
+/* ================= END INDEX (GALERI) ================= */
+

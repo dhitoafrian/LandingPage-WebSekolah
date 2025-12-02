@@ -2,7 +2,6 @@
 $page_title = 'Pengumuman Sekolah';
 include '../src/includes/header.php';
 
-// Data pengumuman yang lebih banyak untuk menguji fitur "Tampilkan Lainnya"
 $announcements = [
     ['id' => 1, 'title' => 'Pengumuman Hasil PPDB Gelombang 1', 'date' => '19 Nov 2025', 'desc' => 'Hasil seleksi PPDB Gelombang 1 Tahun Ajaran 2025/2026 telah diumumkan. Peserta yang diterima diharapkan segera melakukan daftar ulang.'],
     ['id' => 2, 'title' => 'Jadwal Ujian Akhir Semester Genap', 'date' => '18 Nov 2025', 'desc' => 'Informasi jadwal pelaksanaan Ujian Akhir Semester Genap untuk seluruh tingkat. Ujian akan dilaksanakan mulai tanggal 2-9 Desember 2025.'],
@@ -113,7 +112,7 @@ $announcements = [
                         data-title="<?= htmlspecialchars($announcement['title']) ?>"
                         data-content="<?= htmlspecialchars($announcement['desc']) ?>">
 
-                        <a href="pengumuman-detail.php?id=<?= $index ?>" class="p-6 flex-grow flex flex-col">
+                        <a href="pengumuman-detail.php?id=<?= $announcement['id'] ?>" class="p-6 flex-grow flex flex-col">
 
                             <!-- Header seperti di gambar referensi (Tanggal) -->
                             <div class="flex items-center gap-3 mb-4">

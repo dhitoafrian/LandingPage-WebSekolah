@@ -18,7 +18,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $error_message = 'Mohon lengkapi semua field yang wajib diisi!';
     } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $error_message = 'Format email tidak valid!';
-    } else {+
+    } else {
+        +
         // Di sini nanti bisa kirim email atau simpan ke database
         // Untuk demo, kita kasih success message aja
         $success_message = 'Pesan Anda berhasil dikirim! Kami akan segera menghubungi Anda.';
@@ -47,6 +48,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     .contact-card:hover {
         transform: translateY(-5px);
         box-shadow: 0 12px 24px rgba(59, 130, 246, 0.2);
+    }
+
+    /* Mobile: DISABLE hover & animasi */
+    @media (max-width: 767px) {
+        .contact-card {
+            transition: none;
+        }
+
+        .contact-card:hover {
+            transform: none;
+            box-shadow: none;
+        }
+
+        /* Wrap mobile cards dalam container putih */
+        .contact-cards-container {
+            background: white;
+            border-radius: 0.75rem;
+            padding: 0 1rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
     }
 
     .info-item {
@@ -81,68 +102,129 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </div>
 </div>
 
-<div class="bg-gray-50 py-12">
+<section class="bg-gray-50 py-12">
     <div class="container mx-auto px-4">
 
         <!-- Contact Info Cards -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 -mt-20 mb-12">
+        <div class="contact-cards-container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 -mt-20 mb-12">
+
             <!-- Alamat -->
-            <div class="contact-card bg-white rounded-xl shadow-lg p-6 text-center">
-                <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <i class="fas fa-map-marker-alt text-blue-600 text-2xl"></i>
+            <div class="contact-card">
+                <!-- Mobile: List compact tanpa animasi -->
+                <div class="md:hidden mt-12 py-4 border-b border-gray-200">
+                    <h3 class="text-sm font-semibold text-gray-800 flex items-center mb-2">
+                        <i class="fas fa-map-marker-alt text-blue-600 text-base mr-2"></i>
+                        Alamat
+                    </h3>
+                    <p class="text-gray-600 text-sm pl-6 leading-relaxed">
+                        Jl. Pendidikan No. 123, Yogyakarta, 55281, Indonesia
+                    </p>
                 </div>
-                <h3 class="text-lg font-bold text-gray-800 mb-2">Alamat</h3>
-                <p class="text-gray-600 text-sm">
-                    Jl. Pendidikan No. 123<br>
-                    Yogyakarta, 55281<br>
-                    Indonesia
-                </p>
+
+                <!-- Desktop: Card lengkap (TIDAK DIUBAH) -->
+                <div class="hidden md:block bg-white rounded-xl shadow-lg p-6 text-center">
+                    <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-map-marker-alt text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-800 mb-2">Alamat</h3>
+                    <p class="text-gray-600 text-sm">
+                        Jl. Pendidikan No. 123<br>
+                        Yogyakarta, 55281<br>
+                        Indonesia
+                    </p>
+                </div>
             </div>
 
-            <!-- Telepon -->
-            <div class="contact-card bg-white rounded-xl shadow-lg p-6 text-center">
-                <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <i class="fas fa-phone text-green-600 text-2xl"></i>
+            <!-- Telepon - FIX: Hapus "block" dari link -->
+            <div class="contact-card">
+                <!-- Mobile: List compact -->
+                <div class="md:hidden py-4 border-b border-gray-200">
+                    <h3 class="text-sm font-semibold text-gray-800 flex items-center mb-2">
+                        <i class="fas fa-phone text-green-600 text-base mr-2"></i>
+                        Telepon
+                    </h3>
+                    <p class="text-gray-600 text-sm pl-6 leading-relaxed">
+                        <a href="tel:+622741234567" class="hover:text-blue-600 transition block">(0274) 123-4567</a>
+                        <a href="tel:+6281234567890" class="hover:text-blue-600 transition block">0812-3456-7890</a>
+                    </p>
                 </div>
-                <h3 class="text-lg font-bold text-gray-800 mb-2">Telepon</h3>
-                <p class="text-gray-600 text-sm">
-                    <a href="tel:+622741234567" class="hover:text-blue-600 transition">
-                        (0274) 123-4567
-                    </a><br>
-                    <a href="tel:+6281234567890" class="hover:text-blue-600 transition">
-                        0812-3456-7890
-                    </a>
-                </p>
+
+                <!-- Desktop: Card lengkap (TIDAK DIUBAH) -->
+                <div class="hidden md:block bg-white rounded-xl shadow-lg p-6 text-center">
+                    <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-phone text-green-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-800 mb-2">Telepon</h3>
+                    <p class="text-gray-600 text-sm">
+                        <a href="tel:+622741234567" class="hover:text-blue-600 transition block">
+                            (0274) 123-4567
+                        </a><br>
+                        <a href="tel:+6281234567890" class="hover:text-blue-600 transition block">
+                            0812-3456-7890
+                        </a>
+                    </p>
+                </div>
             </div>
 
-            <!-- Email -->
-            <div class="contact-card bg-white rounded-xl shadow-lg p-6 text-center">
-                <div class="bg-red-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <i class="fas fa-envelope text-red-600 text-2xl"></i>
+            <!-- Email - FIX: Hapus "block" dari link -->
+            <div class="contact-card">
+                <!-- Mobile: List compact -->
+                <div class="md:hidden py-4 border-b border-gray-200">
+                    <h3 class="text-sm font-semibold text-gray-800 flex items-center mb-2">
+                        <i class="fas fa-envelope text-red-600 text-base mr-2"></i>
+                        Email
+                    </h3>
+                    <p class="text-gray-600 text-sm pl-6 leading-relaxed">
+                        <a href="mailto:info@sekolah.sch.id" class="hover:text-blue-600 transition">info@sekolah.sch.id</a><br>
+                        <a href="mailto:admin@sekolah.sch.id" class="hover:text-blue-600 transition">admin@sekolah.sch.id</a>
+                    </p>
                 </div>
-                <h3 class="text-lg font-bold text-gray-800 mb-2">Email</h3>
-                <p class="text-gray-600 text-sm">
-                    <a href="mailto:info@sekolah.sch.id" class="hover:text-blue-600 transition">
-                        info@sekolah.sch.id
-                    </a><br>
-                    <a href="mailto:admin@sekolah.sch.id" class="hover:text-blue-600 transition">
-                        admin@sekolah.sch.id
-                    </a>
-                </p>
+
+                <!-- Desktop: Card lengkap (TIDAK DIUBAH) -->
+                <div class="hidden md:block bg-white rounded-xl shadow-lg p-6 text-center">
+                    <div class="bg-red-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-envelope text-red-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-800 mb-2">Email</h3>
+                    <p class="text-gray-600 text-sm">
+                        <a href="mailto:info@sekolah.sch.id" class="hover:text-blue-600 transition block">
+                            info@sekolah.sch.id
+                        </a><br>
+                        <a href="mailto:admin@sekolah.sch.id" class="hover:text-blue-600 transition">
+                            admin@sekolah.sch.id
+                        </a>
+                    </p>
+                </div>
             </div>
 
             <!-- Jam Operasional -->
-            <div class="contact-card bg-white rounded-xl shadow-lg p-6 text-center">
-                <div class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <i class="fas fa-clock text-purple-600 text-2xl"></i>
+            <div class="contact-card">
+                <!-- Mobile: List compact -->
+                <div class="md:hidden py-4">
+                    <h3 class="text-sm font-semibold text-gray-800 flex items-center mb-2">
+                        <i class="fas fa-clock text-purple-600 text-base mr-2"></i>
+                        Jam Operasional
+                    </h3>
+                    <p class="text-gray-600 text-sm pl-6 leading-relaxed">
+                        Senin - Jumat, 07.00 - 15.00 WIB
+                        <span class="text-xs text-gray-500 block">(Sabtu-Minggu Libur)</span>
+                    </p>
                 </div>
-                <h3 class="text-lg font-bold text-gray-800 mb-2">Jam Operasional</h3>
-                <p class="text-gray-600 text-sm">
-                    Senin - Jumat<br>
-                    07.00 - 15.00 WIB<br>
-                    <span class="text-xs text-gray-500">(Sabtu-Minggu Libur)</span>
-                </p>
+
+                <!-- Desktop: Card lengkap (TIDAK DIUBAH) -->
+                <div class="hidden md:block bg-white rounded-xl shadow-lg p-6 text-center">
+                    <div class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-clock text-purple-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-800 mb-2">Jam Operasional</h3>
+                    <p class="text-gray-600 text-sm">
+                        Senin - Jumat<br>
+                        07.00 - 15.00 WIB<br>
+                        <span class="text-xs text-gray-500">(Sabtu-Minggu Libur)</span>
+                    </p>
+                </div>
             </div>
+
         </div>
 
         <!-- Main Content: Form + Map -->
@@ -318,51 +400,57 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
 
         <!-- Social Media Section -->
-        <div class="mt-12 bg-white rounded-xl shadow-lg p-8 text-center">
-            <h3 class="text-2xl font-bold text-gray-800 mb-4">Ikuti Kami di Media Sosial</h3>
-            <p class="text-gray-600 mb-6">Dapatkan update terbaru dari kami melalui platform media sosial</p>
+        <div class="mt-12 bg-white rounded-xl shadow-lg p-6 md:p-8 text-center">
+            <h3 class="text-xl md:text-2xl font-bold text-gray-800 mb-3 md:mb-4">Ikuti Kami di Media Sosial</h3>
+            <p class="text-sm md:text-base text-gray-600 mb-4 md:mb-6">Dapatkan update terbaru dari kami melalui platform media sosial</p>
 
-            <div class="flex justify-center gap-4 flex-wrap">
-                <a
-                    href="https://facebook.com"
-                    target="_blank"
-                    class="flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition shadow-md hover:shadow-lg">
+            <div class="grid grid-cols-2 sm:flex sm:flex-wrap justify-center gap-3 md:gap-4 max-w-2xl mx-auto">
+                <!-- Facebook -->
+                <a href="https://facebook.com" target="_blank"
+                    class="flex items-center justify-center gap-2 px-4 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition text-sm">
                     <i class="fab fa-facebook-f"></i>
-                    Facebook
+                    <span>Facebook</span>
                 </a>
-                <a
-                    href="https://instagram.com"
-                    target="_blank"
-                    class="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg hover:from-purple-700 hover:to-pink-700 transition shadow-md hover:shadow-lg">
+
+                <!-- Instagram -->
+                <a href="https://instagram.com" target="_blank"
+                    class="flex items-center justify-center gap-2 px-4 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg font-semibold hover:from-purple-700 hover:to-pink-700 transition shadow-md hover:shadow-lg text-sm">
                     <i class="fab fa-instagram"></i>
-                    Instagram
+                    <span>Instagram</span>
                 </a>
-                <a
-                    href="https://twitter.com"
-                    target="_blank"
-                    class="flex items-center gap-2 px-6 py-3 bg-sky-500 text-white rounded-lg hover:bg-sky-600 transition shadow-md hover:shadow-lg">
-                    <i class="fab fa-twitter"></i>
-                    Twitter
-                </a>
-                <a
-                    href="https://youtube.com"
-                    target="_blank"
-                    class="flex items-center gap-2 px-6 py-3 bg-red-600 text-white rounded-lg hover:bg-red-700 transition shadow-md hover:shadow-lg">
+
+                <!-- YouTube -->
+                <a href="https://youtube.com" target="_blank"
+                    class="flex items-center justify-center gap-2 px-4 py-3 bg-red-600 text-white rounded-lg font-semibold hover:bg-red-700 transition text-sm">
                     <i class="fab fa-youtube"></i>
-                    YouTube
+                    <span>YouTube</span>
                 </a>
-                <a
-                    href="https://wa.me/6281234567890"
-                    target="_blank"
-                    class="flex items-center gap-2 px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition shadow-md hover:shadow-lg">
-                    <i class="fab fa-whatsapp"></i>
-                    WhatsApp
+
+                <!-- TikTok -->
+                <a href="https://tiktok.com/@yourschool" target="_blank"
+                    class="flex items-center justify-center gap-2 px-4 py-3 bg-black text-white rounded-lg font-semibold hover:bg-gray-800 transition text-sm">
+                    <i class="fab fa-tiktok"></i>
+                    <span>TikTok</span>
+                </a>
+
+                <!-- X (Twitter) -->
+                <a href="https://twitter.com" target="_blank"
+                    class="flex items-center justify-center gap-2 px-4 py-3 bg-black text-white rounded-lg font-semibold hover:bg-gray-800 transition text-sm">
+                    <i class="fab fa-twitter"></i>
+                    <span>X</span>
+                </a>
+
+                <!-- Telegram -->
+                <a href="https://t.me/yourtelegramchannel" target="_blank"
+                    class="flex items-center justify-center gap-2 px-4 py-3 bg-sky-500 text-white rounded-lg font-semibold hover:bg-sky-600 transition text-sm">
+                    <i class="fab fa-telegram-plane"></i>
+                    <span>Telegram</span>
                 </a>
             </div>
         </div>
 
     </div>
-</div>
+</section>
 
 <?php
 include '../src/includes/footer.php';

@@ -138,9 +138,9 @@ include 'includes/header.php';
                                 </div>
                                 <h4 class="text-white text-xl font-bold mb-2">Pendaftaran Dibuka</h4>
                                 <p class="text-white/90 text-sm mb-4">Jalur Zonasi & Prestasi</p>
-                                <button class="px-6 py-2.5 bg-white text-blue-600 rounded-lg text-sm font-semibold hover:bg-gray-100 transition shadow-lg pointer-events-auto">
+                                <a href="/Template-WebSekolah/pages/info-ppdb.php" class="px-6 py-2.5 bg-white text-blue-600 rounded-lg text-sm font-semibold hover:bg-gray-100 transition shadow-lg pointer-events-auto">
                                     Lihat Selengkapnya →
-                                </button>
+                                </a>
                             </div>
                         </div>
 
@@ -153,9 +153,9 @@ include 'includes/header.php';
                                 </div>
                                 <h4 class="text-white text-xl font-bold mb-2">Beasiswa Prestasi</h4>
                                 <p class="text-white/90 text-sm mb-4">Raih Kesempatan Beasiswa Full</p>
-                                <button class="px-6 py-2.5 bg-white text-blue-600 rounded-lg text-sm font-semibold hover:bg-gray-100 transition shadow-lg pointer-events-auto">
+                                <a href="/Template-WebSekolah/pages/info-ppdb.php" class="px-6 py-2.5 bg-white text-blue-600 rounded-lg text-sm font-semibold hover:bg-gray-100 transition shadow-lg pointer-events-auto">
                                     Info Lengkap →
-                                </button>
+                                </a>
                             </div>
                         </div>
 
@@ -168,9 +168,9 @@ include 'includes/header.php';
                                 </div>
                                 <h4 class="text-white text-xl font-bold mb-2">Fasilitas Lengkap</h4>
                                 <p class="text-white/90 text-sm mb-4">Lab Komputer, Studio & Lebih</p>
-                                <button class="px-6 py-2.5 bg-white text-blue-600 rounded-lg text-sm font-semibold hover:bg-gray-100 transition shadow-lg pointer-events-auto">
+                                <a href="/Template-WebSekolah/pages/info-ppdb.php" class="px-6 py-2.5 bg-white text-blue-600 rounded-lg text-sm font-semibold hover:bg-gray-100 transition shadow-lg pointer-events-auto">
                                     Lihat Fasilitas →
-                                </button>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -314,110 +314,129 @@ include 'includes/header.php';
                 <div class="swiper swiper-hero mb-6 relative">
                     <div class="swiper-wrapper">
                         <!-- Slide 1 -->
-                        <div class="swiper-slide relative h-96">
-                            <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1200&h=600&fit=crop"
-                                alt="Berita 3" class="w-full h-full object-cover">
-                            <div class="hero-content">
-                                <h4 class="text-white text-2xl md:text-3xl font-bold mb-2">Upacara Nasional 2025</h4>
-                                <p class="text-white/80 text-sm">📅 1 Oktober 2025</p>
+                        <a href="/Template-WebSekolah/pages/berita-detail.php?id=1" class="swiper-slide relative h-96 block">
+                            <div class="swiper-slide relative h-96">
+                                <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1200&h=600&fit=crop"
+                                    alt="Berita 3" class="w-full h-full object-cover">
+                                <div class="hero-content">
+                                    <h4 class="text-white text-2xl md:text-3xl font-bold mb-2">Upacara Nasional 2025</h4>
+                                    <p class="text-white/80 text-sm">📅 1 Oktober 2025</p>
+                                </div>
                             </div>
-                        </div>
+                        </a>
 
                         <!-- Slide 2 -->
-                        <div class="swiper-slide relative h-96">
-                            <img src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=1200&h=600&fit=crop"
-                                alt="Berita 2" class="w-full h-full object-cover">
-                            <div class="hero-content">
-                                <h4 class="text-white text-2xl md:text-3xl font-bold mb-2">Prestasi Olimpiade Nasional</h4>
-                                <p class="text-white/80 text-sm">📅 28 Oktober 2025</p>
+                        <a href="/Template-WebSekolah/pages/berita-detail.php?id=2" class="swiper-slide relative h-96 block">
+                            <div class="swiper-slide relative h-96">
+                                <img src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=1200&h=600&fit=crop"
+                                    alt="Berita 2" class="w-full h-full object-cover">
+                                <div class="hero-content">
+                                    <h4 class="text-white text-2xl md:text-3xl font-bold mb-2">Prestasi Olimpiade Nasional</h4>
+                                    <p class="text-white/80 text-sm">📅 28 Oktober 2025</p>
+                                </div>
                             </div>
-                        </div>
+                        </a>
 
                         <!-- Slide 3 -->
-                        <div class="swiper-slide relative h-96">
-                            <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1200&h=600&fit=crop"
-                                alt="Berita 3" class="w-full h-full object-cover">
-                            <div class="hero-content">
-                                <h4 class="text-white text-2xl md:text-3xl font-bold mb-2">Kunjungan Industri Teknologi</h4>
-                                <p class="text-white/80 text-sm">📅 25 Oktober 2025</p>
+                        <a href="/Template-WebSekolah/pages/berita-detail.php?id=3" class="swiper-slide relative h-96 block">
+                            <div class="swiper-slide relative h-96">
+                                <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1200&h=600&fit=crop"
+                                    alt="Berita 3" class="w-full h-full object-cover">
+                                <div class="hero-content">
+
+                                    <h4 class="text-white text-2xl md:text-3xl font-bold mb-2">Kunjungan Industri Teknologi</h4>
+                                    <p class="text-white/80 text-sm">📅 25 Oktober 2025</p>
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 </div>
 
                 <!-- Grid 6 Berita (3x2) -->
                 <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-6">
                     <!-- News Card 1 -->
-                    <div class="bg-white rounded-lg overflow-hidden shadow-sm cursor-pointer">
-                        <div class="overflow-hidden h-40">
-                            <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=400&h=300&fit=crop"
-                                alt="News 1" class="w-full h-full object-cover">
+                    <a href="/Template-WebSekolah/pages/berita-detail.php?id=1" class="swiper-slide relative h-96 block">
+                        <div class="bg-white rounded-lg overflow-hidden shadow-sm cursor-pointer">
+                            <div class="overflow-hidden h-40">
+                                <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=400&h=300&fit=crop"
+                                    alt="News 1" class="w-full h-full object-cover">
+                            </div>
+                            <div class="p-4">
+                                <h5 class="font-bold text-gray-800 mb-2 line-clamp-2 hover:text-blue-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi inventore repudiandae unde suscipit eius architecto deserunt recusandae quos dolor corrupti?</h5>
+                                <p class="text-sm text-gray-500">📅 01 November 2025</p>
+                            </div>
                         </div>
-                        <div class="p-4">
-                            <h5 class="font-bold text-gray-800 mb-2 line-clamp-2 hover:text-blue-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi inventore repudiandae unde suscipit eius architecto deserunt recusandae quos dolor corrupti?</h5>
-                            <p class="text-sm text-gray-500">📅 01 November 2025</p>
-                        </div>
-                    </div>
+                    </a>
 
                     <!-- News Card 2 -->
-                    <div class="bg-white rounded-lg overflow-hidden shadow-sm cursor-pointer">
-                        <div class="overflow-hidden h-40">
-                            <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=400&h=300&fit=crop"
-                                alt="News 2" class="w-full h-full object-cover">
+                    <a href="/Template-WebSekolah/pages/berita-detail.php?id=2" class="swiper-slide relative h-96 block">
+                        <div class="bg-white rounded-lg overflow-hidden shadow-sm cursor-pointer">
+                            <div class="overflow-hidden h-40">
+                                <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=400&h=300&fit=crop"
+                                    alt="News 2" class="w-full h-full object-cover">
+                            </div>
+                            <div class="p-4">
+                                <h5 class="font-bold text-gray-800 mb-2 line-clamp-2 hover:text-blue-600">Penarikan Mahasiswa PLP UIN</h5>
+                                <p class="text-sm text-gray-500">📅 29 Oktober 2025</p>
+                            </div>
                         </div>
-                        <div class="p-4">
-                            <h5 class="font-bold text-gray-800 mb-2 line-clamp-2 hover:text-blue-600">Penarikan Mahasiswa PLP UIN</h5>
-                            <p class="text-sm text-gray-500">📅 29 Oktober 2025</p>
-                        </div>
-                    </div>
+                    </a>
 
                     <!-- News Card 3 -->
-                    <div class="bg-white rounded-lg overflow-hidden shadow-sm cursor-pointer">
-                        <div class="overflow-hidden h-40">
-                            <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=400&h=300&fit=crop"
-                                alt="News 3" class="w-full h-full object-cover">
+                    <a href="/Template-WebSekolah/pages/berita-detail.php?id=3" class="swiper-slide relative h-96 block">
+                        <div class="bg-white rounded-lg overflow-hidden shadow-sm cursor-pointer">
+                            <div class="overflow-hidden h-40">
+                                <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=400&h=300&fit=crop"
+                                    alt="News 3" class="w-full h-full object-cover">
+                            </div>
+                            <div class="p-4">
+                                <h5 class="font-bold text-gray-800 mb-2 line-clamp-2 hover:text-blue-600">Orientasi Hizbul Wathan</h5>
+                                <p class="text-sm text-gray-500">📅 27 Oktober 2025</p>
+                            </div>
                         </div>
-                        <div class="p-4">
-                            <h5 class="font-bold text-gray-800 mb-2 line-clamp-2 hover:text-blue-600">Orientasi Hizbul Wathan</h5>
-                            <p class="text-sm text-gray-500">📅 27 Oktober 2025</p>
-                        </div>
-                    </div>
+                    </a>
 
                     <!-- News Card 4 -->
-                    <div class="bg-white rounded-lg overflow-hidden shadow-sm cursor-pointer">
-                        <div class="overflow-hidden h-40">
-                            <img src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=400&h=300&fit=crop"
-                                alt="News 4" class="w-full h-full object-cover">
+                    <a href="/Template-WebSekolah/pages/berita-detail.php?id=4" class="swiper-slide relative h-96 block">
+                        <div class="bg-white rounded-lg overflow-hidden shadow-sm cursor-pointer">
+                            <div class="overflow-hidden h-40">
+                                <img src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=400&h=300&fit=crop"
+                                    alt="News 4" class="w-full h-full object-cover">
+                            </div>
+                            <div class="p-4">
+                                <h5 class="font-bold text-gray-800 mb-2 line-clamp-2 hover:text-blue-600">Perdalaman Materi Penjurusan SMA</h5>
+                                <p class="text-sm text-gray-500">📅 29 Oktober 2025</p>
+                            </div>
                         </div>
-                        <div class="p-4">
-                            <h5 class="font-bold text-gray-800 mb-2 line-clamp-2 hover:text-blue-600">Perdalaman Materi Penjurusan SMA</h5>
-                            <p class="text-sm text-gray-500">📅 29 Oktober 2025</p>
-                        </div>
-                    </div>
+                    </a>
 
                     <!-- News Card 5 -->
-                    <div class="bg-white rounded-lg overflow-hidden shadow-sm cursor-pointer">
-                        <div class="overflow-hidden h-40">
-                            <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=400&h=300&fit=crop"
-                                alt="News 5" class="w-full h-full object-cover">
+                    <a href="/Template-WebSekolah/pages/berita-detail.php?id=5" class="swiper-slide relative h-96 block">
+                        <div class="bg-white rounded-lg overflow-hidden shadow-sm cursor-pointer">
+                            <div class="overflow-hidden h-40">
+                                <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=400&h=300&fit=crop"
+                                    alt="News 5" class="w-full h-full object-cover">
+                            </div>
+                            <div class="p-4">
+                                <h5 class="font-bold text-gray-800 mb-2 line-clamp-2 hover:text-blue-600">Upacara Memperingati Hari Sumpah Pemuda</h5>
+                                <p class="text-sm text-gray-500">📅 29 Oktober 2025</p>
+                            </div>
                         </div>
-                        <div class="p-4">
-                            <h5 class="font-bold text-gray-800 mb-2 line-clamp-2 hover:text-blue-600">Upacara Memperingati Hari Sumpah Pemuda</h5>
-                            <p class="text-sm text-gray-500">📅 29 Oktober 2025</p>
-                        </div>
-                    </div>
+                    </a>
 
                     <!-- News Card 6 -->
-                    <div class="bg-white rounded-lg overflow-hidden shadow-sm cursor-pointer">
-                        <div class="overflow-hidden h-40">
-                            <img src="https://images.unsplash.com/photo-1580537659466-0a9bfa916a54?w=400&h=300&fit=crop"
-                                alt="News 6" class="w-full h-full object-cover">
+                    <a href="/Template-WebSekolah/pages/berita-detail.php?id=6" class="swiper-slide relative h-96 block">
+                        <div class="bg-white rounded-lg overflow-hidden shadow-sm cursor-pointer">
+                            <div class="overflow-hidden h-40">
+                                <img src="https://images.unsplash.com/photo-1580537659466-0a9bfa916a54?w=400&h=300&fit=crop"
+                                    alt="News 6" class="w-full h-full object-cover">
+                            </div>
+                            <div class="p-4">
+                                <h5 class="font-bold text-gray-800 mb-2 line-clamp-2 hover:text-blue-600">Deteksi Kesehatan Siswa Sejak Dini</h5>
+                                <p class="text-sm text-gray-500">📅 27 Oktober 2025</p>
+                            </div>
                         </div>
-                        <div class="p-4">
-                            <h5 class="font-bold text-gray-800 mb-2 line-clamp-2 hover:text-blue-600">Deteksi Kesehatan Siswa Sejak Dini</h5>
-                            <p class="text-sm text-gray-500">📅 27 Oktober 2025</p>
-                        </div>
-                    </div>
+                    </a>
                 </div>
 
                 <!-- Button Berita Lainnya -->
@@ -441,56 +460,65 @@ include 'includes/header.php';
                 <!-- Article List -->
                 <div class="space-y-4 mb-6">
                     <!-- Article 1 -->
-                    <div class="bg-white rounded-lg p-4 shadow-sm cursor-pointer flex gap-4">
-                        <div class="overflow-hidden rounded-lg w-24 h-24 flex-shrink-0">
-                            <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=200&h=200&fit=crop"
-                                alt="Article 1" class="w-full h-full object-cover">
+                    <a href="/Template-WebSekolah/pages/artikel-detail.php?id=1">
+                        <div class="bg-white rounded-lg p-4 shadow-sm cursor-pointer flex gap-4">
+                            <div class="overflow-hidden rounded-lg w-24 h-24 flex-shrink-0">
+                                <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=200&h=200&fit=crop"
+                                    alt="Article 1" class="w-full h-full object-cover">
+                            </div>
+                            <div class="flex-grow">
+                                <h5 class="font-bold text-gray-800 mb-1 line-clamp-2 hover:text-blue-600">Berdzikir dengan Ikhlas</h5>
+                                <p class="text-xs text-gray-500 mb-1">Oleh: Kumara Adji Kusuma</p>
+                                <p class="text-xs text-gray-400">📅 3 menit baca</p>
+                            </div>
                         </div>
-                        <div class="flex-grow">
-                            <h5 class="font-bold text-gray-800 mb-1 line-clamp-2 hover:text-blue-600">Berdzikir dengan Ikhlas</h5>
-                            <p class="text-xs text-gray-500 mb-1">Oleh: Kumara Adji Kusuma</p>
-                            <p class="text-xs text-gray-400">📅 3 menit baca</p>
-                        </div>
-                    </div>
+                    </a>
+
 
                     <!-- Article 2 -->
-                    <div class="bg-white rounded-lg p-4 shadow-sm cursor-pointer flex gap-4">
-                        <div class="overflow-hidden rounded-lg w-24 h-24 flex-shrink-0">
-                            <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=200&h=200&fit=crop"
-                                alt="Article 2" class="w-full h-full object-cover">
+                    <a href="/Template-WebSekolah/pages/artikel-detail.php?id=2">
+                        <div class="bg-white rounded-lg p-4 shadow-sm cursor-pointer flex gap-4">
+                            <div class="overflow-hidden rounded-lg w-24 h-24 flex-shrink-0">
+                                <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=200&h=200&fit=crop"
+                                    alt="Article 2" class="w-full h-full object-cover">
+                            </div>
+                            <div class="flex-grow">
+                                <h5 class="font-bold text-gray-800 mb-1 line-clamp-2 hover:text-blue-600">Ketika Berbuat Salah Terasa Aneh</h5>
+                                <p class="text-xs text-gray-500 mb-1">Oleh: Ahmad Fauzi</p>
+                                <p class="text-xs text-gray-400">📅 5 menit baca</p>
+                            </div>
                         </div>
-                        <div class="flex-grow">
-                            <h5 class="font-bold text-gray-800 mb-1 line-clamp-2 hover:text-blue-600">Ketika Berbuat Salah Terasa Aneh</h5>
-                            <p class="text-xs text-gray-500 mb-1">Oleh: Ahmad Fauzi</p>
-                            <p class="text-xs text-gray-400">📅 5 menit baca</p>
-                        </div>
-                    </div>
+                    </a>
 
                     <!-- Article 3 -->
-                    <div class="bg-white rounded-lg p-4 shadow-sm cursor-pointer flex gap-4">
-                        <div class="overflow-hidden rounded-lg w-24 h-24 flex-shrink-0">
-                            <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=200&h=200&fit=crop"
-                                alt="Article 3" class="w-full h-full object-cover">
+                    <a href="/Template-WebSekolah/pages/artikel-detail.php?id=3">
+                        <div class="bg-white rounded-lg p-4 shadow-sm cursor-pointer flex gap-4">
+                            <div class="overflow-hidden rounded-lg w-24 h-24 flex-shrink-0">
+                                <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=200&h=200&fit=crop"
+                                    alt="Article 3" class="w-full h-full object-cover">
+                            </div>
+                            <div class="flex-grow">
+                                <h5 class="font-bold text-gray-800 mb-1 line-clamp-2 hover:text-blue-600">Puasa Melawan Angkuh Diri</h5>
+                                <p class="text-xs text-gray-500 mb-1">Oleh: Haedir Nashir</p>
+                                <p class="text-xs text-gray-400">📅 4 menit baca</p>
+                            </div>
                         </div>
-                        <div class="flex-grow">
-                            <h5 class="font-bold text-gray-800 mb-1 line-clamp-2 hover:text-blue-600">Puasa Melawan Angkuh Diri</h5>
-                            <p class="text-xs text-gray-500 mb-1">Oleh: Haedir Nashir</p>
-                            <p class="text-xs text-gray-400">📅 4 menit baca</p>
-                        </div>
-                    </div>
+                    </a>
 
                     <!-- Article 4 -->
-                    <div class="bg-white rounded-lg p-4 shadow-sm cursor-pointer flex gap-4">
-                        <div class="overflow-hidden rounded-lg w-24 h-24 flex-shrink-0">
-                            <img src="https://images.unsplash.com/photo-1519452635265-7b1fbfd1e4e0?w=200&h=200&fit=crop"
-                                alt="Article 4" class="w-full h-full object-cover">
+                    <a href="/Template-WebSekolah/pages/artikel-detail.php?id=4">
+                        <div class="bg-white rounded-lg p-4 shadow-sm cursor-pointer flex gap-4">
+                            <div class="overflow-hidden rounded-lg w-24 h-24 flex-shrink-0">
+                                <img src="https://images.unsplash.com/photo-1519452635265-7b1fbfd1e4e0?w=200&h=200&fit=crop"
+                                    alt="Article 4" class="w-full h-full object-cover">
+                            </div>
+                            <div class="flex-grow">
+                                <h5 class="font-bold text-gray-800 mb-1 line-clamp-2 hover:text-blue-600">Islam, Muhammadiyah, dan Seni</h5>
+                                <p class="text-xs text-gray-500 mb-1">Oleh: Dr. Syamsul Arifin</p>
+                                <p class="text-xs text-gray-400">📅 6 menit baca</p>
+                            </div>
                         </div>
-                        <div class="flex-grow">
-                            <h5 class="font-bold text-gray-800 mb-1 line-clamp-2 hover:text-blue-600">Islam, Muhammadiyah, dan Seni</h5>
-                            <p class="text-xs text-gray-500 mb-1">Oleh: Dr. Syamsul Arifin</p>
-                            <p class="text-xs text-gray-400">📅 6 menit baca</p>
-                        </div>
-                    </div>
+                    </a>
                 </div>
 
                 <!-- Button Semua Artikel -->
@@ -630,8 +658,7 @@ include 'includes/header.php';
 </section>
 <!-- ================= END GALERI FOTO ================= -->
 
-<!-- ================= START VIDEO SECTION ================= -->
-<!-- ================= END VIDEO SECTION ================= -->
+
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="/Template-WebSekolah/assets/js/main.js"></script>
 <?php include 'includes/footer.php'; ?>

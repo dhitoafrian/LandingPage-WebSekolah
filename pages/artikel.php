@@ -5,6 +5,7 @@ include '../src/includes/header.php';
 // Data artikel (sama seperti sebelumnya)
 $articles = [
     [
+        'id' => 1,
         'title' => 'Berdzikir dengan Ikhlas',
         'author' => 'Kumara Adji Kusuma',
         'date' => '22 Nov 2025',
@@ -14,6 +15,7 @@ $articles = [
         'desc' => 'Dzikir adalah salah satu amalan yang sangat dianjurkan dalam Islam. Namun, dzikir yang dilakukan dengan ikhlas akan memberikan keberkahan yang luar biasa.'
     ],
     [
+        'id' => 2,
         'title' => 'Ketika Berbuat Salah Terasa Aneh',
         'author' => 'Ahmad Fauzi',
         'date' => '20 Nov 2025',
@@ -23,6 +25,7 @@ $articles = [
         'desc' => 'Perasaan tidak nyaman saat berbuat salah adalah tanda hati nurani yang masih hidup. Ini adalah nikmat Allah yang harus kita syukuri.'
     ],
     [
+        'id' => 3,
         'title' => 'Puasa Melawan Angkuh Diri',
         'author' => 'Haedir Nashir',
         'date' => '18 Nov 2025',
@@ -32,6 +35,7 @@ $articles = [
         'desc' => 'Puasa bukan hanya menahan lapar dan haus, tetapi juga menahan hawa nafsu dan sifat angkuh yang ada dalam diri kita.'
     ],
     [
+        'id' => 4,
         'title' => 'Islam, Muhammadiyah, dan Seni',
         'author' => 'Dr. Syamsul Arifin',
         'date' => '15 Nov 2025',
@@ -41,6 +45,7 @@ $articles = [
         'desc' => 'Seni dalam perspektif Islam dan Muhammadiyah memiliki peran penting dalam dakwah dan pembentukan karakter generasi muda.'
     ],
     [
+        'id' => 5,
         'title' => 'Pentingnya Literasi Digital di Era Modern',
         'author' => 'Siti Nurhaliza, M.Pd',
         'date' => '12 Nov 2025',
@@ -50,6 +55,7 @@ $articles = [
         'desc' => 'Di era digital ini, literasi digital menjadi keterampilan wajib yang harus dimiliki siswa untuk menghadapi tantangan masa depan.'
     ],
     [
+        'id' => 6,
         'title' => 'Membangun Karakter Melalui Kegiatan Ekstrakurikuler',
         'author' => 'Budi Santoso, S.Pd',
         'date' => '10 Nov 2025',
@@ -60,6 +66,7 @@ $articles = [
     ],
     // Card ke-7 dan seterusnya (Hidden by default)
     [
+        'id' => 7,
         'title' => 'Teknologi AI dalam Pendidikan',
         'author' => 'Dr. Andi Prasetyo',
         'date' => '8 Nov 2025',
@@ -69,6 +76,7 @@ $articles = [
         'desc' => 'Artificial Intelligence membawa revolusi baru dalam dunia pendidikan, membuat pembelajaran lebih personal dan efektif.'
     ],
     [
+        'id' => 8,
         'title' => 'Prestasi Siswa dalam Olimpiade Sains Nasional',
         'author' => 'Redaksi',
         'date' => '5 Nov 2025',
@@ -78,6 +86,7 @@ $articles = [
         'desc' => 'Siswa SMA Muhammadiyah 3 Yogyakarta kembali menorehkan prestasi gemilang di ajang Olimpiade Sains Nasional 2025.'
     ],
     [
+        'id' => 9,
         'title' => 'Kiat Sukses Menghadapi Ujian Nasional',
         'author' => 'Muhammad Rizki, S.Pd',
         'date' => '2 Nov 2025',
@@ -87,6 +96,7 @@ $articles = [
         'desc' => 'Tips dan strategi jitu untuk menghadapi ujian nasional dengan percaya diri dan meraih hasil maksimal.'
     ],
     [
+        'id' => 10,  
         'title' => 'Program Beasiswa untuk Siswa Berprestasi',
         'author' => 'Tim Akademik',
         'date' => '28 Okt 2025',
@@ -323,7 +333,7 @@ $articles = [
 
                                 <!-- Baca Selengkapnya -->
                                 <div class="card-footer pt-2">
-                                    <a href="/Template-WebSekolah/pages/artikel-detail.php"
+                                    <a href="/Template-WebSekolah/pages/artikel-detail.php?id=<?= $article['id'] ?>"
                                         class="inline-flex items-center text-sm font-semibold text-blue-500 hover:text-blue-700 transition">
                                         <i class="fas fa-arrow-right mr-2 text-xs"></i>
                                         BACA SELENGKAPNYA

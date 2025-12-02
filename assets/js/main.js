@@ -1,15 +1,14 @@
-// Pastikan file ini dimuat setelah Swiper Library (swiper-bundle.min.js)
 document.addEventListener("DOMContentLoaded", function () {
   // ========================================
-  // S1: HERO SLIDER (Fix Touch & Scroll Conflict)
+  // S1: HERO SLIDER
   // ========================================
   const swiper = new Swiper(".heroSwiper", {
     loop: true,
     autoplay: {
-      delay: 5000, // Lebih lama dikit biar gak terburu-buru
+      delay: 5000,
       disableOnInteraction: false,
     },
-    speed: 800, // Smooth transition
+    speed: 800,
     effect: "fade",
     fadeEffect: {
       crossFade: true,
@@ -24,14 +23,13 @@ document.addEventListener("DOMContentLoaded", function () {
     },
   });
 
-  // GAK PERLU slideChange event lagi, CSS udah handle animasi
 
   // ========================================
-  // S2: PPDB SLIDER (Fix Layout Mobile & Click/Drag)
+  // S2: PPDB SLIDER
   // ========================================
   const ppdbSwiper = new Swiper("#ppdbSwiper", {
-    loop: true, // WAJIB TRUE
-    speed: 700, // ✅ FIX 1: Memaksa Re-render di dalam Kontainer Dinamis (Grid)
+    loop: true,
+    speed: 700,
 
     observer: true,
     observeParents: true,
@@ -42,20 +40,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
     breakpoints: {
       0: {
-        // Mobile Fix
         slidesPerView: 1,
         spaceBetween: 15,
         centeredSlides: false,
       },
       1024: {
-        // Desktop Fix (lg:)
         slidesPerView: 1.4,
         spaceBetween: 30,
         centeredSlides: false,
-
-        // ✅ FIX 2: Menetapkan Jumlah Slide Kloning Secara Eksplisit
-        // Diperlukan saat slidesPerView adalah pecahan (1.4)
-        loopedSlides: 3, // Karena Anda punya 3 slide
+        loopedSlides: 3,
         loopFillGroupWithBlank: true,
       },
     },
@@ -66,7 +59,6 @@ document.addEventListener("DOMContentLoaded", function () {
       pauseOnMouseEnter: true,
     },
 
-    // Menangani Klik/Tap untuk Menampilkan Info di Mobile
     on: {
       tap: function (swiper, event) {
         if (window.innerWidth <= 768) {
@@ -83,10 +75,12 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-//smartschool
+  // ========================================
+  // S2: SMARTSCHOOL
+  // ========================================
 function animateCounter(element, target, duration = 2000) {
   let start = 0;
-  const increment = target / (duration / 16); // 60fps
+  const increment = target / (duration / 16);
 
   const updateCounter = () => {
     start += increment;
@@ -101,21 +95,18 @@ function animateCounter(element, target, duration = 2000) {
   updateCounter();
 }
 
-// Intersection Observer untuk trigger animation saat scroll
 const observerOptions = {
-  threshold: 0.3, // Trigger ketika 30% element terlihat
+  threshold: 0.3,
   rootMargin: "0px",
 };
 
 const statsObserver = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
-      // Ambil semua angka yang mau di-animate
       const pesertaDidik = entry.target.querySelector(".counter-peserta");
       const guru = entry.target.querySelector(".counter-guru");
       const kelas = entry.target.querySelector(".counter-kelas");
 
-      // Jalankan animasi
       if (pesertaDidik && !pesertaDidik.classList.contains("animated")) {
         animateCounter(pesertaDidik, 595);
         pesertaDidik.classList.add("animated");
@@ -135,17 +126,18 @@ const statsObserver = new IntersectionObserver((entries) => {
   });
 }, observerOptions);
 
-// Observe section stats
 document.addEventListener("DOMContentLoaded", () => {
   const statsSection = document.querySelector(
-    "#stats-section" // INI PERUBAHAN UTAMA
+    "#stats-section"
   );
   if (statsSection) {
     statsObserver.observe(statsSection);
   }
 });
 
-//infografis
+  // ========================================
+  // S2: INFOGRAFIS
+  // ========================================
 const swiperPrestasi = new Swiper(".prestasi-swiper", {
   slidesPerView: 1,
   spaceBetween: 20,
@@ -174,7 +166,9 @@ const swiperPrestasi = new Swiper(".prestasi-swiper", {
   },
 });
 
-//berita
+  // ========================================
+  // S2: BERITA
+  // ========================================
 const swiperBerita = new Swiper(".swiper-hero", {
   loop: true,
   freeMode: {
@@ -209,31 +203,6 @@ const galeriSwiper = new Swiper(".galeri-swiper", {
     },
     1024: {
       slidesPerView: 3,
-      spaceBetween: 20,
-    },
-  },
-});
-// video dan agenda
-const videoSwiper = new Swiper(".video-swiper", {
-  slidesPerView: 1,
-  spaceBetween: 15,
-
-  // ✅ 1. SLIDE INFINITY
-  loop: true,
-
-  // ✅ 2. SLIDE OTOMATIS DAN MANUAL (Sudah Terpenuhi)
-  allowTouchMove: true,
-  touchRatio: 1,
-  threshold: 5,
-  autoplay: {
-    delay: 4000,
-    disableOnInteraction: false, // Lanjut auto-slide setelah manual interaksi
-  },
-
-
-  breakpoints: {
-    768: {
-      slidesPerView: 2,
       spaceBetween: 20,
     },
   },

@@ -12,7 +12,7 @@
 </head>
 
 <body class="bg-gray-50">
-    <div class="bg-gradient-to-r from-blue-900 to-blue-800 text-white py-2">
+    <div class="hidden md:block bg-gradient-to-r from-blue-900 to-blue-800 text-white py-2">
         <div class="container mx-auto px-4">
             <div class="flex flex-col md:flex-row justify-between items-center text-sm">
                 <div class="flex flex-wrap items-center gap-4 mb-2 md:mb-0">
@@ -208,7 +208,7 @@
 
                 <div class="flex items-center gap-2 lg:hidden">
                     <div>
-                        <a href="login.php" class="glow-button overflow-hidden block w-full h-full rounded-full bg-blue-600 text-white px-6 py-2.5 hover:bg-blue-700 font-semibold shadow-md will-change-transform">
+                        <a href="login.php" class="glow-button overflow-hidden block w-full h-full rounded-full bg-blue-600 text-white px-4 py-2.5 hover:bg-blue-700 font-semibold shadow-md will-change-transform">
                             <span class="relative z-10">Masuk</span>
                         </a>
                     </div>
